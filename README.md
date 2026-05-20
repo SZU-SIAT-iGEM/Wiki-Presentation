@@ -1,93 +1,46 @@
 # Wiki-Presentation
-作为SZU-SIAT-iGEM2026的Wiki与展示仓库，存放包括 Wiki 文稿、Presentation 资料等。这个仓库晚些时候才会开始使用。
-## 📁 08_Wiki与展示
 
-### 用途说明
+这里存放 SZU-SIAT-China 2026 iGEM 项目 **friskoli** 的 Wiki 草稿与后续展示材料。
 
-存放 **Wiki 网站内容和各类展示材料**，包括 Wiki 文稿、Presentation 资料等。
+目前仓库里主要是 [`wiki-drafts/`](wiki-drafts/) 下的 Wiki 文稿草稿。这些内容还不是最终 Wiki 页面，后续需要继续补数据、补图片、校对事实，并转换成正式网页。
 
-### 目录结构
+## 当前内容
 
-```
-08_Wiki与展示/
-├── 📁 Wiki内容/
-│   ├── 📁 页面文稿/
-│   │   ├── Home.md
-│   │   ├── Project_Description.md
-│   │   ├── Design.md
-│   │   ├── Engineering.md
-│   │   ├── Results.md
-│   │   ├── Parts.md
-│   │   ├── Safety.md
-│   │   ├── Human_Practices.md
-│   │   ├── Education.md
-│   │   ├── Collaborations.md
-│   │   ├── Model.md
-│   │   ├── Software.md
-│   │   ├── Contribution.md
-│   │   ├── Team.md
-│   │   └── Attributions.md
-│   ├── 📁 图片素材/
-│   └── 📁 参考资料/
-├── 📁 Presentation/
-│   ├── 📁 答辩/
-│   │   ├── 📄 答辩稿.md
-│   │   └── 📄 答辩PPT.pptx
-│   └── 📁 Video/
-│       ├── 📄 宣传视频脚本.md
-│       └── 📄 视频链接.txt
-├── 📁 Poster/
-│   └── ...
-├── 📄 Wiki写作指南.md
-├── 📄 内容审核清单.md
-└── 📄 README.md
-```
+| 文件 | 当前状态 |
+| --- | --- |
+| `wiki-drafts/00-CONTENT-PLAN.md` | 内容规划与评审说明 |
+| `wiki-drafts/01-Home.md` | 已有草稿 |
+| `wiki-drafts/02-Description.md` | 已有草稿 |
+| `wiki-drafts/03-Design.md` | 已有草稿 |
+| `wiki-drafts/04-Engineering-Success.md` | 已有草稿 |
+| `wiki-drafts/07-Parts.md` | 已有草稿 |
+| `wiki-drafts/09-Safety.md` | 已有草稿 |
+| `wiki-drafts/10-Model.md` | 已有草稿 |
+| `wiki-drafts/11-Human-Practices.md` | 已有草稿 |
+| `wiki-drafts/12-Education-Communication.md` | 已有草稿 |
+| `wiki-drafts/12b-Friskoli-I-Game.md` | 已有草稿 |
+| `wiki-drafts/14-Proposed-Implementation.md` | 已有草稿 |
 
-### 操作指南
+## 怎样提出修改
 
-#### Wiki 文稿撰写流程
+请为每一条独立修改建议新开一个 GitHub Issue。
 
-```
-创建 Issue → 分配撰写人 → 撰写初稿 → 内部评审 → 修改完善 → 设计排版 → 最终审核 → 上线
-    ↓           ↓          ↓          ↓          ↓        ↓         ↓       ↓
-  标注页面    记录负责人   提交草稿   提PR评审   合并修改   美工配合   队长审核  部署
-```
+发 Issue 时尽量写清楚：
 
-#### 页面文稿命名与状态追踪
+1. 对应文件名，比如 `02-Description.md` 或 `10-Model.md`。
+2. 需要修改的位置，比如标题、段落，或大概所在部分。
+3. 希望怎么改，或者缺什么材料。
+4. 如果涉及数据、图片、文献、访谈记录、实验记录，请附上来源。
 
-在 `Wiki内容/页面文稿/` 中维护状态表：
+不同主题请分开发 Issue。比如 `Home` 的措辞修改和 `Model` 的数据补充，应当写成两个 Issue。
 
-```markdown
-## Wiki 页面状态
+## 目前缺口
 
-| 页面 | 状态 | 撰写人 | 审核人 | 最后更新 |
-|------|------|--------|--------|----------|
-| Home | ✅ 已完成 | @张三 | @李四 | 2026-08-15 |
-| Description | 🔄 撰写中 | @王五 | - | 2026-08-10 |
-| Design | ⏳ 待开始 | 未分配 | - | - |
-```
+现在仓库只包含草稿页面，还需要继续补：
 
-状态说明：
-- ⏳ 待开始
-- 🔄 撰写中
-- 📝 待审核
-- 🔧 修改中
-- ✅ 已完成
+- 实验、建模、文献相关的事实校对；
+- 数据、图片、活动记录、访谈记录；
+- 队员信息与贡献归属；
+- 正式 Wiki 网页排版。
 
-#### 内容审核清单
-
-每个页面完成前需通过以下检查：
-
-- [ ] 内容准确性：数据和描述无误
-- [ ] 逻辑完整性：结构清晰，论述完整
-- [ ] 语言规范：无语法错误，表达专业
-- [ ] 图片质量：清晰度足够，有说明文字
-- [ ] 引用规范：所有引用都有标注
-- [ ] 链接有效：所有链接可正常访问
-- [ ] iGEM 要求：符合评审标准
-
-### 自由扩展
-
-- `📁 历史版本/` - 重大修改前的备份
-- `📁 评审反馈/` - 收集到的评审意见
-- `📁 翻译/` - 如需多语言版本
+更完整的 Wiki 计划里还包括 Results、Experiments、Notebook、Entrepreneurship、Collaborations、Contribution、Software、Hardware、Team、Attributions 等页面，但这些草稿目前还没有放进本仓库。
