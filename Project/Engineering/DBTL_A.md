@@ -881,7 +881,7 @@ Chb operon 编码多个 PTS 相关蛋白，其中包括膜相关转运组分。
 
 这成为下一轮 DBTL——**A5 CP12-chb 染色体启动子替换**——的起点。
 
-## DBTL A5 CP12-chb 染色体启动子替换与功能验证
+## DBTL A5 CP12-chb 基因组启动子替换与功能验证
 
 ### Overview
 
@@ -894,14 +894,6 @@ A4 中，我们先后尝试了 RSF 和 p15A 两种 Chb 质粒表达系统，但�
 获得候选工程菌后，我们首先通过基因组 PCR 和 Sanger sequencing 确认编辑区域是否与设计序列一致。在确认 CP12-chb 基因型正确后，再分别利用生长曲线和 soft agar assay 检测其纤维二糖利用与趋化相关表型。
 
 最终，CP12CHB 在纤维二糖培养条件下表现出了区别于 WT MG1655 的生长优势，但在 soft agar assay 中没有观察到明显增强的纤维二糖趋化表型。
-
-这一结果使我们开始将两个问题分开：
-
-**cellobiose utilization 是否得到增强**
-
-以及
-
-**这种增强是否能够进一步产生 measurable chemotactic response**
 
 ### Cycle 1｜CP12 替换内源 chb 启动子并验证基因型
 
@@ -937,17 +929,15 @@ PCR 结果出现了与预期大小一致的目标条带，说明目标区域的�
 
 测序结果显示，编辑区域与设计序列一致，没有观察到碱基错配。
 
-因此，我们确认获得了预期的 CP12-chb 染色体编辑菌株。
+因此，我们确认获得了预期的 CP12-chb 基因组编辑菌株。
 
 #### Learn｜学习
 
-A4 中最大的问题是无法获得稳定的 Chb 质粒工程菌，而本轮通过直接修改染色体内源 `chb` 调控区域，成功获得了基因型符合设计的 CP12CHB 菌株。
+A4 中最大的问题是无法获得稳定的 Chb 质粒工程菌，而本轮通过直接修改大肠杆菌MG1655基因组内源 `chb` 调控区域，成功获得了基因型符合设计的 CP12CHB 菌株。
 
 这说明我们使用chromosomal activation of endogenous chb，解决了先前的plasmid-based chb expression构建失败，从而导致阻碍我们进入功能实验的问题。
 
-但是，基因组序列正确只能证明工程改造在 DNA 层面完成，并不能证明这一改造已经产生预期的纤维二糖利用表型。
-
-因此，下一轮实验我们先检测 CP12CHB 在纤维二糖条件下的生长表现。
+这一改造究竟能不能产生预期的纤维二糖利用表型呢？因此，下一轮实验我们先检测 CP12CHB 在纤维二糖条件下的生长表现。
 
 ### Cycle 2｜CP12CHB 是否获得增强的纤维二糖利用表型？
 
@@ -1049,50 +1039,32 @@ Soft agar cellobiose chemotaxis：no clear enhanced phenotype detected
 
 同时，soft agar 中形成的宏观扩展同时受到生长、运动、底物代谢和趋化等因素影响，因此：没有观察到明显的 soft agar expansion，并不能直接等同于 chemotactic drift 为零。
 
-### Learn｜从“Chb 是否工作”转向“Chb 表达强度如何影响功能”
+### Learn｜从单一 CP12 构建转向表达强度依赖性问题
 
-A5 完成后，我们已经建立了三层证据：
+CP12CHB 的基因型验证和生长曲线表明，利用组成型启动子激活染色体内源 `chb` operon 可以使 MG1655 获得明显改变的纤维二糖利用表型。
 
-**Genotype**
+但是，在当前 soft agar assay 中，我们没有观察到 CP12CHB 对纤维二糖产生明显的定向扩展。
 
-CP12 已正确替换至设计的 `chb` 调控位置，PCR 与测序均符合预期。
+这一结果使我们意识到，能够摄取利用纤维二糖并不等同于已经获得可观察的纤维二糖趋化表型。
 
-↓
+同时，CP12 只代表一个固定的 `chb` 表达水平。仅根据这一株工程菌，我们无法进一步判断：
 
-**Metabolic phenotype**
+- Chb-mediated cellobiose uptake 是否能够产生足够强的 PTS chemotactic signal；
+- CP12 的表达水平是否处于适合产生趋化响应的范围；
+- Chb expression、cellobiose utilization 与 chemotactic response 之间是否存在表达强度依赖关系。
 
-CP12CHB 在 cellobiose 条件下表现出 WT MG1655 所没有的明显生长趋势。
+因此，下一轮实验不再只比较 WT 与 CP12CHB，而是构建一系列具有不同转录强度的 CP promoter replacement strains，以系统改变 `chb` 的表达水平。
 
-↓
+### Next Design｜构建 CP promoter series
 
-**Chemotaxis phenotype**
+下一轮设计的核心问题是：
 
-当前 soft agar assay 没有观察到对应的明显趋化增强。
+> **改变 Chb 的表达强度，是否会产生不同的纤维二糖利用和趋化表型？**
 
-因此，项目问题开始从：
+我们首先通过不同 CP 系列启动子建立 Chb expression gradient，并利用生长曲线评价这些构建的纤维二糖利用表型。
 
-> **我们能否激活 Chb 系统？**
+随后再对不同表达水平的菌株进行趋化测试，以判断是否存在：
 
-转变为：
+**promoter strength → cellobiose phenotype → chemotactic response**
 
-> **Chb 的表达强度如何影响纤维二糖利用，以及这种代谢变化是否能够进一步影响趋化？**
-
-### Next Design｜从 CP12 单一构建扩展到 CP promoter series
-
-CP12 已经证明染色体启动子替换能够产生稳定的纤维二糖相关功能表型。
-
-因此，下一轮不再只比较：
-
-**WT → CP12CHB**
-
-而是进一步建立不同强度的组成型 promoter series。
-
-通过构建多个不同表达水平的 Chb 工程菌，我们希望进一步获得：
-
-**promoter strength → cellobiose growth / utilization**
-
-并进一步测试：
-
-**promoter strength → chemotactic response**
-
-这样可以判断 Chb expression、cellobiose utilization 与 chemotaxis 三者之间究竟是否存在可以定量描述的关系。
+之间的可检测关系。
