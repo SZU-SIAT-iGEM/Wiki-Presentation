@@ -1,0 +1,6 @@
+# 这个库由 Obsidian 写入，行尾统一为 LF
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
