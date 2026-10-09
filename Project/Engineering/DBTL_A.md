@@ -1025,6 +1025,8 @@ Cycle 2 已经表明 CP12CHB 获得了明显不同于 WT 的 cellobiose-dependen
 
 #### Learn｜学习
 
+![CP12_OD600_growth_curve_YH(1)](./../../Wetlab-DBTL-image/CP12_OD600_growth_curve_YH(1).svg)
+
 Cycle 2 和 Cycle 3 得到了两个不同层面的结果：
 
 Cellobiose growth：positive phenotype
