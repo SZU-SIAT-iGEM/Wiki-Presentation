@@ -965,6 +965,8 @@ A4 中最大的问题是无法获得稳定的 Chb 质粒工程菌，而本轮通
 
 #### Test｜测试
 
+![CP12_OD600_growth_curve_YH(1)](../../Wetlab-DBTL-image/CP12_OD600_growth_curve_YH(1).svg)
+
 在 glucose 条件下，两株菌均表现出明显生长。
 
 在 cellobiose 条件下则出现了明显不同的趋势。
@@ -1024,8 +1026,6 @@ Cycle 2 已经表明 CP12CHB 获得了明显不同于 WT 的 cellobiose-dependen
 换言之，虽然生长曲线已经显示 CP12CHB 的 cellobiose-dependent growth phenotype 明显改变，但这一变化没有在当前 soft agar assay 中表现为对应的明显趋化增强。
 
 #### Learn｜学习
-
-![CP12_OD600_growth_curve_YH(1)](./../../Wetlab-DBTL-image/CP12_OD600_growth_curve_YH(1).svg)
 
 Cycle 2 和 Cycle 3 得到了两个不同层面的结果：
 
