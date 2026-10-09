@@ -193,7 +193,7 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 - 工程菌，即尝试转入 pCDF-based SmR plasmid 的 DH5α；
 
-- 野生型 DH5α WT，未转入任何 plasmid。
+- 野生型 DH5α WildType，未转入任何 plasmid。
 
 我们设置了三种 selection condition：
 
@@ -223,11 +223,11 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 #### Build
 
-将转入 pCDF-based SmR plasmid 的工程菌涂布于链霉素平板，并在 37℃ 下过夜培养。
+将转入 pCDF-based SmR plasmid 的工程菌和未经 transformation 的 DH5α WT 分别涂布于链霉素平板，所有平板在 37℃ 下过夜培养。
 
 #### Test
 
-结果显示，链霉素平板上的工程菌能够形成单菌落，这一结果与 DBTL B1 中观察到的现象一致。但同时，链霉素平板上的野生型菌株也能够形成单菌落。
+结果显示，链霉素平板上的工程菌能够形成单菌落，这一结果与 DBTL B1 中观察到的现象一致；但同时，链霉素平板上的野生型菌株也能够形成单菌落。
 
 <img width="1233" height="1235" alt="SD链霉素板子含WT" src="https://github.com/user-attachments/assets/cccdd42a-2a68-46b4-ab08-002baafa0f74" />
 
@@ -237,7 +237,7 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 这一结果与我们的预期明显不符。如果 streptomycin selection 工作正常，那么，工程菌应当生长，WT 应当无法生长，但实际结果是 WT 同样能够生长。
 
-这说明，streptomycin 单抗生素条件在我们的实验体系中无法可靠区分 WT 与 plasmid-containing cells。
+这说明，WT 没有被链霉素有效抑制，streptomycin 单抗生素条件在我们的实验体系中无法可靠区分 WT 与 plasmid-containing cells。
 
 ### Cycle 2｜Can spectinomycin provide a more reliable selection condition?
 
@@ -251,19 +251,11 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 #### Build
 
-我们重新进行 transformation，并将：
-
-- 工程菌
-
-- 未经 transformation 的 DH5α WT
-
-分别涂布于新的 spectinomycin-containing plates，所有组在 37℃ 培养条件下过夜培养。
+我们重新进行 transformation，并将工程菌和未经 transformation 的 DH5α WT 分别涂布于新的 spectinomycin-containing plates，所有平板在 37℃ 下过夜培养。
 
 #### Test
 
 结果显示，壮观霉素平板上，工程菌能够形成 colonies；同时，DH5α WT 也能够在壮观霉素平板上形成 colonies。
-
-也就是说，WT 没有被壮观霉素有效抑制。
 
 <img width="2487" height="2476" alt="SD壮观霉素板子" src="https://github.com/user-attachments/assets/9101b274-14de-4a04-a870-ca6a302bce28" />
 
@@ -271,9 +263,9 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 #### Learn
 
-这一结果与我们的预期明显不符。如果 spectinomycin selection 工作正常，那么，工程菌应当生长，WT 应当无法生长，但实际结果是 WT 同样能够生长。
+这一结果与我们的预期明显不符。如果 spectinomycin selection 工作正常，那么工程菌应当生长，WT 应当无法生长，但实际结果是 WT 同样能够生长。
 
-这说明，spectinomycin 单抗生素条件在我们的实验体系中无法可靠区分 WT 与 plasmid-containing cells。
+这说明，WT 没有被壮观霉素有效抑制，spectinomycin 单抗生素条件在我们的实验体系中无法可靠区分 WT 与 plasmid-containing cells。
 
 ### Cycle 3｜Does combined streptomycin + spectinomycin selection improve stringency?
 
