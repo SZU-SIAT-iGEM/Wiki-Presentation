@@ -187,17 +187,17 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 > 能够在 antibiotic plate 上生长的 colony，并不一定就是目标 transformant。
 
-因此，我们决定重新测试整个 SmR-based selection system，并加入未经 transformation 的 DH5α 和 MG1655 WT 作为 negative control。
+因此，我们决定重新测试整个 SmR-based selection system，并加入未经 transformation 的 DH5α WT 作为 negative control。
 
 这一轮我们同时比较不同 antibiotic condition 下：
 
-- 工程菌，即尝试转入 pCDF-based SmR plasmid 的 DH5α 和 MG1655；
+- 工程菌，即尝试转入 pCDF-based SmR plasmid 的 DH5α；
 
-- 野生型 DH5α 和 MG1655 WT，未转入任何 plasmid。
+- 野生型 DH5α WT，未转入任何 plasmid。
 
 我们设置了三种 selection condition：
 
-1. **链霉素平板**：观察工程菌是否能够形成 colonies；
+1. **链霉素平板**：同时涂布工程菌和 WT，判断链霉素能否抑制 WT；
 
 2. **壮观霉素平板**：同时涂布工程菌和 WT，判断壮观霉素能否抑制 WT；
 
@@ -209,21 +209,9 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 - WT 应当无法生长。
 
-如果 WT 同样能够生长，那么此前根据“selection plate 上有 colony”判断 transformation 成功的逻辑就不再成立。
+我们使用新的 DH5α competent cells，并进行 pCDF-based SmR plasmid transformation，同时保留未经任何 plasmid transformation 的 DH5α WT。
 
-我们重新制备 MG1655 competent cells，并进行 pCDF-based SmR plasmid transformation。
-
-同时保留未经任何 plasmid transformation 的 DH5α 和 MG1655 WT。
-
-随后将各组细胞分别涂布于以下平板：
-
-- 链霉素平板：工程菌；
-
-- 壮观霉素平板：工程菌、WT；
-
-- 链霉素 + 壮观霉素平板：工程菌、WT。
-
-所有平板在相同条件下过夜培养。
+随后将各组细胞分别涂布于三种 selection condition 下的平板，所有平板在 37℃ 的相同培养条件下过夜培养。
 
 ### Cycle 1｜What does the streptomycin plate alone tell us?
 
@@ -231,11 +219,7 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 链霉素平板是最初 DBTL B1 中使用的 selection condition。
 
-我们首先保留这一条件，观察工程菌是否能够形成 colonies。
-
-但需要注意的是，这一轮链霉素平板只测试了工程菌，没有同时设置 WT negative control。
-
-因此，即使工程菌能够生长，也不能单独证明 streptomycin selection 具有区分 WT 与 transformants 的能力。
+我们首先保留这一条件，观察工程菌和 DH5α WT 是否能够形成 colonies。
 
 #### Build
 
@@ -243,27 +227,17 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 #### Test
 
-结果显示，链霉素平板上的工程菌能够形成单菌落。
+结果显示，链霉素平板上的工程菌能够形成单菌落，这一结果与 DBTL B1 中观察到的现象一致。但同时，链霉素平板上的野生型菌株也能够形成单菌落。
 
-这一结果与 DBTL B1 中观察到的现象一致。
+<img width="1233" height="1235" alt="SD链霉素板子含WT" src="https://github.com/user-attachments/assets/cccdd42a-2a68-46b4-ab08-002baafa0f74" />
 
-<img width="2476" height="2476" alt="SD链霉素工程菌" src="https://github.com/user-attachments/assets/3cadb4e6-14e9-4ba4-bad1-6bf3cfe65e27" />
-
-图2.1-1 划线接种工程菌的链霉素平板
+图2.1-1 涂布接种工程菌和野生型菌株的链霉素平板
 
 #### Learn
 
-链霉素平板上工程菌能够生长，只能说明，在链霉素筛选条件下，工程菌组能够形成 colonies，但并不能证明这些 colonies 一定是携带目标质粒的 transformants。
+这一结果与我们的预期明显不符。如果 streptomycin selection 工作正常，那么，工程菌应当生长，WT 应当无法生长，但实际结果是 WT 同样能够生长。
 
-原因如下：
-
-- 该条件没有同时设置 WT negative control；
-
-- 仅凭工程菌生长，无法排除 background growth；
-
-- 也无法判断 streptomycin 是否真正抑制了没有 resistance plasmid 的细胞。
-
-因此，链霉素平板上的 colony formation 仍然不能作为可靠的 transformation evidence。
+这说明，streptomycin 单抗生素条件在我们的实验体系中无法可靠区分 WT 与 plasmid-containing cells。
 
 ### Cycle 2｜Can spectinomycin provide a more reliable selection condition?
 
@@ -271,7 +245,7 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 为了进一步验证问题是否仅仅来源于第一批 streptomycin plates 或 antibiotic condition，我们重新购买了 spectinomycin，并重新制备 selection plates。
 
-这一轮实验我们设置了 WT negative control。
+这一轮实验我们保留了 WT negative control。
 
 我们的目标是测试：更换 antibiotic condition 后，是否能够真正建立 WT 与 transformants 之间清晰的生长差异？
 
@@ -281,31 +255,25 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 - 工程菌
 
-- 未经 transformation 的 DH5α 和 MG1655 WT
+- 未经 transformation 的 DH5α WT
 
 分别涂布于新的 spectinomycin-containing plates，所有组在 37℃ 培养条件下过夜培养。
 
 #### Test
 
-结果显示，壮观霉素平板上，工程菌能够形成 colonies；同时，DH5α 和 MG1655 WT 也能够在壮观霉素平板上形成 colonies。
+结果显示，壮观霉素平板上，工程菌能够形成 colonies；同时，DH5α WT 也能够在壮观霉素平板上形成 colonies。
 
 也就是说，WT 没有被壮观霉素有效抑制。
 
-<img width="2476" height="2476" alt="SD壮观霉素工程菌" src="https://github.com/user-attachments/assets/81025138-f89b-450c-9bfc-56c532f44dc2" />
+<img width="2487" height="2476" alt="SD壮观霉素板子" src="https://github.com/user-attachments/assets/9101b274-14de-4a04-a870-ca6a302bce28" />
 
-图2.2-1 涂布接种工程菌的壮观霉素平板
-
-<img width="2476" height="1270" alt="SD壮观霉素WT" src="https://github.com/user-attachments/assets/1752c108-7c4f-4055-9fc2-412f412968ca" />
-
-图2.2-2 涂布接种野生型菌株的壮观霉素平板
+图2.2-1 涂布接种工程菌和野生型菌株的壮观霉素平板
 
 #### Learn
 
 这一结果与我们的预期明显不符。如果 spectinomycin selection 工作正常，那么，工程菌应当生长，WT 应当无法生长，但实际结果是 WT 同样能够生长。
 
 这说明，spectinomycin 单抗生素条件在我们的实验体系中无法可靠区分 WT 与 plasmid-containing cells。
-
-因此，我们观察到的“工程菌在 antibiotic plate 上形成 colony”也并不能证明 plasmid transformation 成功。
 
 ### Cycle 3｜Does combined streptomycin + spectinomycin selection improve stringency?
 
@@ -317,7 +285,7 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 - 工程菌
 
-- 未经 transformation 的 DH5α 和 MG1655 WT
+- 未经 transformation 的 DH5α WT
 
 如果双药组合能够抑制 WT，而工程菌仍然生长，则说明双药 selection 可能比单药更可靠。
 
@@ -327,21 +295,15 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 我们重新制备链霉素 + 壮观霉素双药平板。
 
-随后将工程菌、DH5α 和 MG1655 WT 分别涂布于双药平板上，所有组在 37℃ 培养条件下过夜培养。
+随后将工程菌和 DH5α WT 分别涂布于双药平板上，所有组在 37℃ 培养条件下过夜培养。
 
 #### Test
 
-结果显示，链霉素 + 壮观霉素双抗平板上，工程菌能够形成 colonies；同时，DH5α 和 MG1655 WT也能够在链霉素 + 壮观霉素双抗平板上形成 colonies。
+结果显示，链霉素 + 壮观霉素双抗平板上，工程菌能够形成 colonies；同时，DH5α WT 也能够在链霉素 + 壮观霉素双抗平板上形成 colonies。
 
-也就是说，即使联合使用两种 antibiotic，WT 仍然没有被抑制。
+<img width="2487" height="2476" alt="SD双抗板子" src="https://github.com/user-attachments/assets/209d5579-04bb-43d9-8efe-70dc7063d65a" />
 
-<img width="2476" height="2476" alt="SD双抗工程菌" src="https://github.com/user-attachments/assets/b2ab51cc-a46e-4bb1-bba5-175cdebf3b72" />
-
-图2.3-1 涂布接种工程菌的链霉素+壮观霉素平板
-
-<img width="2476" height="1210" alt="SD双抗WT" src="https://github.com/user-attachments/assets/9d4f1770-6924-4724-9719-8c8c22138b7c" />
-
-图2.3-2 涂布接种野生型菌株的链霉素+壮观霉素平板
+图2.3-1 涂布接种工程菌和野生型菌株的的链霉素+壮观霉素平板
 
 #### Learn
 
@@ -349,7 +311,7 @@ Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察
 
 | Selection condition | 工程菌        | WT         |
 | ------------------- | ---------- | ---------- |
-| 链霉素平板               | 有 colonies | 未设置        |
+| 链霉素平板               | 有 colonies | 有 colonies |
 | 壮观霉素平板              | 有 colonies | 有 colonies |
 | 链霉素 + 壮观霉素平板        | 有 colonies | 有 colonies |
 
@@ -363,15 +325,8 @@ spectinomycin 单药不能抑制 WT；
 
 streptomycin + spectinomycin 双药也不能抑制 WT；
 
-因此 SmR-based selection 无法可靠地区分 WT 与 transformants。
+因此 SmR-based selection 无法可靠地区分 WT 与 transformants，所以在下一轮中，我们需要重新设置 selection condition，丢弃 SmR-based selection。
 
-在这里，我们不需要立即证明 WT 生长的具体分子机制。
-
-对于工程迭代来说，更关键的是：
-
-这个 selection system 已经无法继续承担“识别 transformant”的功能。
-
-因此，即使继续优化 Gibson assembly，只要 selection 本身不能可靠工作，我们仍然无法判断获得的 colony 究竟是不是目标工程菌，所以在下一轮中，我们需要重新设置 selection condition，丢弃 SmR-based selection。
 ## DBTL B3 Rebuilding the system with an independent selection strategy
 
 ### Design
