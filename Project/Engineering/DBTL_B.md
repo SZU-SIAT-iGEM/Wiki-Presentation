@@ -18,8 +18,6 @@
 
 ## DBTL B1 Building the first INPNC-cellulase surface display system
 
-### Overview
-
 ### Cycle 1｜构建表面展示工程菌
 
 ### Design
@@ -581,98 +579,3 @@ INPNC 并不是唯一可能的 outer-membrane display strategy。
 
 **surface-display scaffold selection itself may be one of the key design variables。**
 
----
-
-## Overall Learning
-
-这一系列 DBTL cycles 最重要的结果并不是简单得到：
-
-**“我们的 construct 没有转出来。”**
-
-更重要的是，我们通过不断增加能够区分不同 failure modes 的 controls，使问题逐渐从一个模糊的 cloning failure 被拆解。
-
-最初：
-
-**Selection plate 上有 colonies**
-
-↓
-
-但：
-
-**Colony PCR negative**
-
-以及：
-
-**CMC-Congo red functional assay negative**
-
-↓
-
-因此我们检测：
-
-**Assembly products**
-
-↓
-
-发现：
-
-**Target expression cassette can be detected**
-
-↓
-
-于是开始怀疑：
-
-**Are the colonies actually transformants?**
-
-↓
-
-加入 WT control：
-
-**WT also grows under the original selection condition**
-
-↓
-
-说明：
-
-**The original SmR-based selection is unreliable in our experimental system**
-
-↓
-
-更换：
-
-**pACYC + chloramphenicol**
-
-↓
-
-得到：
-
-**WT: no colony**
-
-**Empty vector: colonies**
-
-↓
-
-说明：
-
-**selection, host transformation and plasmid backbone can work**
-
-↓
-
-但是：
-
-**INPNC-Cel5L / Cel9K / Cel48S: no colonies**
-
-↓
-
-同时：
-
-**target DNA remains detectable in assembly products**
-
-↓
-
-因此我们将下一轮工程问题聚焦为：
-
-> **Does the shared INPNC-cellulase expression architecture impose excessive cellular burden?**
-
-这使我们的下一轮设计不再是单纯重复 cloning，而是开始重新思考：
-
-**How should the surface-display architecture itself be redesigned?**
