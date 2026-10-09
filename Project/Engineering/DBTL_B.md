@@ -96,7 +96,7 @@
 
 ### Test 
 
-![图片1](./images of wetlabDBTL/图片1.png)
+![图片1](./images%20of%20wetlabDBTL/图片1.png)
 
 为了初步检验构建产物能否用于获得候选工程菌，我们将三个 Gibson Assembly products 分别转化至 *E. coli* MG1655。
 
