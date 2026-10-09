@@ -96,6 +96,8 @@
 
 ### Test 
 
+![图片1](./images of wetlabDBTL/图片1.png)
+
 为了初步检验构建产物能否用于获得候选工程菌，我们将三个 Gibson Assembly products 分别转化至 *E. coli* MG1655。
 
 转化后，我们将细胞涂布至含链霉素的选择平板上并进行培养。
@@ -120,23 +122,13 @@
 
 在上一轮构建中，我们将三种 INPNC–cellulase assembly products 分别转化至 MG1655，并在所有实验组的链霉素选择平板上观察到了菌落。
 
-然而，菌落形成并不能直接证明目标表达盒已成功导入细胞，更无法证明其能够表达具有功能的纤维素酶。
-
-因此，本轮的工程目标是进一步验证这些候选菌落的基因型和功能表型。
+本轮的工程目标是进一步验证这些候选菌落的基因型和功能表型。
 
 我们选择两种互补的验证方法。
 
 首先，使用 colony PCR 检测目标 INPNC–cellulase DNA 结构是否存在于候选菌落中。
 
 其次，利用 CMC–Congo red assay 观察菌株是否表现出可检测的纤维素降解活性。若纤维素酶能够有效水解 CMC，理论上可以在刚果红染色和脱色后观察到菌落周围的浅色水解区域。
-
-选择这两种检测方法，是因为 colony PCR 结果可能受到模板释放、引物及反应条件等因素影响，单一阴性结果并不能完全排除目标构建体的存在。
-
-通过同时考察 DNA 与功能表型，我们希望获得更加充分的验证证据。
-
-本轮需要回答的问题是：
-
-**Are the colonies obtained in DBTL B1 genuine transformants carrying functional INPNC–cellulase constructs?**
 
 ## Build
 
