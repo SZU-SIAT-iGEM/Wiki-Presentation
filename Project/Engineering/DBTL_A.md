@@ -597,7 +597,7 @@ AscF 和 AscB 的分子量十分接近，如果蛋白在凝胶中的迁移距离
 随后将这些样品进行 SDS-PAGE 分析。
 
 #### Test｜测试
-![SDS3](./images of wetlabDBTL/SDS3.png)
+![SDS3](./images%20of%20wetlabDBTL/SDS3.png)
 
 第三次 SDS-PAGE 中，我们观察到了比前两次实验更具有解释力的结果。
 
@@ -911,7 +911,7 @@ MG1655 染色体本身已经携带内源 `chb` operon，因此本轮选择保留
 
 #### Test｜测试
 
-![A5-1](./images of wetlabDBTL/A5-1.png)
+![A5-1](./images%20of%20wetlabDBTL/A5-1.png)
 
 我们成功得到了 λ-Red菌株和CP12CHB菌株
 
@@ -921,7 +921,7 @@ PCR 结果出现了与预期大小一致的目标条带，说明目标区域的�
 
 随后对 PCR 产物进行 Sanger sequencing，并将测序序列与预期的 CP12-chb edited sequence 进行比对。
 
-![image-20261009174808914](./images of wetlabDBTL/image-20261009174808914.png)
+![image-20261009174808914](./images%20of%20wetlabDBTL/image-20261009174808914.png)
 
 测序结果显示，编辑区域与设计序列一致，没有观察到碱基错配。至此，我们确认获得了预期的 CP12-chb 基因组编辑菌株。
 
