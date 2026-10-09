@@ -1,0 +1,7 @@
+# Obsidian 工作区状态：每次开关都会改写，纳入版本控制只会制造噪音
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Obsidian 回收站与缓存
+.trash/
+.obsidian/cache
