@@ -597,7 +597,7 @@ AscF 和 AscB 的分子量十分接近，如果蛋白在凝胶中的迁移距离
 随后将这些样品进行 SDS-PAGE 分析。
 
 #### Test｜测试
-<img width="1629" height="1395" alt="sds3" src="https://github.com/user-attachments/assets/81bb7a7a-a587-43bf-8394-d1a0746741bf" />
+![SDS3](./images of wetlabDBTL/SDS3.png)
 
 第三次 SDS-PAGE 中，我们观察到了比前两次实验更具有解释力的结果。
 
@@ -701,16 +701,6 @@ AscB 的预测翻译起始速率约为 AscF 的 3.4 倍。
 文献中，`chbBCA` 被用于构建更加完整的 PTS 转运模块，其中不同组分共同承担 EIIA、EIIB 和 EIIC 相关功能；同时，`chbF` 负责后续的磷酸化 β-葡萄糖苷水解。相关工程研究也表明，围绕 `chb` 和 `asc` 系统的多节点调控能够显著改善大肠杆菌的纤维二糖利用能力（Parisutham et al., 2013; Parisutham & Lee, 2015）。
 
 基于这些结果，我们在下一轮 DBTL 中不再继续单纯优化 `ascFB`，而是重新构建以 **Chb 系统**为核心的纤维二糖转运与代谢模块。
-
----
-
-### References
-
-Morabbi Heravi, K., & Altenbuchner, J. (2018). Cross talk among transporters of the phosphoenolpyruvate-dependent phosphotransferase system in *Bacillus subtilis*. *Journal of Bacteriology, 200*(19), e00213-18. https://doi.org/10.1128/JB.00213-18
-
-Parisutham, V., Jung, S.-K., Nam, D., & Lee, S. K. (2013). Transcriptome-driven synthetic re-modeling of *Escherichia coli* to enhance cellobiose utilization. *Chemical Engineering Science, 103*, 50–57. https://doi.org/10.1016/j.ces.2012.08.006
-
-Parisutham, V., & Lee, S. K. (2015). Novel functions and regulation of cryptic cellobiose operons in *Escherichia coli*. *PLoS ONE, 10*(6), e0131928. https://doi.org/10.1371/journal.pone.0131928
 
 ## DBTL A4 Chb 质粒表达系统的构建与路线调整
 
@@ -909,7 +899,7 @@ MG1655 染色体本身已经携带内源 `chb` operon，因此本轮选择保留
 
 #### Build｜实施
 
-我们工程菌的构建采用 pKD46 / λ-Red homologous recombination 进行染色体编辑。
+我们工程菌的构建采用 pKD46 / λ-Red homologous recombination 进行基因组编辑。
 
 1、首先将 pKD46 导入 MG1655，并在适合 pKD46 维持的条件下培养。
 
@@ -921,23 +911,25 @@ MG1655 染色体本身已经携带内源 `chb` operon，因此本轮选择保留
 
 #### Test｜测试
 
-我们从候选 CP12CHB 工程菌中提取基因组 DNA，并使用针对编辑区域设计的引物进行 PCR。
+![A5-1](./images of wetlabDBTL/A5-1.png)
+
+我们成功得到了 λ-Red菌株和CP12CHB菌株
+
+下一步我们从候选 CP12CHB 工程菌中提取基因组 DNA，并使用针对编辑区域设计的引物进行 PCR。
 
 PCR 结果出现了与预期大小一致的目标条带，说明目标区域的长度变化与设计相符。
 
 随后对 PCR 产物进行 Sanger sequencing，并将测序序列与预期的 CP12-chb edited sequence 进行比对。
 
-测序结果显示，编辑区域与设计序列一致，没有观察到碱基错配。
+![image-20261009174808914](./images of wetlabDBTL/image-20261009174808914.png)
 
-因此，我们确认获得了预期的 CP12-chb 基因组编辑菌株。
+测序结果显示，编辑区域与设计序列一致，没有观察到碱基错配。至此，我们确认获得了预期的 CP12-chb 基因组编辑菌株。
 
 #### Learn｜学习
 
 A4 中最大的问题是无法获得稳定的 Chb 质粒工程菌，而本轮通过直接修改大肠杆菌MG1655基因组内源 `chb` 调控区域，成功获得了基因型符合设计的 CP12CHB 菌株。
 
-这说明我们使用chromosomal activation of endogenous chb，解决了先前的plasmid-based chb expression构建失败，从而导致阻碍我们进入功能实验的问题。
-
-这一改造究竟能不能产生预期的纤维二糖利用表型呢？因此，下一轮实验我们先检测 CP12CHB 在纤维二糖条件下的生长表现。
+这说明我们使用 chb 操纵子的基因组激活策略，解决了先前的plasmid-based chb expression构建失败，从而导致阻碍我们进入功能实验的问题。这一改造究竟能不能产生预期的纤维二糖利用表型呢？因此，下一轮实验我们先检测 CP12CHB 在纤维二糖条件下的生长表现。
 
 ### Cycle 2｜CP12CHB 是否获得增强的纤维二糖利用表型？
 
@@ -965,17 +957,11 @@ A4 中最大的问题是无法获得稳定的 Chb 质粒工程菌，而本轮通
 
 #### Test｜测试
 
-![CP12_OD600_growth_curve_YH(1)](./images of wetlabDBTL/CP12_OD600_growth_curve_YH(1).svg)
+![CP12 Growth Curve](./images%20of%20wetlabDBTL/CP12_OD600_growth_curve_YH(1).svg)
 
-在 glucose 条件下，两株菌均表现出明显生长。
+在 glucose 条件下，两株菌均表现出明显生长。在 cellobiose 条件下则出现了明显不同的趋势。
 
-在 cellobiose 条件下则出现了明显不同的趋势。
-
-WT MG1655 的 OD600 在整个实验过程中基本维持在初始水平附近，没有表现出明显增长。
-
-相比之下，CP12CHB 的 OD600 随培养时间持续缓慢增加，由初始约 0.14 上升至 24 h 时约 0.21。
-
-因此，在相同的 cellobiose 培养条件下，CP12CHB 表现出了 WT MG1655 所没有的持续 OD600 增长趋势。
+WT MG1655 的 OD600 在整个实验过程中基本维持在初始水平附近，没有表现出明显增长。相比之下，CP12CHB 的 OD600 随培养时间持续缓慢增加，由初始约 0.14 上升至 24 h 时约 0.21。因此，在相同的 cellobiose 培养条件下，CP12CHB 表现出了 WT MG1655 所没有的持续 OD600 增长趋势。
 
 #### Learn｜学习
 
@@ -1007,17 +993,7 @@ Cycle 2 已经表明 CP12CHB 获得了明显不同于 WT 的 cellobiose-dependen
 
 #### Build｜实施
 
-分别制备：
-
-**M9 + 0.3% agar + 10 mM glucose**
-
-以及：
-
-**M9 + 0.3% agar + 10 mM cellobiose**
-
-软琼脂平板。
-
-接种 CP12CHB，并观察培养过程中菌体是否形成明显的扩展区域或趋化环。
+分别制备：**M9 + 0.3% agar + 10 mM glucose** / **M9 + 0.3% agar + 10 mM cellobiose** 软琼脂平板。接种 CP12CHB，并观察培养过程中菌体是否形成明显的扩展区域或趋化环。
 
 #### Test｜测试
 
@@ -1041,13 +1017,11 @@ Soft agar cellobiose chemotaxis：no clear enhanced phenotype detected
 
 同时，soft agar 中形成的宏观扩展同时受到生长、运动、底物代谢和趋化等因素影响，因此：没有观察到明显的 soft agar expansion，并不能直接等同于 chemotactic drift 为零。
 
-### Learn｜从单一 CP12 构建转向表达强度依赖性问题
+### Learn｜从单一 CP12 构建转向CP系列启动子构建
 
 CP12CHB 的基因型验证和生长曲线表明，利用组成型启动子激活染色体内源 `chb` operon 可以使 MG1655 获得明显改变的纤维二糖利用表型。
 
-但是，在当前 soft agar assay 中，我们没有观察到 CP12CHB 对纤维二糖产生明显的定向扩展。
-
-这一结果使我们意识到，能够摄取利用纤维二糖并不等同于已经获得可观察的纤维二糖趋化表型。
+但是，在当前 soft agar assay 中，我们没有观察到 CP12CHB 对纤维二糖产生明显的定向扩展。这一结果使我们意识到，能够摄取利用纤维二糖并不等同于已经获得可观察的纤维二糖趋化表型。
 
 同时，CP12 只代表一个固定的 `chb` 表达水平。仅根据这一株工程菌，我们无法进一步判断：
 
@@ -1059,14 +1033,22 @@ CP12CHB 的基因型验证和生长曲线表明，利用组成型启动子激活
 
 ### Next Design｜构建 CP promoter series
 
-下一轮设计的核心问题是：
+通过改变 Chb 的表达强度，测试其是否会产生不同的纤维二糖利用和趋化表型？
 
-> **改变 Chb 的表达强度，是否会产生不同的纤维二糖利用和趋化表型？**
+我们首先通过不同 CP 系列启动子建立 Chb expression gradient，并利用生长曲线评价这些构建的纤维二糖利用表型。随后再对不同表达水平的菌株进行趋化测试，以判断是否存在之间的可检测关系。
 
-我们首先通过不同 CP 系列启动子建立 Chb expression gradient，并利用生长曲线评价这些构建的纤维二糖利用表型。
 
-随后再对不同表达水平的菌株进行趋化测试，以判断是否存在：
 
-**promoter strength → cellobiose phenotype → chemotactic response**
 
-之间的可检测关系。
+
+
+
+
+
+### References
+
+Morabbi Heravi, K., & Altenbuchner, J. (2018). Cross talk among transporters of the phosphoenolpyruvate-dependent phosphotransferase system in *Bacillus subtilis*. *Journal of Bacteriology, 200*(19), e00213-18. https://doi.org/10.1128/JB.00213-18
+
+Parisutham, V., Jung, S.-K., Nam, D., & Lee, S. K. (2013). Transcriptome-driven synthetic re-modeling of *Escherichia coli* to enhance cellobiose utilization. *Chemical Engineering Science, 103*, 50–57. https://doi.org/10.1016/j.ces.2012.08.006
+
+Parisutham, V., & Lee, S. K. (2015). Novel functions and regulation of cryptic cellobiose operons in *Escherichia coli*. *PLoS ONE, 10*(6), e0131928. https://doi.org/10.1371/journal.pone.0131928
