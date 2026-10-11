@@ -724,6 +724,8 @@ A3 的蛋白验证和文献分析表明，继续单独优化 `ascFB` 未必能�
 相比只构建单一表达强度，我们希望通过启动子梯度进一步研究：
 
 Chb expression → cellobiose utilization → downstream phenotype
+<img width="1852" height="312" alt="最最新" src="https://github.com/user-attachments/assets/0407af3f-3a65-4bb3-936c-c72a6d38cef0" />
+
 
 因此，我们选择五个不同强度的 Anderson constitutive promoters：
 
