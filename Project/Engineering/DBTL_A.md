@@ -9,7 +9,8 @@
 在第一轮设计中，我们选择了大肠杆菌自身基因组中存在的 `asc` 系统作为工程化对象。`asc` 操纵子与部分 β-葡萄糖苷类糖的转运和代谢有关，其中：
 
 - `ascF` 编码与糖转运相关的膜蛋白；
-- `ascB` 编码 β-葡萄糖苷酶，参与胞内后续代谢。
+- `ascB` 编码 β-葡萄糖苷酶，参与胞内后续代谢。<img width="2002" height="1142" alt="cp12软琼脂" src="https://github.com/user-attachments/assets/07f668cf-7b20-426e-b1a7-562fb2f34b35" />
+
 
 我们的目的是将目标基因（`ascF`、`ascB`）克隆至合适的表达载体，转化至大肠杆菌MG1655底盘，并获得可稳定传代、可诱导/组成型表达的工程菌株。
 
@@ -996,6 +997,7 @@ Cycle 2 已经表明 CP12CHB 获得了明显不同于 WT 的 cellobiose-dependen
 分别制备：**M9 + 0.3% agar + 10 mM glucose** / **M9 + 0.3% agar + 10 mM cellobiose** 软琼脂平板。接种 CP12CHB，并观察培养过程中菌体是否形成明显的扩展区域或趋化环。
 
 #### Test｜测试
+<img width="2002" height="1142" alt="cp12软琼脂" src="https://github.com/user-attachments/assets/27cf8874-980b-4ea7-8e74-c2f1dc8e0f4a" />
 
 在本轮实验条件下，CP12CHB 在 cellobiose soft agar 中没有表现出明显的趋化扩展。
 
