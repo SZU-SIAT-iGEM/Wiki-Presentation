@@ -982,10 +982,12 @@ Cycle 2 已经表明 CP12CHB 获得了明显不同于 WT 的 cellobiose-dependen
 
 因此，我们在这一轮进一步测试，CP12 激活 chb 后，是否同时产生能够通过 soft agar assay 观察到的纤维二糖趋化增强？
 
-沿用前期建立的 soft agar assay，使用：
-
-- M9 minimal medium；
-- 0.3% agar。
+通过查阅文献得到胰蛋白胨软琼脂板 + 外加糖体系，用于比较"加糖 vs 不加糖"对迁移速度的影响
+| 成分              | 用量（per L）                            |
+| --------------- | ------------------------------------ |
+| Bacto tryptone  | 10 g（1%）                             |
+| NaCl            | 5 g（0.5%）                            |
+| Bacto agar (BD) | **3.5 g（0.35%）**                     |
 
 分别以：
 
@@ -996,7 +998,7 @@ Cycle 2 已经表明 CP12CHB 获得了明显不同于 WT 的 cellobiose-dependen
 
 #### Build｜实施
 
-分别制备：**M9 + 0.3% agar + 10 mM glucose** / **M9 + 0.3% agar + 10 mM cellobiose** 软琼脂平板。接种 CP12CHB，并观察培养过程中菌体是否形成明显的扩展区域或趋化环。
+分别制备：**1%Bacto tryptone + 0.5%NaCl + 0.35% agar + 10 mM glucose** / **1%Bacto tryptone + 0.5%NaCl + 0.35% agar + 10 mM cellobiose** 软琼脂平板。接种 CP12CHB，并观察培养过程中菌体是否形成明显的扩展区域或趋化环。
 
 #### Test｜测试
 <img width="2002" height="1142" alt="cp12软琼脂" src="https://github.com/user-attachments/assets/27cf8874-980b-4ea7-8e74-c2f1dc8e0f4a" />
