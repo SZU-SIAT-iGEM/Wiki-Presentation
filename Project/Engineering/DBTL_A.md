@@ -1042,12 +1042,133 @@ CP12CHB 的基因型验证和生长曲线表明，利用组成型启动子激活
 通过改变 Chb 的表达强度，测试其是否会产生不同的纤维二糖利用和趋化表型？
 
 我们首先通过不同 CP 系列启动子建立 Chb expression gradient，并利用生长曲线评价这些构建的纤维二糖利用表型。随后再对不同表达水平的菌株进行趋化测试，以判断是否存在之间的可检测关系。
+# DBTL A6 CP系列启动子梯度菌株的趋化能力验证
+
+## Overview
+
+在 DBTL A5 中，我们通过 CP12 启动子替换激活了 MG1655 染色体内源 `chb` operon，工程菌 CP12CHB 在纤维二糖条件下表现出了 WT 所没有的持续生长表型。然而，在 M9 soft agar assay 中，我们没有观察到 CP12CHB 对纤维二糖产生明显的趋化扩展。
+
+这一结果提出了两个问题：
+
+> 1. 能够摄取利用纤维二糖，是否必然转化为可观察的趋化表型？
+> 2. CP12 只代表一个固定的 `chb` 表达水平——趋化响应对表达强度是否存在依赖关系？
+
+为了系统回答这些问题，本轮我们构建了一组由不同强度 CP 系列启动子驱动的 promoter replacement strains（cp6、cp7、cp12、cp25、cp30、cp44），以 WT MG1655 作为基线对照，建立 Chb expression gradient，并在软琼脂体系中比较各菌株的纤维二糖趋化表型。
+
+同时，在上一轮对 CP12CHB 的测定中，我们观察到趋化圈整体偏小，信号较弱。经过文献调研，我们注意到**细菌的趋化能力并不是一个固定参数，而是随生长环境营养状况被系统性调节的**，其机制在三个层面上均有报道：
+
+1. **转录调控层面**：大肠杆菌鞭毛与趋化基因的主调控子 *flhDC* 受 cAMP-CRP 复合物正调控。碳源质量越差、胞内 cAMP 水平越高，CRP 活性越强，*flhDC* 及其下游整个鞭毛-趋化调控子（包括趋化受体 *tar*、*tsr* 和 *che* 操纵子）的表达随之上调（Zhao et al., 2007）。也就是说，细胞在贫瘠环境中会主动把更大比例的蛋白预算投入到运动与趋化机器上。
+2. **资源分配层面**：定量蛋白质组学研究表明，这种投入随生长速率下降而线性增加——在贫瘠碳源中，鞭毛合成相关蛋白占细胞总蛋白的比例显著高于富培养基，且投入量与趋化在该环境下的潜在收益定量匹配（Ni et al., 2020）。
+3. **受体信号层面**：在营养贫瘠培养基中生长的细胞，其趋化受体及 CheA/CheW 等信号蛋白的表达水平更高，导致膜上受体阵列的**侧向密度增加**；受体密度升高会扩大受体间协作的信号团队（signaling team）规模，提高协同性（cooperativity），从而使细胞对相同吸引剂浓度变化产生更强的 CheA 激酶活性响应，即**趋化灵敏度提高**（Sourjik & Wingreen, 2012）。
+
+这三层机制共同指向一个结论：在营养限制条件下预培养的细菌，对吸引剂梯度的感知与响应能力会强于富培养基中生长的同一菌株。因此，本轮实验在接种前将工程菌置于贫瘠营养条件下预培养，以期放大弱趋化信号、提高 assay 的检测灵敏度。
+
+需要指出的是，上述文献报道的"趋化增强"是在群体行为与单细胞运动轨迹层面的定量测量（如 swarm 迁移速度、受体 FRET 响应），而非直接针对我们的 CP 系列工程菌；我们将其作为**培养条件优化的依据**，具体增强效果仍需在本轮实验中验证。
+
+本轮实验沿用前期建立的胰蛋白胨软琼脂体系进行初步筛查。
+
+---
+
+## Cycle 1｜CP系列工程菌的趋化能力测定（胰蛋白胨软琼脂体系）
+
+### Goal
+
+验证经贫瘠营养预培养的 CP 系列不同强度启动子工程菌，能否在胰蛋白胨软琼脂平板上表现出对纤维二糖的趋化响应，并初步比较不同启动子强度下趋化圈的差异。
+
+### Design｜设计
+
+#### 1. 菌株设计
+
+本轮测试的菌株为 A5 路线中通过 λ-Red 同源重组构建的 CP 系列 promoter replacement strains：将 MG1655 染色体上天然受阻遏的 `chb` 启动子分别替换为不同强度的 CP 系列组成型启动子，从而建立一组 `chb` 表达水平的梯度。
+
+| 菌株 | chb 上游启动子 | 预期表达强度 |
+| ---- | ---- | ---- |
+| cp6 | CP6 | 梯度成员 |
+| cp7 | CP7 | 梯度成员 |
+| cp12 | CP12 | A5 已验证（生长表型阳性） |
+| cp25 | CP25 | 梯度成员 |
+| cp30 | CP30 | 梯度成员 |
+| cp44 | CP44 | 梯度成员 |
+| WT MG1655 | 内源沉默启动子 | 基线对照 |
+
+#### 2. 培养基体系设计
+
+趋化平板沿用胰蛋白胨软琼脂体系（tryptone swarm plate）：
+
+| 组分 | 浓度（per L） |
+| ---- | ---- |
+| Bacto tryptone | 10 g（1%） |
+| NaCl | 5 g（0.5%） |
+| Bacto agar | 3.5 g（0.35%） |
+| 外加糖（过滤除菌，冷却至 ~50 °C 后无菌加入） | 纤维二糖 / 葡萄糖 / 不加糖 |
+
+平板设三种糖条件：
+
+| 平板条件 | 外加碳源 | 目的 |
+| ---- | ---- | ---- |
+| 纤维二糖板 | cellobiose | 检测工程菌对纤维二糖的趋化响应 |
+| 葡萄糖板 | glucose | 阳性比较条件（内源 PTS 通路完好，预期所有菌株均能趋化） |
+| 无糖板 | — | 基线对照（仅胰蛋白胨背景营养驱动的迁移） |
+
+#### 3. 预培养条件设计
+
+所有菌株接种前均进行贫瘠营养预培养：
+
+- 培养基：**M9 + 0.2% 甘油**液体培养基；
+- 目的：通过营养限制条件强化细菌趋化能力，放大弱趋化信号；
+- 甘油浓度选择 0.2% 作为限制性碳源，维持细胞基本代谢但不足以支持快速增殖。
+
+### Build｜实施
+
+1. **预培养**：各菌株（cp6、cp7、cp12、cp25、cp30、cp44、WT MG1655）分别接种至 M9 + 0.2% 甘油液体培养基中，于适宜温度振荡培养至对数期，使细胞处于贫瘠营养胁迫状态。
+2. **制板**：按上表配方制备胰蛋白胨软琼脂平板。基础培养基（tryptone + NaCl + agar）高压灭菌后冷却至 ~50 °C，无菌加入过滤除菌的糖溶液（纤维二糖板 / 葡萄糖板）或等体积无菌水（无糖板），混匀后倒板，每皿约 20–25 mL，水平静置凝固。
+3. **多点接种**：在上一轮对 CP12 的趋化能力测定中，我们观察到单点接种形成的趋化圈较小、信号弱。为提升实验效率并实现多菌株同板平行比较，本轮实验改为**在同一块平板上针刺接种多个菌株**：用无菌枪头/接种针蘸取预培养菌液，在平板表面以网格状多点垂直刺入琼脂约 2–3 mm，各接种点之间保持足够间距，使趋化圈在扩展过程中互不重叠干扰。
+4. **培养与观察**：平板正置（勿倒置，防止冷凝水滴落破坏趋化圈），于 30 °C 培养，按既定时间点（如 8 h、20 h）拍照记录各接种点周围的趋化圈形成情况，并测量趋化圈直径。
 
 
+### Test｜测试
 
+【图 A6-2：CP系列工程菌在纤维二糖板 / 葡萄糖板 / 无糖板上的趋化圈对比照片（占位）】
 
+经过培养观察，所有 CP 系列工程菌在三种平板条件下均形成了可辨识的趋化圈，并表现出一致的排序趋势：
 
+**纤维二糖板 > 葡萄糖板 > 无糖板（基线）**
 
+即：
+
+- 在纤维二糖平板上，各工程菌均形成了最大、最清晰的趋化圈；
+- 在葡萄糖平板上，趋化圈可见但小于纤维二糖板；
+- 在无糖平板上，仅观察到最小的基础迁移圈，对应胰蛋白胨背景营养驱动的非特异性扩散。
+
+这一结果表明：经贫瘠营养预培养后，CP 系列工程菌对纤维二糖表现出优于基线和葡萄糖条件的趋化响应。与 A5 中 CP12CHB 在 M9 soft agar 上未观察到明显趋化扩展相比，本轮通过贫瘠预培养 + 胰蛋白胨体系获得了明确的阳性趋化信号。
+
+### Learn｜学习
+
+1. **功能层面**：通过贫瘠营养环境的预培养，我们成功获得了对于纤维二糖具有较强趋化性的工程菌。这支持了"营养胁迫可强化趋化能力"的文献结论（Sourjik & Wingreen, 2012; Ni et al., 2020），也说明 A5 中 soft agar 阴性结果更可能源于检测灵敏度不足，而非趋化表型完全不存在——`chb` 激活确实可以产生 cellobiose-dependent chemotactic response，只是需要合适的培养和检测条件才能观察到。
+
+2. **方法层面的两个局限**：本轮结果虽然为阳性，但存在两个必须正视的问题：
+
+   - **表型稳定性未知**：当前的趋化增强是在贫瘠营养预培养这一环境胁迫条件下获得的。这种由环境条件诱导产生的趋化性，暂时无法确定能否稳定遗传——即回到常规培养条件后，趋化增强是否会消失，尚未验证。
+   - **背景信号干扰**：胰蛋白胨培养基中含有天冬氨酸、丝氨酸等强趋化性氨基酸，细菌在这些背景吸引剂驱动下本身即可形成迁移圈。因此，工程菌对纤维二糖的趋化能力只能通过"纤维二糖板 vs 无糖板"的趋化圈差值间接推算，纤维二糖的净趋化贡献被背景信号掩盖，**并不十分直观准确**。
+
+3. **下一轮设计方向**：基于上述局限，我们决定后续进行**经典 Adler 软琼脂趋化体系**：以限定盐培养基（M9 salts / Kaiser-Hogness 盐基底）+ 低浓度琼脂（0.25–0.3%）为基础，不添加任何氨基酸类背景吸引剂。在该体系中，趋化圈完全由外加趋化物（纤维二糖）诱导形成，"无糖板不出环、纤维二糖板出环"即可直接归因于纤维二糖趋化，从而对 CP 系列菌株的趋化能力给出干净、特异、可定量的评价，并进一步检验贫瘠预培养诱导的趋化增强是否可稳定重现。
+
+---
+
+## Next Design｜Adler 体系下的 CP 系列趋化定量
+
+核心问题：
+
+> 在排除背景吸引剂的经典 Adler 软琼脂体系中，CP 系列工程菌能否形成完全由纤维二糖诱导的趋化环？不同启动子强度（cp6 → cp44）是否对应可区分的趋化环直径，即 Chb expression → cellobiose chemotaxis 是否存在强度依赖关系？
+
+计划：
+
+1. 制备 Adler 体系平板：Kaiser-Hogness 盐基底 + 0.3% agar，分别加入纤维二糖（实验组）与不加糖（阴性对照），另设葡萄糖板作为体系有效性阳性对照；
+2. 沿用 M9 + 0.2% 甘油贫瘠预培养流程，同时增设常规培养对照，检验胁迫诱导趋化增强的可重复性与稳定性；
+3. 多点接种 CP 系列菌株与 WT，定时拍照并用 ImageJ 定量趋化环直径，建立"启动子强度 – 趋化环直径"关系；
+4. 将趋化环数据与 A5/生长曲线获得的纤维二糖利用表型（OD600、HPLC 底物消耗）联合分析，判断 chb 表达强度、纤维二糖摄取与趋化响应三者之间是否存在定量对应。
+
+---
 
 
 
@@ -1058,3 +1179,16 @@ Morabbi Heravi, K., & Altenbuchner, J. (2018). Cross talk among transporters of 
 Parisutham, V., Jung, S.-K., Nam, D., & Lee, S. K. (2013). Transcriptome-driven synthetic re-modeling of *Escherichia coli* to enhance cellobiose utilization. *Chemical Engineering Science, 103*, 50–57. https://doi.org/10.1016/j.ces.2012.08.006
 
 Parisutham, V., & Lee, S. K. (2015). Novel functions and regulation of cryptic cellobiose operons in *Escherichia coli*. *PLoS ONE, 10*(6), e0131928. https://doi.org/10.1371/journal.pone.0131928
+
+Sanders, D. E., et al. (2013). Cell population control of swarming and surface behavior in *Escherichia coli*. 
+
+Adler, J. (1973). A method for measuring chemotaxis and use of it to define the optimum conditions for chemotaxis by *Escherichia coli*. *Journal of General Microbiology, 74*, 77–91.
+
+Croze, O. A., et al. (2011). Migration of *Escherichia coli* in semi-solid soft agar: Role of growth and chemotaxis. *Biophysical Journal*. 
+
+Sourjik, V., & Wingreen, N. S. (2012). Responding to chemical gradients: bacterial chemotaxis. *Current Opinion in Cell Biology, 24*(2), 262–268. https://doi.org/10.1016/j.ceb.2011.11.008 
+
+Ni, B., Colin, R., Link, H., Endres, R. G., & Sourjik, V. (2020). Growth-rate dependent resource investment in bacterial motile behavior quantitatively follows potential benefit of chemotaxis. *PNAS, 117*(1), 595–601. https://doi.org/10.1073/pnas.1909859116 
+
+Zhao, K., Liu, M., & Burgess, R. R. (2007). Adaptation in bacterial flagellar and motility systems: from regulon members to 'foraging'-like behavior in *Escherichia coli*. *Nucleic Acids Research, 35*(13), 4441–4452. https://doi.org/10.1093/nar/gkm453 
+
