@@ -575,7 +575,7 @@ Friskoli 涉及多个相互联系的过程。
 
 ---
 
-## 7. Experimental Strategy：如何验证我们的构想？
+## 7. Experimental Strategy：如何验证我们的构想？ 
 
 ### 7.1 分阶段验证的必要性
 
