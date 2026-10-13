@@ -30,7 +30,7 @@
 
 我们选择来自 *Clostridium thermocellum* 的三种纤维素酶 Cel48S、Cel9K 和 Cel5L，分别承担不同类型的纤维素降解功能。
 
-考虑到同时表达三个大型融合蛋白可能给单株工程菌造成较大的表达负担，我们决定采用模块化构建策略：分别构建三株独立的工程菌，每株菌仅表达一种 cellulase，最终再以 microbial cocktail 的形式组合使用。
+考虑到同时表达三个大型融合蛋白可能给单株工程菌造成较大的表达负担，我们决定分别构建三株独立的工程菌，每株菌仅表达一种 cellulase，最终再以 microbial cocktail 的形式组合使用。
 
 #### 2. Selection of the INPNC anchor
 
@@ -143,6 +143,8 @@
 实验结果显示，三个构建组均未获得预期大小的目的条带。
 
 这意味着，我们未能从这些菌落中获得证明目标 INPNC–cellulase constructs 存在的基因型证据。
+
+[260805INP工程菌电泳.tif](https://github.com/user-attachments/files/33378501/260805INP.tif)
 
 ### Test 2 — CMC–Congo Red Assay
 
