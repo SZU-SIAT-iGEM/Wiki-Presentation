@@ -1,5 +1,3 @@
-
-
 # Shaped by Dialogue
 
 ### 从交流中发现问题，在反馈中重新定义 Friskoli
