@@ -144,6 +144,8 @@
 
 这意味着，我们未能从这些菌落中获得证明目标 INPNC–cellulase constructs 存在的基因型证据。
 
+[260805INP工程菌电泳.tif](https://github.com/user-attachments/files/33378501/260805INP.tif)
+
 ### Test 2 — CMC–Congo Red Assay
 
 为了进一步排除 colony PCR 技术性假阴性的可能，我们对候选菌株进行了 CMC–Congo red 功能验证。
