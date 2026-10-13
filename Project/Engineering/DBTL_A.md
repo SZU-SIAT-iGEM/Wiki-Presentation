@@ -21,6 +21,8 @@
 #### Design｜设计
 
 在质粒设计上，我们的主要设计决策点如下表所示：
+<img width="1836" height="312" alt="Bicistronic expression cassette" src="https://github.com/user-attachments/assets/244844a7-ca5d-4b0d-b5b6-5cf36d63e860" />
+
 
 | 决策项  | 最终选择                    | 备注                                             |
 | ---- | ----------------------- | ---------------------------------------------- |
@@ -724,7 +726,6 @@ A3 的蛋白验证和文献分析表明，继续单独优化 `ascFB` 未必能�
 相比只构建单一表达强度，我们希望通过启动子梯度进一步研究：
 
 Chb expression → cellobiose utilization → downstream phenotype
-<img width="1852" height="312" alt="最最新" src="https://github.com/user-attachments/assets/0407af3f-3a65-4bb3-936c-c72a6d38cef0" />
 
 
 因此，我们选择五个不同强度的 Anderson constitutive promoters：
@@ -748,10 +749,14 @@ Chb expression → cellobiose utilization → downstream phenotype
 总体表达盒设计为：
 
 **Constitutive promoter → chb operon → B0015 terminator**
+<img width="1852" height="312" alt="最最新" src="https://github.com/user-attachments/assets/0407af3f-3a65-4bb3-936c-c72a6d38cef0" />
+
 
 其中 constitutive promoter 分别为 J23113、J23116、J23107、J23104 和 J23100。
 
 #### Test｜测试
+
+<img width="3561" height="3561" alt="ceeeb0b47512dffae760aedd9a00b5fb" src="https://github.com/user-attachments/assets/f692db5e-0b01-46c7-8f71-df90d976c4b3" />
 
 Gibson Assembly 完成后，我们将组装体系用于转化筛选。
 
@@ -1127,8 +1132,8 @@ CP12CHB 的基因型验证和生长曲线表明，利用组成型启动子激活
 
 
 ### Test｜测试
+<img width="2069" height="1814" alt="CP series 软琼脂" src="https://github.com/user-attachments/assets/78468fae-1e27-4bf2-905f-259cf77e8413" />
 
-【图 A6-2：CP系列工程菌在纤维二糖板 / 葡萄糖板 / 无糖板上的趋化圈对比照片（占位）】
 
 经过培养观察，所有 CP 系列工程菌在三种平板条件下均形成了可辨识的趋化圈，并表现出一致的排序趋势：
 
@@ -1184,7 +1189,7 @@ Sanders, D. E., et al. (2013). Cell population control of swarming and surface b
 
 Adler, J. (1973). A method for measuring chemotaxis and use of it to define the optimum conditions for chemotaxis by *Escherichia coli*. *Journal of General Microbiology, 74*, 77–91.
 
-Croze, O. A., et al. (2011). Migration of *Escherichia coli* in semi-solid soft agar: Role of growth and chemotaxis. *Biophysical Journal*. 
+Croze, O. A., et al. (2011). Migration of *Escherichia coli* in semi-solid soft agar: Role of Gel Concentration. *Biophysical Journal*. 2011 Aug 3;101(3):525–534. doi: 10.1016/j.bpj.2011.06.023
 
 Sourjik, V., & Wingreen, N. S. (2012). Responding to chemical gradients: bacterial chemotaxis. *Current Opinion in Cell Biology, 24*(2), 262–268. https://doi.org/10.1016/j.ceb.2011.11.008 
 
