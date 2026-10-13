@@ -21,6 +21,8 @@
 #### Design｜设计
 
 在质粒设计上，我们的主要设计决策点如下表所示：
+<img width="1836" height="312" alt="Bicistronic expression cassette" src="https://github.com/user-attachments/assets/244844a7-ca5d-4b0d-b5b6-5cf36d63e860" />
+
 
 | 决策项  | 最终选择                    | 备注                                             |
 | ---- | ----------------------- | ---------------------------------------------- |
@@ -1127,8 +1129,8 @@ CP12CHB 的基因型验证和生长曲线表明，利用组成型启动子激活
 
 
 ### Test｜测试
+<img width="2069" height="1814" alt="CP series 软琼脂" src="https://github.com/user-attachments/assets/78468fae-1e27-4bf2-905f-259cf77e8413" />
 
-【图 A6-2：CP系列工程菌在纤维二糖板 / 葡萄糖板 / 无糖板上的趋化圈对比照片（占位）】
 
 经过培养观察，所有 CP 系列工程菌在三种平板条件下均形成了可辨识的趋化圈，并表现出一致的排序趋势：
 
@@ -1184,7 +1186,7 @@ Sanders, D. E., et al. (2013). Cell population control of swarming and surface b
 
 Adler, J. (1973). A method for measuring chemotaxis and use of it to define the optimum conditions for chemotaxis by *Escherichia coli*. *Journal of General Microbiology, 74*, 77–91.
 
-Croze, O. A., et al. (2011). Migration of *Escherichia coli* in semi-solid soft agar: Role of growth and chemotaxis. *Biophysical Journal*. 
+Croze, O. A., et al. (2011). Migration of *Escherichia coli* in semi-solid soft agar: Role of Gel Concentration. *Biophysical Journal*. 2011 Aug 3;101(3):525–534. doi: 10.1016/j.bpj.2011.06.023
 
 Sourjik, V., & Wingreen, N. S. (2012). Responding to chemical gradients: bacterial chemotaxis. *Current Opinion in Cell Biology, 24*(2), 262–268. https://doi.org/10.1016/j.ceb.2011.11.008 
 
