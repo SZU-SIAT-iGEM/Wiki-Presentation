@@ -5,3 +5,7 @@
 # Obsidian 回收站与缓存
 .trash/
 .obsidian/cache
+
+# 本地临时资料与未命名草稿
+/临时文件/
+/未命名*.md

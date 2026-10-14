@@ -6,7 +6,7 @@
 
 整个构建过程主要经历了三个阶段。
 
-**DBTL B1** 聚焦于第一代表面展示系统的构建与验证。我们尝试使用 pCDF-based vector 构建三种 INPNC-cellulase 质粒，并通过基因型和功能表型两种方式判断工程菌是否构建成功。
+**DBTL B1** 聚焦于第一代表面展示系统的构建与验证。我们尝试使用 pCDF-based vector 构建三种 INPNC-cellulase 质粒，并通过基因型和功能表型两种方式判断工程菌是否构建成功。在 colony PCR 未获得阳性结果后，我们进一步对 assembly products 进行质粒 PCR，确认目标 DNA 结构已经成功组装，从而将问题指向转化与筛选环节。
 
 **DBTL B2** 聚焦于抗生素筛选体系。由于第一轮实验中出现了“选择平板有菌落，但无法验证目标构建”的矛盾现象，我们加入 WT 对照，并重新评估原有 SmR-based selection 是否能够真正筛选出转化子。
 
@@ -20,7 +20,7 @@
 
 ### Cycle 1｜构建表面展示工程菌
 
-### Design
+#### Design
 
 #### 1. Establishing the first-generation surface display architecture
 
@@ -76,7 +76,7 @@
 
 ---
 
-### Build
+#### Build
 
 根据上述设计，我们分别准备 pCDF 质粒骨架以及 INPNC、linker、Cel48S、Cel9K 和 Cel5L 等构建所需的 DNA 片段。
 
@@ -92,9 +92,11 @@
 
 此时，我们获得的是用于后续转化的 assembly mixtures，尚未通过测序确认其中是否存在完整且正确的环状重组质粒。
 
-### Test 
+#### Test
 
 ![图片1](./images%20of%20wetlabDBTL/图片1.png)
+
+图1.1-1 三个构建组的链霉素选择平板
 
 为了初步检验构建产物能否用于获得候选工程菌，我们将三个 Gibson Assembly products 分别转化至 *E. coli* MG1655。
 
@@ -106,37 +108,27 @@
 
 然而，抗生素选择平板上的 colony formation 仅能证明相应实验组在该培养条件下出现了细胞生长，尚不能确认菌落是否真正携带目标 INPNC–cellulase construct。
 
-### Learn
+#### Learn
 
 在第一轮工程循环中，我们完成了三种 INPNC–cellulase 表达盒的设计与 Gibson Assembly，并在三个转化实验组中均观察到了候选菌落。
 
 **Do the colonies actually carry functional INPNC–cellulase constructs?**
 
-下一轮工程循环将以这些候选菌落为研究对象，通过 colony PCR 进行基因型验证，并结合 CMC–Congo red assay 检查是否存在可检测的纤维素降解表型。
+下一轮工程循环将以这些候选菌落为研究对象，通过 colony PCR 进行基因型验证；在此之后，还将结合 CMC–Congo red assay 检查是否存在可检测的纤维素降解表型。
 
-### Cycle 2｜验证表面展示工程菌菌落的基因型和功能表型
+### Cycle 2｜验证表面展示工程菌菌落的基因型
 
-## Design
+#### Design
 
 在上一轮构建中，我们将三种 INPNC–cellulase assembly products 分别转化至 MG1655，并在所有实验组的链霉素选择平板上观察到了菌落。
 
-本轮的工程目标是进一步验证这些候选菌落的基因型和功能表型。
+本轮的第一个工程目标是验证这些候选菌落的基因型，即使用 colony PCR 检测目标 INPNC–cellulase DNA 结构是否存在于候选菌落中。
 
-我们选择两种互补的验证方法。
+#### Build
 
-首先，使用 colony PCR 检测目标 INPNC–cellulase DNA 结构是否存在于候选菌落中。
+我们从上一轮链霉素选择平板中挑取三个构建组的候选单菌落，将对应菌落分别用于 colony PCR 的样品准备。
 
-其次，利用 CMC–Congo red assay 观察菌株是否表现出可检测的纤维素降解活性。若纤维素酶能够有效水解 CMC，理论上可以在刚果红染色和脱色后观察到菌落周围的浅色水解区域。
-
-## Build
-
-我们从上一轮链霉素选择平板中挑取三个构建组的候选单菌落。
-
-将对应菌落分别用于 colony PCR 的样品准备，并进一步接种至含 CMC 的培养基中，用于后续纤维素酶活性定性检测。
-
-## Test
-
-### Test 1 — Colony PCR
+#### Test
 
 我们使用针对目标表达结构设计的引物，对不同构建组获得的候选菌落进行 colony PCR。
 
@@ -144,38 +136,81 @@
 
 这意味着，我们未能从这些菌落中获得证明目标 INPNC–cellulase constructs 存在的基因型证据。
 
-[260805INP工程菌电泳.tif](https://github.com/user-attachments/files/33378501/260805INP.tif)
+<img width="484" height="497" alt="image" src="https://github.com/user-attachments/assets/7aa78def-8aa2-4ea5-862b-98a6c0ac68ac" />
 
-### Test 2 — CMC–Congo Red Assay
+图1.2-1 三个构建组候选菌落的 colony PCR 电泳结果
 
-为了进一步排除 colony PCR 技术性假阴性的可能，我们对候选菌株进行了 CMC–Congo red 功能验证。
+#### Learn
+
+Colony PCR 没有检测到目标 DNA，这使我们开始重新审视上一轮获得的候选菌落是否真正携带目标重组质粒。
+
+不过，这一阴性结果本身有两种可能的解释：一种是候选菌落中确实不含目标 construct，另一种是 colony PCR 出现了技术性假阴性。
+
+为了区分这两种情况，我们决定先跳过菌落这一步，直接检测 Gibson Assembly products 中是否存在预期的 DNA 结构。
+
+### Cycle 3｜质粒 PCR 直接检测组装产物
+
+#### Design
+
+Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选菌落中确实不含目标 construct，另一种是 colony PCR 本身出现了技术性假阴性。为了区分这两种情况，我们决定暂时跳过菌落这一步，直接以三个 Gibson Assembly products 为模板进行 PCR，检验目标 DNA 结构在转化之前是否已经组装成功。
+
+#### Build
+
+我们使用针对目标表达结构设计的引物，分别以 pCDF–INPNC–Cel48S、pCDF–INPNC–Cel9K 和 pCDF–INPNC–Cel5L 的 assembly products 为模板进行 PCR，并将产物进行琼脂糖凝胶电泳。
+
+#### Test
+
+电泳结果显示，三个 assembly products 均获得了预期大小的目的条带。
+
+![质粒PCR](./images%20of%20wetlabDBTL/质粒PCR.png)
+
+图1.3-1 以三个 assembly products 为模板的 PCR 电泳结果
+
+#### Learn
+
+这一结果说明，目标 INPNC–cellulase DNA 结构在 assembly 阶段已经成功组装，此前 colony PCR 的阴性结果并不能归因于组装失败。
+
+因此，问题的关键已经从“DNA 有没有组装成功”转变为“组装好的质粒有没有真正进入并保留在细菌中”。链霉素选择平板上长出的菌落是否真正携带目标质粒，以及原有的抗生素筛选条件是否可靠，都成为下一个需要排查的环节。
+
+在重新评估筛选体系之前，我们还想从功能表型的角度对候选菌株做一次补充验证。
+
+### Cycle 4｜验证候选菌落的纤维素降解表型
+
+#### Design
+
+在 colony PCR 未能提供基因型证据、质粒 PCR 又确认目标 DNA 已经组装成功之后，我们希望进一步从功能表型的角度判断候选菌株是否表现出可检测的纤维素降解活性。
+
+我们利用 CMC–Congo red assay 对候选菌株进行功能验证。若纤维素酶能够有效水解 CMC，理论上可以在刚果红染色和脱色后观察到菌落周围的浅色水解区域。
+
+#### Build
+
+我们将此前挑取的候选单菌落进一步接种至含 CMC 的培养基中培养，用于纤维素酶活性定性检测。
 
 培养完成后，我们对含 CMC 的平板进行刚果红染色及脱色处理，观察菌落周围是否形成纤维素水解区域。
 
+#### Test
+
 然而，三个构建组均未观察到预期的清晰水解圈。
+
+<img width="909" height="745" alt="image" src="https://github.com/user-attachments/assets/6c0bf27b-0c06-41b0-89b0-4d284a63f6a1" />
+
+图1.4-1 三个构建组候选菌株的 CMC–Congo red assay 结果
+
+#### Learn
 
 因此，该实验也没有提供能够确认工程菌具有纤维素降解活性的功能证据。
 
-## Learn
+不过，CMC 染色阴性本身不能证明目标 DNA 不存在，因为蛋白表达、定位或酶活不足同样可能造成阴性结果。
 
-本轮两种验证方法均未获得预期的阳性结果。
+至此，我们同时获得了三方面的信息：colony PCR 没有检测到目标 DNA，质粒 PCR 证明目标 DNA 结构已经成功组装，而 CMC–Congo red assay 也没有观察到纤维素降解表型。
 
-Colony PCR 没有检测到目标 DNA，而 CMC–Congo red assay 也没有观察到明确的纤维素降解表型。
+这些结果合在一起，使我们更加怀疑上一轮获得的候选菌落是否真正携带目标重组质粒，问题也开始从 DNA 组装环节转向转化与筛选环节。
 
-这使我们开始重新审视上一轮获得的候选菌落是否真正携带目标重组质粒。
+因此，下一轮我们决定重新评估原有抗生素筛选条件是否能够真正区分野生型细胞与携带质粒的转化子。
 
-不过，这些阴性结果仍然不能单独区分 DNA 组装失败、转化与筛选问题以及融合蛋白表达问题。
+如果目标 DNA 确实已经组装成功，那么我们的下一步问题是：
 
-特别是，CMC 染色阴性本身不能证明目标 DNA 不存在，因为蛋白表达、定位或酶活不足同样可能造成阴性结果。
-
-因此，下一轮我们决定从两个方向排查：
-
-1. 直接检测 Gibson Assembly products 中是否存在预期的 DNA 结构。
-2. 重新评估原有抗生素筛选条件是否能够真正区分野生型细胞与携带质粒的转化子。
-
-我们的下一步问题是：
-
-**Did our DNA assembly fail, or were we unable to reliably identify genuine transformants?**
+**Were the colonies on the selection plates genuine transformants at all?**
 
 ---
 
