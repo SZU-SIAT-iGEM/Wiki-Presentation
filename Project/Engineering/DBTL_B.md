@@ -154,7 +154,9 @@
 
 然而，三个构建组均未观察到预期的清晰水解圈。
 
-因此，该实验也没有提供能够确认工程菌具有纤维素降解活性的功能证据。
+因此，该实验也没有提供能够确认工程菌具有纤维素降解活性的功能证据。0
+
+<img width="905" height="729" alt="image" src="https://github.com/user-attachments/assets/79f4e304-30bf-4edd-b7b0-8d0b427c8281" />
 
 ## Learn
 
