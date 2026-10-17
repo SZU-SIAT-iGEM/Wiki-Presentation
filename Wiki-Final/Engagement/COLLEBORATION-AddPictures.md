@@ -50,7 +50,9 @@
 
 2026 年 3 月 29 日，我们来到华南农业大学，参加 iGBA 广州交流会。
 
-![iGBA活动照片](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/iGBA-event.jpg)
+![iGBA-event](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/iGBA-event.jpg)
+
+![iGBA-groupphoto](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/iGBA-groupphoto.jpg)
 
 那时的 Friskoli 还很年轻——甚至还没有获得 Friskoli 这个名字。
 
@@ -120,6 +122,8 @@
 
 **我们是那场交流会中唯一的太空赛道队伍。**
 
+![huanan-stage](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/huanan-stage.JPG)
+
 其他团队研究着不同的生物学问题，有些与医学有关，有些与环境有关，还有些探索着我们此前并不了解的合成生物学应用。
 
 而我们带来的，是一株试图在微重力环境中寻找底物的细菌以及关于未来太空物质循环的想象。
@@ -128,6 +132,8 @@
 
 ![[ZZB_2600.jpg]]
 
+![huanan-booth2.JPG](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/huanan-booth2.JPG)
+
 我们努力向其他队伍介绍太空环境中的生物制造问题，也邀请他们体验《月轨·三十天》，在文字冒险中了解我们为什么对太空资源循环感兴趣。
 
 有人被游戏的形式吸引，有人对趋化机制感到好奇，也有人提出了我们此前未曾充分考虑的问题。
@@ -135,6 +141,8 @@
 我们开始理解，向不同领域的人介绍自己的研究，也是在重新理解自己的研究。
 
 ![[ZZB_2635.jpg]]
+
+![huanan-booth.JPG](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/huanan-booth.JPG)
 
 当有人询问细菌究竟如何寻找底物时，我们尝试用更直观的方式解释随机游走与运动偏向。当有人对太空废弃物回收的意义提出疑问时，我们又重新思考应该怎样呈现项目的背景与应用场景。
 
@@ -145,6 +153,8 @@
 不同的项目有着不同的出发点，却共享着对合成生物学的兴趣，以及把一个科学设想逐渐变成现实的热情。
 
 这让我们第一次真切地感受到 iGEM 社区的魅力。
+
+![huanan-drawing.JPG](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/huanan-drawing.JPG)
 
 **For the first time, we were not just learning from the community. We were becoming part of it.**
 
@@ -160,7 +170,13 @@
 
 太空赛道的队伍分散在世界各地。即使在同一个国家，彼此相遇也需要一些运气。
 
+![APiC-SUSTech.jpg](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/APiC-SUSTech.jpg)
+
+![APiC-HKU.jpg](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/APiC-HKU.jpg)
+
 2026 年 8 月，我们来到南方科技大学，参加 APiC 国际交流会。
+
+![APiC-Team.jpg](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/APiC-Team.jpg)
 
 在这里，我们经历了一场特别的相遇。
 
@@ -180,6 +196,8 @@
 
 她向我们分享了关于太空赛道、项目展示和研究实践的建议，也鼓励我们进一步联系实际的航天工程需求相关者，并通过更直观的细胞运动证据展示研究成果。
 
+![APiC-Stage.jpg](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/APiC-Stage.jpg)
+
 与此同时，现场评委提出的许多问题，也帮助我们重新审视项目。
 
 在他们的反馈下，我们开始更加认真地思考 Friskoli 在真实生物反应器中的作用，以及如何将围绕纤维素展开的研究进一步整理为可供其他场景使用的方法。
@@ -191,6 +209,8 @@
 在更大的舞台上，我们继续展示各自的研究，也经历了新的讨论和挑战。
 
 两场活动之间相隔的时间很短，却让我们从最初的相识，逐渐建立了更加深入的联系。
+
+![SC-Stage.jpg](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/SC-Stage.jpg)
 
 后来，当我们开始筹建 **Space Material Atlas** 时，BUCT 成为了第一支加入图谱共创的队伍。
 
@@ -227,6 +247,8 @@
 得知这件事时，我们感到十分高兴和幸运，也很感谢 SZU-China 帮助建立这次联系。
 
 随后，我们与 EPFL 继续沟通，克服了跨国联系和会议安排中的一些困难，最终在线上相聚。
+
+![Meeting.png](https://raw.githubusercontent.com/SZU-SIAT-iGEM/Wiki-Presentation/main/Meeting.png)
 
 那次会议中，我们见到了 EPFL，也见到了来自美国的 **UFlorida** 团队。
 
