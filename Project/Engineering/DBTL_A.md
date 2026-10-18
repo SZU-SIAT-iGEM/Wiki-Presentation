@@ -1080,11 +1080,13 @@ CP12CHB 的基因型验证和生长曲线表明，利用组成型启动子激活
 
 #### Test｜测试
 
-![CPseries生长曲线1](./images%20of%20wetlabDBTL/CPseries%E7%94%9F%E9%95%BF%E6%9B%B2%E7%BA%BF1.png)
+![CPseries生长曲线1修改](./images%20of%20wetlabDBTL/CPseries%E7%94%9F%E9%95%BF%E6%9B%B2%E7%BA%BF1%E4%BF%AE%E6%94%B9.png)
 
 Figure A6.3-1：第一轮 CP 系列生长曲线，分别展示 cellobiose和glucose组 
 
 第一轮实验中，多株 CP 系列工程菌在纤维二糖培养基中表现出持续的 OD600 增长，而 WT MG1655 的增长较弱。
+
+![未标题-1(1)](./images%20of%20wetlabDBTL/%E6%9C%AA%E6%A0%87%E9%A2%98-1(1).png)
 
 其中，CP12、CP25、CP30 和 CP44 均表现出较明显的生长趋势，说明染色体启动子替换能够改变工程菌在纤维二糖条件下的生长表型。
 
