@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notebook Timeline | Friskoli - SZU-SIAT iGEM 2026</title>
+<style>
+  :root{
+    --bg:#070d1a;
+    --bg2:#0b1426;
+    --card:rgba(255,255,255,0.045);
+    --card-border:rgba(255,255,255,0.14);
+    --text:#eaf0f7;
+    --muted:#9db0c4;
+    --cn:#b9c8d8;
+    --accent:#7fd4a8;
+    --c-wetlab:#4FA3C7;
+    --c-model:#45CB85;
+    --c-hp:#B57BEE;
+    --c-edu:#F79F79;
+    --c-team:#E5C15C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 60%,#0a1020 100%);
+    color:var(--text);
+    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  /* ---------- starfield ---------- */
+  #star-field{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .star{position:absolute;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 4s ease-in-out infinite;}
+  .star.dim{opacity:.28;animation-duration:7s;}
+  @keyframes twinkle{0%,100%{opacity:.15;}50%{opacity:.85;}}
+
+  .wrap{position:relative;z-index:1;}
+
+  /* ---------- header ---------- */
+  header{
+    text-align:center;
+    padding:96px 24px 56px;
+  }
+  header .kicker{
+    letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;
+    color:var(--accent);margin-bottom:18px;
+  }
+  header h1{
+    font-size:clamp(2rem,5vw,3.4rem);font-weight:700;line-height:1.15;
+  }
+  header h1 .cn{display:block;font-size:.52em;font-weight:500;color:var(--muted);margin-top:12px;letter-spacing:.08em;}
+  header .tagline{
+    margin-top:22px;font-style:italic;color:var(--muted);font-size:1.02rem;
+  }
+  header .range{
+    margin-top:10px;color:var(--cn);font-size:.92rem;
+  }
+
+  /* ---------- legend ---------- */
+  .legend{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:14px 26px;
+    padding:18px 24px 44px;font-size:.85rem;color:var(--muted);
+  }
+  .legend span{display:inline-flex;align-items:center;gap:8px;}
+  .dot{width:12px;height:12px;border-radius:3px;display:inline-block;}
+
+  /* ---------- timeline ---------- */
+  .timeline{position:relative;max-width:1120px;margin:0 auto;padding:30px 0 80px;}
+  .timeline:before{
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;
+    background:linear-gradient(180deg,transparent,var(--card-border) 6%,var(--card-border) 94%,transparent);
+    transform:translateX(-50%);
+  }
+  .timeline ul{list-style:none;}
+  .timeline li{
+    position:relative;width:50%;padding:10px 56px 58px;
+    opacity:0;transform:translateY(26px);
+    transition:opacity .65s ease-out,transform .65s ease-out;
+  }
+  .timeline li.visible{opacity:1;transform:translateY(0);}
+  .timeline li:nth-child(odd){left:0;text-align:left;}
+  .timeline li:nth-child(even){left:50%;}
+  /* node dot */
+  .timeline li:after{
+    content:'';position:absolute;top:22px;width:14px;height:14px;border-radius:50%;
+    background:var(--bg);border:3px solid var(--node,var(--accent));
+    box-shadow:0 0 12px var(--node,var(--accent));
+  }
+  .timeline li:nth-child(odd):after{right:-9px;}
+  .timeline li:nth-child(even):after{left:-9px;}
+
+  .card{
+    background:var(--card);border:1.5px solid var(--card-border);
+    border-left:4px solid var(--node,var(--accent));
+    border-radius:14px;padding:26px 28px;
+    backdrop-filter:blur(4px);
+  }
+  .timeline li:nth-child(even) .card{border-left:1.5px solid var(--card-border);border-right:4px solid var(--node,var(--accent));}
+  .card .date{
+    color:var(--node,var(--accent));font-weight:700;font-size:.82rem;
+    letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;
+  }
+  .card h3{font-size:1.14rem;line-height:1.4;font-weight:650;margin-bottom:4px;}
+  .card h3 .cn{display:block;font-size:.92em;font-weight:500;color:var(--cn);margin-top:6px;}
+  .card p{margin-top:12px;font-size:.93rem;line-height:1.75;color:var(--muted);text-align:justify;}
+  .card p.cn{color:var(--cn);}
+  .card b,.card strong{color:var(--text);}
+  .card .hl{color:var(--node,var(--accent));font-weight:600;}
+
+  .photo-slot{
+    margin-top:18px;border:1.5px dashed rgba(255,255,255,.28);border-radius:10px;
+    padding:34px 18px;text-align:center;color:var(--muted);font-size:.84rem;
+  }
+  .photo-slot img{max-width:100%;border-radius:10px;display:block;}
+
+  /* category colors */
+  li.wetlab{--node:var(--c-wetlab);}
+  li.model{--node:var(--c-model);}
+  li.hp{--node:var(--c-hp);}
+  li.edu{--node:var(--c-edu);}
+  li.team{--node:var(--c-team);}
+
+  /* era divider */
+  .era{
+    position:relative;width:100%;left:0!important;text-align:center;
+    padding:30px 0 50px!important;opacity:1!important;transform:none!important;
+  }
+  .era:after{display:none;}
+  .era .chip{
+    display:inline-block;background:var(--bg2);border:1px solid var(--card-border);
+    border-radius:999px;padding:10px 26px;font-size:.9rem;letter-spacing:.14em;
+    color:var(--text);text-transform:uppercase;
+  }
+  .era .chip small{display:block;text-transform:none;letter-spacing:.05em;color:var(--muted);font-size:.8rem;margin-top:4px;}
+
+  footer{
+    text-align:center;padding:40px 24px 70px;color:var(--muted);font-size:.85rem;line-height:1.9;
+  }
+  footer .fin{color:var(--accent);letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;margin-bottom:14px;}
+
+  /* ---------- mobile ---------- */
+  @media (max-width:767px){
+    .timeline:before{left:14px;}
+    .timeline li{width:100%;left:0!important;padding:6px 16px 42px 44px;}
+    .timeline li:nth-child(odd):after,.timeline li:nth-child(even):after{left:5px;right:auto;top:16px;}
+    .timeline li:nth-child(even) .card{border-right:1.5px solid var(--card-border);border-left:4px solid var(--node,var(--accent));}
+    header{padding:64px 18px 36px;}
+  }
+</style>
+</head>
+<body>
+<div id="star-field"></div>
+<div class="wrap">
+
+<header>
+  <div class="kicker">SZU-SIAT iGEM 2026 · Friskoli</div>
+  <h1>Project Timeline
+    <span class="cn">项目时间轴</span>
+  </h1>
+  <p class="tagline">"Finding food in a world without gravity"</p>
+  <p class="range">June 2025 — October 2026 · 2025年6月 — 2026年10月</p>
+</header>
+
+<div class="legend">
+  <span><i class="dot" style="background:var(--c-team)"></i>Team &amp; Milestone 团队与里程碑</span>
+  <span><i class="dot" style="background:var(--c-wetlab)"></i>Wet Lab 湿实验</span>
+  <span><i class="dot" style="background:var(--c-model)"></i>Modeling &amp; Design 建模与设计</span>
+  <span><i class="dot" style="background:var(--c-hp)"></i>Human Practices 人类实践</span>
+  <span><i class="dot" style="background:var(--c-edu)"></i>Education &amp; Communication 教育与传播</span>
+</div>
+
+<div class="timeline">
+<ul>
+
+<!-- ============ 2025 ============ -->
+<li class="era"><div class="chip">2025<small>From team founding to problem-driven convergence · 从建队到问题驱动</small></div></li>
+
+<li class="team">
+  <div class="card">
+    <div class="date">Jun – Jul 2025</div>
+    <h3>The team is formed<span class="cn">团队组建</span></h3>
+    <p>Second-round interviews took place in June, and the team was officially assembled in mid-July. As a first-year team, we spent the startup phase learning how iGEM projects are evaluated — Engineering cycle, safety, Human Practices, modeling and wiki requirements — rather than rushing to pick a topic.</p>
+    <p class="cn">6 月完成二轮面试，7 月中旬正式组队。作为初创团队，启动阶段的重点不是立即定题，而是系统学习 iGEM 项目的评估方式：工程循环、安全、人类实践、建模与 Wiki 要求。</p>
+  </div>
+</li>
+
+<li class="team">
+  <div class="card">
+    <div class="date">Jul 16, 2025</div>
+    <h3>Kick-off meeting &amp; the Markdown convention<span class="cn">启动会与 Markdown 记录规范</span></h3>
+    <p>Our kick-off meeting covered the competition workflow, awards and wet-lab rules, followed by regular weekly meetings with rotating note-taking. One decision shaped everything after: <b>all records in Markdown</b> — no more mixing Word and PDF. A Feishu workspace, and later a GitHub organization, kept the process reusable.</p>
+    <p class="cn">7 月 16 日启动会安排比赛流程、奖项与湿实验规则分享，随后形成固定周会与笔记分工。一个影响深远的决定：<b>统一使用 Markdown 记录</b>，避免 Word/PDF 混杂，降低材料汇总与 Wiki 转换成本。团队建立飞书协作空间，后又建立 GitHub 组织——"让过程能够复用"的想法很早就出现了。</p>
+  </div>
+</li>
+
+<li class="model">
+  <div class="card">
+    <div class="date">Jul – Aug 2025</div>
+    <h3>Building the space-track problem pool<span class="cn">太空赛道候选问题池</span></h3>
+    <p>Starting from past award-winning projects and literature, we built a candidate problem pool: quorum sensing, microbial fuel, biosensors, PFAS, in-situ resource utilization, astronaut circadian rhythms, space food… Our advisor introduced the space track and microfluidics resources in August, and the space track gradually became our priority.</p>
+    <p class="cn">7 月下旬起，团队从往年优秀项目和文献出发建立候选问题池：群体感应、微生物燃料、生物传感器、PFAS、原位资源利用、宇航员生物钟、太空食物等都曾进入讨论。8 月门老师介绍太空赛道与微流控，团队意识到自身能接触太空相关导师、地基模拟装置与微流控资源，太空赛道逐渐成为优先方向。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Sep – Nov 2025</div>
+    <h3>Three parallel directions<span class="cn">三个方向并行探索</span></h3>
+    <p>Offline meetings crystallized three parallel groups: <b>algae-bacteria co-culture</b> (oxygen &amp; food symbiosis), <b>space waste utilization</b> (organics → medium / building material / fuel, later including keratin hydrogels from waste hair), and <b>omega-3</b> nutritional supplements. Valuable modules, but no single through-line yet — the real topic-selection process is complex and iterative.</p>
+    <p class="cn">9 月线下组会后探索分化为三个并行小组：<b>藻菌共培养</b>（产氧与食物共生体系）、<b>太空废弃物利用</b>（有机物转培养基/建材/燃料，10 月起包含废弃毛发角蛋白水凝胶方向）与 <b>omega-3</b> 营养补充。有价值的模块很多，但尚未形成主线——真实的选题过程本就复杂而反复。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Dec 2025 – Jan 2026</div>
+    <h3>The <i>Aspergillus niger</i> platform &amp; composting fieldwork<span class="cn">黑曲霉平台与堆肥实践</span></h3>
+    <p>Directions were reorganized into a "space solid-waste bio-recycling platform" with <i>Aspergillus niger</i> as the chassis. We stress-tested it honestly — degradation efficiency, oxygen demand, safety, metabolic burden. In January, pre-experiments and composting practice in Longhua exposed the real problems: turning, stirring, microbial-community complexity and inconsistent standards. Mass transfer stopped being an abstract concept.</p>
+    <p class="cn">12 月，多类方向重组为"太空固体废弃物生物回收—培养平台"，黑曲霉因分泌能力强成为核心候选底盘，团队同时明确列出其必要性、降解效率、耗氧、安全性等风险清单。2026 年 1 月预实验与龙华堆肥实践暴露具体问题：翻堆、搅拌、菌群复杂性和标准不统一。"传质"从抽象背景变成可感知的工程问题。</p>
+  </div>
+</li>
+
+<!-- ============ 2026 ============ -->
+<li class="era"><div class="chip">2026<small>Convergence on microgravity mass transfer · 收敛于微重力传质问题</small></div></li>
+
+<li class="team">
+  <div class="card">
+    <div class="date">Mar 2, 2026</div>
+    <h3>The turning point: chemotaxis in low convection<span class="cn">关键转向：低对流环境中的趋化</span></h3>
+    <p>The end-of-holiday meeting became the project's decisive turn. Comparing fungi and bacteria, we kept the <b>chemotaxis</b> concept with a bacterial chassis: mature tools, short cycles. The new logic — cellulose is partially degraded, locally releasing cellobiose; engineered bacteria sense this local signal and accumulate near the substrate in diffusion-dominated, low-convection regions. Bacterial biased random walks don't need an absolute gravity direction.</p>
+    <p class="cn">3 月 2 日假期收尾会议成为项目的关键转向：比较真菌与细菌后，决定保留趋化设定、采用细菌底盘（工具成熟、周期短）。新逻辑：纤维素被初步降解后局部释放纤维二糖等可溶性产物，工程菌利用局部信号调整运动，在对流弱、扩散占主导的区域向底物靠近——细菌的偏置随机游走不需要绝对重力方向。</p>
+  </div>
+</li>
+
+<li class="model">
+  <div class="card">
+    <div class="date">Mar 6 – 19, 2026</div>
+    <h3>Four-layer hypothesis &amp; the first chemotaxis simulator<span class="cn">四层假设与第一版趋化模拟器</span></h3>
+    <p>We decomposed the idea into four testable layers: is chemotaxis more important under microgravity; does enhanced chemotaxis improve substrate utilization; can chemotaxis be engineered; can engineered strains show a measurable difference. On Mar 19 we decided to start with MG1655, behavioral/chemical surrogate validation and a Python model, so material access wouldn't block progress. The modeling work also produced the <b>first interactive chemotaxis simulator mini-game</b>.</p>
+    <p class="cn">3 月 6—15 日，设想被拆成四层假设：微重力下趋化是否更重要、增强趋化是否改善底物利用、趋化能否被工程化、工程菌能否表现出可比较差异。3 月 19 日决定先用 MG1655、行为/化学替代验证和 Python 模型推进，避免被材料获取限制进度。建模工作同时催生了<b>第一版交互式可视化趋化模拟器小游戏</b>，为教育传播提供了工具。</p>
+  </div>
+</li>
+
+<li class="team">
+  <div class="card">
+    <div class="date">Mar 30 – 31, 2026</div>
+    <h3>Retrospective: one problem, one through-line<span class="cn">阶段复盘：围绕一个问题组织全队</span></h3>
+    <p>The stage retrospective explicitly mapped our iteration chain — algae-bacteria → keratin → <i>A. niger</i> degradation → composting → microgravity chemotaxis — and confirmed that past parallelism had been excessive. Modeling, HP, education, visuals, wiki and wet lab would now all organize around one question: <b>cellobiose PTS sensing with positive feedback</b>.</p>
+    <p class="cn">3 月 30—31 日阶段回顾第一次把路线转折明确总结为"藻菌—角蛋白—黑曲霉降解—堆肥—微重力趋化"的迭代链路，确认过去并行策略过多，需要围绕一个问题组织建模、HP、教育、视觉、Wiki 和湿实验。<b>纤维二糖 PTS 与正反馈</b>由此成为主线。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Apr 2026</div>
+    <h3>MCP → PTS, and a mechanism error caught in review<span class="cn">MCP 转向 PTS，机制错误被文档审查发现</span></h3>
+    <p>MCP receptors could describe motion but not how cellobiose enters the sensing-metabolism chain, so we pivoted to PTS. An early draft's <i>bglF</i> error (it prefers aromatic β-glucosides, not cellobiose) was caught by our own document-review mechanism. After comparing bgl / chb / asc, the plan formally switched to <b>ascF + ascB</b> on Apr 5–7 — with a documented risk: even activated asc may not support growth on cellobiose as sole carbon source.</p>
+    <p class="cn">MCP 路线能描述运动行为，却没解决"纤维二糖怎样进入感知和代谢链"，4 月初团队转向 PTS。初期草案的 bglF 机制错误（不能识别纤维二糖，更偏向芳香族 β-葡萄糖苷）被团队文件整理机制及时审查发现。重新比较 bgl、chb 与 asc 后，4 月 5—7 日方案正式转为 <b>ascF+ascB</b>，同时记录在案的风险是：即使 asc 被激活，菌株也可能无法在以纤维二糖为唯一碳源的培养基中生长。</p>
+  </div>
+</li>
+
+<li class="edu">
+  <div class="card">
+    <div class="date">May 20 – 24, 2026</div>
+    <h3>South China exchange: first public test<span class="cn">华南交流会：项目叙事的首次公开考验</span></h3>
+    <p>By May 20 the early narrative was complete — the name <b>Friskoli</b> ("frisk" + <i>E.&nbsp;coli</i>), ascF/ascB for cellobiose transport &amp; hydrolysis, INP–cellulase surface display, and the text-adventure game <i>friskoli-I</i> "Thirty Days in Lunar Orbit". On May 24 at the South China exchange, our booth, talk and mini-game debuted together; other teams spoke highly of the game format, and the exchanges pushed our own thinking forward.</p>
+    <p class="cn">截至 5 月 20 日，早期叙事成形：项目名 <b>Friskoli</b>（frisk + E. coli）、ascF/ascB 负责纤维二糖转运与水解、INP—cellulase 表面展示，以及文字互动游戏《月轨三十日》。5 月 24 日华南交流会上，展台、项目分享与小游戏首次集中呈现，新颖的展示形式获得其他队伍较高评价，交流也促进了团队自身的思考。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">May 28 – Jul 11, 2026</div>
+    <h3>Cloning, sequencing, first engineered strains<span class="cn">载体组装、测序与首批工程菌</span></h3>
+    <p>Assembly, transformation, single-colony screening, PCR and sequencing proceeded from May 28. Candidate clones showed good bands on Jun 8; sequencing returned Jun 10–11 with checks for frameshifts and extra mutations; clean constructs were transformed into MG1655. After finals, work resumed Jul 9–11: <b>the ascFB engineered strain was obtained and banked</b>.</p>
+    <p class="cn">5 月 28 日后进入载体组装、转化、单克隆筛选、PCR 与测序。6 月 8 日候选克隆 PCR 条带较好；6 月 10—11 日测序返回，团队检查移码与额外突变后，将无明显问题的构建转入 MG1655。期末后 7 月 9—11 日恢复实验，<b>获得 ascFB 工程菌并保种</b>。</p>
+  </div>
+</li>
+
+<li class="hp">
+  <div class="card">
+    <div class="date">Jul 14, 2026</div>
+    <h3>Expert interview reframes the claim<span class="cn">专家访谈修正项目主张</span></h3>
+    <p>Visiting SIAT and interviewing microgravity-simulation experts changed our core claim: chemotaxis should <b>not</b> be presented as a replacement for macroscopic stirring. Stirring handles reactor-scale mass transfer; chemotaxis, if it works, contributes in boundary layers, pores and low-flow regions where stirring cannot fully remove local diffusion limits. Microfluidics was repositioned as a platform for constructing and measuring controlled low-convection environments.</p>
+    <p class="cn">7 月 14 日团队参访先进院并采访微重力模拟专家，项目主张被直接改变：趋化不应被描述为宏观搅拌的替代品——搅拌负责反应器尺度整体传质；趋化若能成立，贡献应体现在边界层、孔隙和低流速区域等搅拌难以完全消除局部扩散限制的地方。微流控被重新定位为控制/减弱对流、测量局部富集的实验平台。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Jul 15 – 20, 2026</div>
+    <h3>The negative result that started a new cycle<span class="cn">开启新循环的阴性结果</span></h3>
+    <p>Cellobiose metabolism validation began Jul 15. On Jul 19 the engineered strain <b>failed to grow</b> — and the team immediately designated this as the new DBTL starting point rather than hiding it. Re-streaking and controls were set up the same day; on Jul 20, SDS-PAGE showed a distinct ~55&nbsp;kDa band for ascFB versus empty vector — the construction/expression chain was partially intact. The question moved from "is it expressed at all" to "is it expressed correctly with substrate flux".</p>
+    <p class="cn">7 月 15 日起团队先做纤维二糖代谢验证。7 月 19 日报告<b>工程菌未养起</b>，团队随即将该结果定为新的 DBTL 起点；当天重新划线纯化工程菌与空载体。7 月 20 日 SDS-PAGE 显示 ascFB 工程菌相较空载体在约 55&nbsp;kDa 处出现明显条带——构建/表达链条部分成立。排查重心从"是否完全没表达"推进到"表达是否正确并形成底物通量"。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Jul 22 – 30, 2026</div>
+    <h3>Systematic troubleshooting → literature verdict: pivot to <i>chb</i><span class="cn">系统排查 → 文献复盘：转向 chb</span></h3>
+    <p>TTC metabolic staining, hard-agar plug vs. capillary assay design, buffer pH checks, 12-h growth curves — every candidate explanation was tested. On Jul 30 the literature review delivered the mechanism: <b>AscF alone cannot support efficient cellobiose transport</b>; asc activity is only ~1/3 of chb, and published efficient strains combine both systems with serial passaging. This met the risk documented back in April — not operator error, but a mechanistic limit. The main line switched to the <b>chb operon</b>.</p>
+    <p class="cn">TTC 代谢显色、硬琼脂塞法与毛细管法方案比较、缓冲体系 pH 排查、12 小时生长曲线——候选解释被逐一验证。7 月 30 日文献复盘给出机制解释：<b>AscF 单独不足以完成纤维二糖高效转运</b>，asc 酶活仅约为 chb 的 1/3，已报道的高效菌株需两套系统搭配并传代培养。这与 4 月选择 asc 时记录在案的风险相遇——不是操作失误，而是机制限制。主线正式转向 <b>chb 操纵子</b>。</p>
+  </div>
+</li>
+
+<li class="edu">
+  <div class="card">
+    <div class="date">Aug 2026</div>
+    <h3>1st Grand APiC: presenting Friskoli<span class="cn">首届 Grand APiC 大会：项目汇报</span></h3>
+    <p>In mid-August the team attended the <b>1st Grand APiC</b>, delivering a presentation introducing the Friskoli project — its design rationale and stage progress — to the synthetic biology community.</p>
+    <p class="cn">8 月中旬，团队参加<b>首届 Grand APiC 大会</b>，进行了项目汇报与介绍，向合成生物学社区展示 Friskoli 的设计理念与阶段进展。</p>
+    <div class="photo-slot">
+      <!-- 替换为 APiC 现场照片：<img src="你的图片路径.jpg" alt="1st Grand APiC presentation"> -->
+      📷 APiC 汇报现场照片占位 — 请将 &lt;img&gt; 替换此注释块<br>(replace this placeholder with your APiC photo)
+    </div>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Aug 22 – 31, 2026</div>
+    <h3><i>chb</i> plasmid v1: pRSFDuet-1 + CP promoter ladder<span class="cn">chb 质粒第一版：pRSFDuet-1 + CP 梯度启动子</span></h3>
+    <p>Gene scope fixed from the genomic order chbBCARFH: use <b>chbBCAF</b>, skip regulator R and H. Version 1 rode on pRSFDuet-1 with a five-step constitutive CP promoter ladder (incl. J23113/J23116) to titrate expression and avoid membrane-protein toxicity. On Aug 31, transformants finally appeared; single clones were picked, expanded and sent for sequencing.</p>
+    <p class="cn">从基因组原始顺序 chbBCARFH 中确定取舍：取用 <b>chbBCAF</b>，不使用 R 与 H。第一版以 pRSFDuet-1 为骨架，用 CP 系列五档梯度组成型启动子（含 J23113、J23116）驱动表达——梯度设计意在滴定表达强度、规避膜转运蛋白毒性。8 月 31 日转化板开始长出菌落，挑单克隆扩培并送测序。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Sep 8 – 18, 2026</div>
+    <h3>Plasmid route fails twice → genome engineering<span class="cn">质粒路线两度受挫 → 转向基因组改造</span></h3>
+    <p>Parallel λ-Red preparation: pKD13 arrived Sep 8, Gibson assembly enzyme Sep 16, electroporation cuvettes Sep 17, sequencing primers designed and ordered. But on Sep 18, even the <b>low-copy pET-28</b> version yielded only empty-vector colonies. High-copy failed, low-copy failed — membrane-protein burden from plasmid-borne chb was the suspected mechanism. The plasmid route was formally closed; the team went all-in on <b>chromosomal promoter replacement via pKD46/λ-Red</b>.</p>
+    <p class="cn">基因组改造线并行准备：9 月 8 日 pKD13 到货、16 日 Gibson 组装酶到货、17 日电击杯到货，测序引物完成设计订购。但 9 月 18 日，换用<b>低拷贝 pET-28</b> 骨架后依旧只有空载体长菌——高拷贝失败、降拷贝仍失败，疑似质粒承载的 chb 膜蛋白对宿主负担/毒性过大。质粒路线正式关闭，全面转向 <b>pKD46/λ-Red 染色体启动子替换</b>。</p>
+  </div>
+</li>
+
+<li class="model">
+  <div class="card">
+    <div class="date">Sep 17 – 18, 2026</div>
+    <h3>Microfluidic chemotaxis chip: design review with SIAT<span class="cn">微流控趋化芯片：与先进院设计对接</span></h3>
+    <p>Armed with a BioProtocol-based three-channel perfusion design, we met Mr. Tom Xu to adapt it to SIAT's platform: two-channel perfusion with peristaltic (not syringe) pumps, RPM-compatible. His suggestion — exploit the paper's intermittent perfusion: no flow while rotating, manual perfusion when stopped. Device constraints became design inputs.</p>
+    <p class="cn">团队带着文献方案（BioProtocol 细菌趋化定量，三通道灌流设计）与先进院 Tom Xu 老师讨论装置适配：现有平台为两路灌流、蠕动泵（非注射泵），RPM 上暂只能适配蠕动泵。徐老师建议利用文中间歇灌流特点——旋转时不灌流，停止后手动灌流再启动。装置约束由此转化为设计输入。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Sep 20 – 23, 2026</div>
+    <h3>CP12 grows on cellobiose — first positive function 🎉<span class="cn">CP12 纤维二糖生长曲线阳性——首个功能证据</span></h3>
+    <p>On Sep 20, electroporation-derived <b>cp12</b> colonies appeared; clones were PCR-verified and sequenced (strain series cp6/7/12/25/30/44 against WT MG1655). On Sep 23 the growth curve came back: with cellobiose as sole carbon source, CP12 showed <span class="hl">clear growth over wild type</span> — slower than glucose, but unmistakably positive. The first functional evidence since the project began: our engineered strain really does use cellobiose.</p>
+    <p class="cn">9 月 20 日电转后 <b>cp12</b> 候选菌落长出，菌落 PCR 验证后送测序（菌株系列 cp6/7/12/25/30/44，以野生型 MG1655 为基线）。9 月 23 日生长曲线结果返回：纤维二糖为唯一碳源时，CP12 相较野生型<span class="hl">有明显增长</span>——比葡萄糖慢很多，但确凿阳性。这是立项以来第一个功能性阳性证据：工程菌真的开始利用纤维二糖了。</p>
+  </div>
+</li>
+
+<li class="hp">
+  <div class="card">
+    <div class="date">Sep 20 – Oct 6, 2026</div>
+    <h3>"Space Mission Personality" questionnaire goes live<span class="cn">"太空任务人格"问卷上线与推文发布</span></h3>
+    <p>Our interactive HP questionnaire launched Sep 20 (with a compliance rule collecting no data from minors), promoted via WeChat article — published Oct 6 after fixing a vector-graphics compatibility issue. In parallel: the material-cycle diagram, authorization from past teams to join the space bioreactor narrative, and Jamboree booth materials submitted by the Sep 16 deadline.</p>
+    <p class="cn">9 月 20 日互动式 HP 问卷"太空任务人格测试"上线（含未成年人不收集数据的合规条款），经公众号推文宣传，推文于 10 月 6 日正式发布（期间修复矢量图与公众号图文的格式兼容问题）。HP 组同步推进物质循环示意图、联系往年队伍获得授权加入太空生物反应器叙事，并于 9 月 16 日截止前提交 Jamboree 展位材料。</p>
+  </div>
+</li>
+
+<li class="team">
+  <div class="card">
+    <div class="date">Sep 24 – 28, 2026</div>
+    <h3>Reading club, presentation drills &amp; surface-display validation<span class="cn">文献报告会、答辩演练与表面展示验证</span></h3>
+    <p>Weekly reading clubs (with Mid-Autumn pizza, courtesy of our advisor) accompanied English presentation-script drills; reviewers advised cutting ~1600 words to 1200–1300 for a 10-minute slot. On the bench, the surface-display line tested the promoter–terminator system with iGEM standard parts: pACYCDuet-1b backbone + GFP reporter; after a band-less first PCR on Sep 29, single clones were picked for a redo — failures kept on record.</p>
+    <p class="cn">每周 reading club（中秋节导师请全组吃披萨）与英文汇报稿演练并行，评审建议 10 分钟场次将约 1600 词删至 1200—1300 词。实验台上，表面展示线用 iGEM 标准元件验证"启动子—终止子"表达系统：pACYCDuet-1b 骨架 + GFP 报告基因；9 月 29 日第一轮 PCR 无条带后挑单菌落重做——失败完整留档。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Oct 6, 2026</div>
+    <h3>Soft-agar chemotaxis: honest mixed results<span class="cn">软琼脂趋化实验：如实记录的结果</span></h3>
+    <p>CP-series soft-agar plates (1% tryptone, 0.35% agar; 10&nbsp;mM cellobiose / glucose / sugar-free) read out: WT and CP12 formed the largest migration zones; other CP strains stayed small — <b>no detectable engineered chemotaxis gain</b>. Learn: swarm-zone size conflates chemotaxis, growth and motility, and a uniform attractant creates no spatial gradient. The result went into the DBTL in full, and defined the next design: known-attractant controls, growth-curve decoupling, and true gradients on microfluidics.</p>
+    <p class="cn">CP 系列软琼脂趋化平板（1% 胰蛋白胨 + 0.35% 琼脂；10&nbsp;mM 纤维二糖/葡萄糖/无糖三条件）读板：野生型与 CP12 迁移圈近似最大，其他 CP 工程菌圈较小——<b>未观察到工程化趋化增益</b>。机制分析：迁移圈是趋化、生长与运动能力的叠加，均匀添加的吸引剂不构成空间梯度。该结果完整写入 DBTL，并引出下一步设计：已知吸引物对照、结合生长曲线区分贡献、用微流控构建真实空间梯度。</p>
+  </div>
+</li>
+
+<li class="edu">
+  <div class="card">
+    <div class="date">Oct 14, 2026</div>
+    <h3>Outreach at Shenzhen Experimental School<span class="cn">深圳实验学校科普课</span></h3>
+    <p>Our education team taught ~50 Grade-7 biology-club students at Shenzhen Experimental School: a live <b>brine-shrimp phototaxis demo</b> on stage plus hands-on pipe-cleaner crafts, opened by Prof. Wong. Verdict from the team chat: "big success today." The school asked for a second session for its geography club, and a public science lecture via the Shenzhen Association for Science and Technology is under discussion.</p>
+    <p class="cn">教育组走进深圳实验学校中学部，为初一年级生物社团约 50 名学生开展科普课：台上演示<b>丰年虾趋光性实验</b>，学生动手制作扭扭棒手工，Tim 老师作开场介绍。团队群里的评价："今天大成功"。学校希望为地理社团加开一场，并探讨了通过深圳市科协举办公益讲座的可能。</p>
+  </div>
+</li>
+
+<li class="wetlab">
+  <div class="card">
+    <div class="date">Oct 16, 2026</div>
+    <h3>Loaded onto the RPM: chemotaxis under simulated microgravity<span class="cn">RPM 加载运行：模拟微重力下的趋化验证</span></h3>
+    <p>At 19:30 on Oct 16, our experimental system was loaded and running on the SIAT <b>Random Positioning Machine</b>: soft-agar plates testing whether our bacteria retain chemotaxis under simulated microgravity. This is the project's first validation on a ground-based microgravity simulator — exactly the route defined after July's expert interview.</p>
+    <p class="cn">10 月 16 日晚 19:30，团队实验体系在先进院 <b>RPM（随机位置机）</b>上加载运行：以软琼脂平板验证我们的细菌在模拟微重力条件下的趋化性。这是项目首次在地基模拟微重力平台上开展趋化验证——正是 7 月专家访谈后确立的验证路线。</p>
+  </div>
+</li>
+
+<li class="model">
+  <div class="card">
+    <div class="date">Oct 17 – 18, 2026</div>
+    <h3>Microfluidic chip completed<span class="cn">微流控芯片制作完成</span></h3>
+    <p>Oct 16 revealed the blocker: bacteria invisible against an agar background under the microscope. On Oct 17 we switched to clearer <b>agarose</b> at higher concentration (protecting the shallow 100&nbsp;µm channels from collapsing) and ran a drop-test on plates — bacteria clearly visible, flow channels confirmed working. On <b>Oct 18 the microfluidic chip was completed</b>, ready for gradient-based chemotaxis observation.</p>
+    <p class="cn">10 月 16 日发现关键问题：琼脂背景下显微镜观察不到细菌。10 月 17 日改用透明度更高的<b>琼脂糖</b>并提高浓度（防止 100&nbsp;µm 浅流道因胶体弹性塌陷堵塞），平板滴菌验证——细菌清晰可见，流道跑通确认。<b>10 月 18 日，微流控芯片制作完成</b>，可用于基于空间梯度的趋化观察。</p>
+  </div>
+</li>
+
+<li class="team">
+  <div class="card">
+    <div class="date">Oct 21, 2026</div>
+    <h3>Wiki writing completed ✓<span class="cn">Wiki 编写完成 ✓</span></h3>
+    <p>After weeks of divided DBTL writing (growth curves, chb construction, soft-agar chemotaxis), protocols split into their own repository, unified Build/Test writing standards, and full weekend write-in sprints, the Friskoli wiki reached completion on Oct 21 — the record of a year that ran from "should we do space composting?" to engineered strains growing on cellobiose and a chip on the bench.</p>
+    <p class="cn">历经数周的 DBTL 分工撰写（生长曲线、chb 构建、软琼脂趋化）、Protocol 独立成库、Build/Test 写作规范统一与周末集中冲刺，Friskoli Wiki 于 10 月 21 日编写完成——它记录了一年时间如何从"要不要做太空堆肥"走到纤维二糖上长出的工程菌与实验台上的芯片。</p>
+  </div>
+</li>
+
+</ul>
+</div>
+
+<footer>
+  <div class="fin">Friskoli · SZU-SIAT iGEM 2026</div>
+  <p>Finding food in a world without gravity · 趋微知著</p>
+  <p style="margin-top:10px;">Timeline compiled from the team's own records (project chat &amp; team history), covering June 2025 – October 2026.<br>时间轴依据团队自有记录（项目群聊与队史）整理，覆盖 2025 年 6 月至 2026 年 10 月。</p>
+</footer>
+
+</div>
+
+<script>
+// starfield
+(function(){
+  const f=document.getElementById('star-field');
+  const n=160;
+  for(let i=0;i<n;i++){
+    const s=document.createElement('div');
+    s.className='star'+(Math.random()<0.5?' dim':'');
+    const size=Math.random()<0.8?1.5:2.5;
+    s.style.width=size+'px';s.style.height=size+'px';
+    s.style.left=(Math.random()*100)+'%';
+    s.style.top=(Math.random()*100)+'%';
+    s.style.animationDelay=(Math.random()*6)+'s';
+    f.appendChild(s);
+  }
+})();
+// scroll reveal
+(function(){
+  const items=document.querySelectorAll('.timeline li:not(.era)');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:0.15});
+  items.forEach(i=>io.observe(i));
+  window.addEventListener('load',()=>items.forEach(i=>{
+    const r=i.getBoundingClientRect();
+    if(r.top<window.innerHeight&&r.bottom>0)i.classList.add('visible');
+  }));
+})();
+</script>
+</body>
+</html>
