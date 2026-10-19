@@ -16,20 +16,23 @@ A5 中，我们用组成型启动子 CP12 替换 *E. coli* MG1655 染色体上�
 
 A5 已证明用 CP12 替换内源 `chb` 启动子可激活 `chb` 系统，但单一 CP12 菌株不足以判断“转录调控程度”与“下游功能表型”的关系。因此，A6 在 MG1655 染色体上保留原有 `chb` 编码区，只替换其上游启动子，构建不同 CP 启动子调控的菌株系列，并以 WT MG1655 作对照。
 
-候选启动子：CP6、CP7、CP25、CP30、CP44、CP9a，加上已有 CP12。
+我们参考文献，选择了一系列候选启动子：CP6、CP7、CP25、CP30、CP44、CP9a，加上已有 CP12，文献中的这些启动子的预期转录活性以及序列如下表所示。(Jensen & Hammer, 1998)
+
+| Promoter                   | E.coli 相对活性（MU） | 5'‑3' DNA 序列                                               |
+| -------------------------- | --------------------- | ------------------------------------------------------------ |
+| CP44=CP45                  | 34                    | CATCGGGTAGTTTATTCTTGACAATTAAGTAGAGCCTGATATAATAGTTCAGTACTGTT  |
+| CP30                       | 42                    | CATGACAGAGTTTATTCTTGACAGTATTGGGTTACTTTGGTATAATAGTTGAGTACTGTT |
+| CP9a                       | 56                    | CATAGTCTAGTTTATTCTTGACACGCGGTCCATTGGCTGGTATAATAATTTAGTACTGTT |
+| CP12（已有，作为中等锚点） | 101                   | CATATACAAGTTTATTCTTGACACTAGTCGGCCAAAATGATATAATACCTGAGTACTGTTCACACAGGAAACAGCTATG |
+| CP7                        | 134                   | TATGCGGTAGTTTATTCTTGACATGACGAGACAGGTGTGGTATAATGGGTCTAGATTAGG |
+| CP6                        | 280                   | CATGTGGGAGTTTATTCTTGACACAGATATTTCCGGATGATATAATAACTGAGTACTGTT |
+| CP25                       | 528                   | CTTTGGCAGTTTATTCTTGACATGTAGTGAGGGGGCTGGTATAATCACATAGTACTGTT  |
 
 ### Build｜实施
 
 沿用 A5 的 pKD46 / λ-Red 同源重组策略，设计带目标位点同源区域的线性 donor DNA，替换 MG1655 内源 `chb` 启动子区域，构建：
 
-- CP6CHB
-- CP7CHB
-- CP25CHB
-- CP30CHB
-- CP44CHB
-- CP9aCHB
-- CP12CHB（已有）
-- WT MG1655（对照）
+CP6CHB、CP7CHB、CP25CHB、CP30CHB、CP44CHB、CP9aCHB、CP12CHB（A5中已有构建）
 
 用设计好的三轮重叠延伸 PCR 引物，扩增对应启动子的线性 Donor DNA，第一轮扩增产物预期约为1300 bp，第二、第三轮扩增产物预期均约为1500bp。
 
@@ -53,7 +56,7 @@ A5 已证明用 CP12 替换内源 `chb` 启动子可激活 `chb` 系统，但单
 
 ![CP所有平板](./images%20of%20wetlabDBTL/CP%E6%89%80%E6%9C%89%E5%B9%B3%E6%9D%BF.png)
 
-挑取单克隆进行扩培，使用两对测序引物进行菌落PCR，覆盖基因组同源区域和完整 Donor DNA，以筛选阳性克隆。两对引物预期产物分别为 ~800 bp，~900 bp。
+挑取各平板单克隆进行扩培，使用两对测序引物进行菌落PCR，覆盖基因组同源区域和完整 Donor DNA，以筛选阳性克隆。两对引物预期产物分别为 ~800 bp，~900 bp。
 
 ![测序](./images%20of%20wetlabDBTL/%E6%B5%8B%E5%BA%8F.png)
 
@@ -63,21 +66,41 @@ A5 已证明用 CP12 替换内源 `chb` 启动子可激活 `chb` 系统，但单
 
 ### Learn｜学习
 
-通过扩展单一 CP12 构建，获得了可比较不同启动子调控条件的菌株系列，使研究重点从“能否激活 `chb`”转向“不同调控条件是否产生不同功能表现”。
+通过扩展单一 CP12 构建，获得了可比较不同启动子调控条件的菌株系列，我们关注的焦点从最初的能否激活 chb 变为，“如果我们去构建梯度启动子强度菌株，启动子强度的改变到底会不会产生不同功能表现？”
 
-但启动子预期强度不等于染色体上的实际转录水平，不同构建还可能受局部序列背景和细胞状态影响。因此，在分析生长和迁移表型前，必须先测量不同构建的相对转录丰度。
+文献中给出的启动子为预期强度，染色体上的实际转录水平，不同构建还可能受局部序列背景和细胞状态影响。因此，在分析生长和迁移表型前，必须先测量不同构建的相对转录丰度。
 
-**Next Design：** 使用 RT-qPCR 比较 CP 系列 `chb` 启动子下游区域的转录水平。
+在下一轮循环中，我们使用 RT-qPCR 比较 CP 系列启动子下游 chb operon 区域的转录水平。
 
-### DBTL A6.2 RT-qPCR
+### DBTL A6.2 CP 系列工程菌的 RT-qPCR 表征
 
+#### Design｜设计
 
+A6.1 中，我们构建了由不同 CP 启动子调控的 *chb* 工程菌。本轮采用 RT-qPCR 测定各菌株的相对转录水平，检验文献中的启动子活性差异能否在染色体 *chb* 调控背景下得到体现。
+
+#### Build｜实施
+
+将各菌株在 M9 + 甘油培养基中预培养，提取总 RNA 并逆转录为 cDNA。以 *cysG* 为内参，选取替换启动子下游、包含 *chbB* 起始部分的区域作为检测目标，通过 ΔΔCt 法计算相对于 WT MG1655 的转录丰度，并以 Log2 FC 表示。
+
+#### Test｜测试
+
+![A6.2-qPCR](./images%20of%20wetlabDBTL/A6.2-qPCR.png)
+
+RT-qPCR 显示，不同 CP 启动子替换株的目标区域转录水平存在明显差异。其中，CP30 和 CP44 的相对转录水平最高，CP25 次之，CP12 表现出一定程度的转录上调，而 CP6、CP7 的测量结果接近 WT。
+
+这一排序与 Jensen and Hammer（1998）报道的启动子活性排序并不一致，表明文献中的启动子强度不能直接用于预测本次染色体 *chb* 构建的转录水平。
+
+#### Learn｜学习
+
+RT-qPCR 表明，CP 启动子系列在本次培养条件下产生了不同的目标区域转录水平，但其相对排序与文献预期存在差异。该结果提示我们最初的假设是合理的，即启动子实际转录水平，在 chb 局部序列下的表达表现，是需要独立表征的。
+
+下一步，我们将通过生长曲线比较不同工程菌的纤维二糖利用相关表型，检验转录差异是否伴随生长表型变化。
 
 ### DBTL A6.3 CP 系列工程菌的生长表型与重复性验证
 
 #### Overview
 
-A6.2 的 RT-qPCR 显示，不同 CP 启动子替换株具有不同的 *chb* 转录水平。我们进一步比较这些菌株在纤维二糖条件下的生长表现，观察转录变化是否伴随可检测的生长表型。
+A6.2 的 RT-qPCR 显示，不同 CP 启动子替换株具有不同的 *chb* 转录水平。不同的转录强度究竟是否带来不同的纤维二糖生长表型呢？我们进一步比较这些菌株在纤维二糖条件下的生长表现，观察转录变化是否伴随可检测的不同生长表型。
 
 为此，我们通过连续 OD600 测量比较 CP 系列工程菌与 WT MG1655 在不同碳源条件下的生长情况，并尝试估计最大比生长速率（μmax）。
 
@@ -102,27 +125,27 @@ A6.2 的 RT-qPCR 显示，不同 CP 启动子替换株具有不同的 *chb* 转�
 
 ##### Test｜测试
 
-![CPseries生长曲线1修改](./images%20of%20wetlabDBTL/CPseries%E7%94%9F%E9%95%BF%E6%9B%B2%E7%BA%BF1%E4%BF%AE%E6%94%B9.png)
+**1. CP 系列工程菌的生长曲线**
 
-*Figure A6.3-1. * 
+![CPseries生长曲线1修改](./images%20of%20wetlabDBTL/CPseries%E7%94%9F%E9%95%BF%E6%9B%B2%E7%BA%BF1%E4%BF%AE%E6%94%B9.png)
 
 CP 系列启动子改造菌株在 cellobiose 与 glucose 条件下的生长曲线。
 
-在纤维二糖条件下，CP12、CP25、CP30 和 CP44 呈现较明显的 OD₆₀₀ 增长，而 CP6、CP7 增长较弱，WT MG1655几乎没有增长。各菌株在葡萄糖条件下均能生长。
+在纤维二糖条件下，在生长曲线图上，我们可以看到CP12、CP25、CP30 和 CP44 呈现较明显的 OD₆₀₀ 增长，而 CP6、CP7 增长较弱，WT MG1655几乎没有增长。各菌株在葡萄糖条件下均能生长。
+
+**2. 最大 6 h 表观比生长速率**
 
 ![未标题-1(1)](./images%20of%20wetlabDBTL/%E6%9C%AA%E6%A0%87%E9%A2%98-1(1).png)
 
-我们拟合了6 h 表观比生长速率，用于辅助比较生长表现
+我们拟合了6 h 表观比生长速率（μ_app,6h,max），用于辅助比较生长表现
 
-其中，CP12、CP25、CP30 和 CP44 均表现出较明显的生长趋势，说明染色体启动子替换能够改变工程菌在纤维二糖条件下的生长表型。
-
-相比之下，各菌株在葡萄糖培养基中也表现出生长，表明工程菌保留了葡萄糖利用能力。
+在纤维二糖条件下，CP12、CP25、CP30 和 CP44 的表观速率约为 7%–9%/h，CP6 约为 3.8%/h，而 CP7 和 WT 未能筛选出可靠的持续增长区间，因此不报告该指标（NA）。各菌株在葡萄糖条件下的表观速率约为 12%–16%/h。
 
 ##### Learn｜学习
 
-在纤维二糖条件下，CP12、CP25、CP30 和 CP44 呈现较明显的 OD₆₀₀ 增长，而 CP6 增长较弱，WT MG1655几乎没有增长。各菌株在葡萄糖条件下均能生长，表明工程菌保留了葡萄糖利用能力。
+结合 A6.2 的 RT-qPCR 结果，转录水平较低的 CP6、CP7 在纤维二糖条件下生长较弱，而 CP12、CP25、CP30 和 CP44 均表现出较明显的增长。然而， CP12 在转录量远低于 CP30、CP44 的情况下，仍表现出相近的生长速率，表明转录丰度与生长表现并非简单的正比例关系。
 
-初步结果支持染色体启动子替换能够改善工程菌在纤维二糖条件下的生长表型。为进一步比较不同启动子强度的功能影响提供了依据。
+由于细胞生长同时受到纤维二糖摄取和后续代谢过程的影响，仅凭生长曲线无法判断不同菌株的底物消耗能力是否存在相应差异。因此，我们在下一轮采用 DNS 法测定反应上清中的还原糖变化，进一步比较各工程菌的表观纤维二糖消耗能力。
 
 ### DBTL A6.4 chb 启动子梯度菌株的纤维二糖摄取定量（DNS 法）
 
@@ -348,3 +371,4 @@ Ni, B., Colin, R., Link, H., Endres, R. G., & Sourjik, V. (2020). Growth-rate de
 
 Zhao, K., Liu, M., & Burgess, R. R. (2007). Adaptation in bacterial flagellar and motility systems: from regulon members to 'foraging'-like behavior in *Escherichia coli*. *Nucleic Acids Research, 35*(13), 4441–4452. https://doi.org/10.1093/nar/gkm453
 
+Jensen, P. R., & Hammer, K. (1998). The sequence of spacers between the consensus sequences modulates the strength of prokaryotic promoters. *Applied and Environmental Microbiology*, *64*(1), 82–87. https://doi.org/10.1128/aem.64.1.82-87.1998
