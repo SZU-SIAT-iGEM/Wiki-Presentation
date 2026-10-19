@@ -1,4 +1,4 @@
-# 路线 A 湿实验工程 DBTL 草稿
+# 路线 A 湿实验工程 DBTL 
 
 ## DBTL A1 基于 asc 操纵子的质粒设计与工程菌构建
 
@@ -402,11 +402,7 @@ Touchdown PCR：本轮 PCR 的预期产物为进行 Gibson Assembly 的两个片
 1. 功能层面：*ascF*、*ascB* 中至少有一个蛋白没有正确发挥功能，工程菌未获得纤维二糖利用能力，需要进一步确认是蛋白未表达，还是未正确折叠或定位。因此，后续进入蛋白分子验证。
 2. 方法层面：OD-CFU 同步测定在本实验体系中不可行，后续实验仅以 OD600 变化表征细菌生长趋势，不再追求绝对活菌数。
 
-
-
 ## DBTL A3 ascFB 蛋白分子验证
-
-> 对应源文件：[DBTL1-ascFB蛋白分子验证小DBTL.md](<./SZU-SIZT github_Wetlab/WetLab-main/实验记录/构建趋化纤维二糖工程菌/DBTL1-ascFB蛋白分子验证小DBTL.md>)
 
 ### Overview
 
@@ -416,7 +412,7 @@ Touchdown PCR：本轮 PCR 的预期产物为进行 Gibson Assembly 的两个片
 
 这迫使我们开始重新追问一个更基础的问题：
 
-> `ascFB` 构建虽然在 DNA 层面成功，但 AscF 和 AscB 是否真的在蛋白水平实现了有效表达？
+`ascFB` 构建虽然在 DNA 层面成功，但 AscF 和 AscB 是否真的在蛋白水平实现了有效表达？
 
 AscF 和 AscB 的理论分子量分别约为：
 
@@ -471,7 +467,7 @@ AscF 和 AscB 的理论分子量分别约为：
 
 #### Test｜测试
 
-<img width="1379" height="1228" alt="sdspage1" src="https://github.com/user-attachments/assets/a8cda51f-a5c1-4147-9899-b9290fe211d8" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/sdspage1.avif
 
 
 第一次 SDS-PAGE 的结果与我们的预期并不完全一致。
@@ -540,7 +536,7 @@ AscF 和 AscB 的分子量十分接近，如果蛋白在凝胶中的迁移距离
 
 #### Test｜测试
 
-<img width="1014" height="1169" alt="SDSPAGE2" src="https://github.com/user-attachments/assets/589d87bd-4633-433c-a378-6ea437cec3f7" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/sdspage2.avif
 
 
 第二次实验中，约 50–55 kDa 区域的蛋白迁移距离得到了进一步展开。但是，即使更换了 8–16% 梯度胶，并将跑胶时间延长到约 2 h，我们仍然没有观察到两条能够明确对应 AscF 和 AscB 的独立蛋白条带。
@@ -600,7 +596,7 @@ AscF 和 AscB 的分子量十分接近，如果蛋白在凝胶中的迁移距离
 随后将这些样品进行 SDS-PAGE 分析。
 
 #### Test｜测试
-![SDS3](./images%20of%20wetlabDBTL/SDS3.png)
+[sds3.avif (1665×1393)](https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/sds3.avif)
 
 第三次 SDS-PAGE 中，我们观察到了比前两次实验更具有解释力的结果。
 
@@ -660,7 +656,7 @@ RBS Calculator 是一种用于估算细菌基因翻译起始速率的计算工�
 
 1. **干实验返回的RBS Calculator 结果**
 
-<img width="906" height="205" alt="ece72cc7924ff1669e9662d9a2c94f90" src="https://github.com/user-attachments/assets/afc3ab69-07f2-4c5f-b185-80602730fe0a" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a3-4.avif
 注：start_position位于990的起始密码子为ascF翻译起始位点，start_position位于2466的起始密码子为ascB的翻译起始位点。
 AscB 的预测翻译起始速率约为 AscF 的 3.4 倍。
 
@@ -749,14 +745,14 @@ Chb expression → cellobiose utilization → downstream phenotype
 总体表达盒设计为：
 
 **Constitutive promoter → chb operon → B0015 terminator**
-<img width="1852" height="312" alt="最最新" src="https://github.com/user-attachments/assets/0407af3f-3a65-4bb3-936c-c72a6d38cef0" />
+<img width="1852" height="312" alt="最最新" src="./images%20of%20wetlabDBTL/0407af3f-3a65-4bb3-936c-c72a6d38cef0.png" />
 
 
 其中 constitutive promoter 分别为 J23113、J23116、J23107、J23104 和 J23100。
 
 #### Test｜测试
 
-<img width="3561" height="3561" alt="ceeeb0b47512dffae760aedd9a00b5fb" src="https://github.com/user-attachments/assets/f692db5e-0b01-46c7-8f71-df90d976c4b3" />
+<img width="3561" height="3561" alt="ceeeb0b47512dffae760aedd9a00b5fb" src="./images%20of%20wetlabDBTL/f692db5e-0b01-46c7-8f71-df90d976c4b3.jpeg" />
 
 Gibson Assembly 完成后，我们将组装体系用于转化筛选。
 
@@ -831,9 +827,7 @@ Chb operon 编码多个 PTS 相关蛋白，其中包括膜相关转运组分。
 
 重新将 Chb 表达模块组装至 p15A-based vector，并完成后续转化与克隆筛选。
 
-这一设计用于直接测试：
-
-> 如果质粒高拷贝是导致 Chb 构建难以获得转化子的主要原因，那么降低复制拷贝数后是否能够恢复有效克隆形成？
+这一设计用于直接测试：如果质粒高拷贝是导致 Chb 构建难以获得转化子的主要原因，那么降低复制拷贝数后是否能够恢复有效克隆形成？
 
 #### Test｜测试
 
@@ -867,11 +861,7 @@ Chb operon 编码多个 PTS 相关蛋白，其中包括膜相关转运组分。
 
 在导师建议下，我们重新参考已有的 *E. coli* cellobiose engineering 工作。其中一种已经被验证的策略，是将 cryptic `chb` operon 的原生调控区域替换为组成型启动子，从而直接激活染色体上的内源 Chb 系统。
 
-因此，我们结束了当前的 Chb 质粒构建路线，并将下一轮工程目标改为：
-
-**native chb promoter → constitutive promoter**
-
-首先选择 **CP12** 作为组成型启动子进行染色体启动子替换。
+因此，我们结束了当前的 Chb 质粒构建路线，并将下一轮工程目标改为：native chb promoter → constitutive promoter.首先选择 **CP12** 作为组成型启动子进行染色体启动子替换。
 
 这一改变使下一阶段的核心问题从：能否在质粒上重新构建并表达完整 Chb 系统？
 
