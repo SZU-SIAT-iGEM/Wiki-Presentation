@@ -189,9 +189,8 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/mg1655-col
 ##### Test｜测试
 
 过夜培养后，各实验条件下均未观察到明显的菌落扩展，也没有形成预期的 TTC 红色区域
-<img width="4032" height="3024" alt="软琼脂1" src="https://github.com/user-attachments/assets/315b2c46-9350-4afd-8d8f-8b2d50e67cb6" />
-<img width="4032" height="3024" alt="软琼脂2" src="https://github.com/user-attachments/assets/0f81c466-3165-4c90-8c1f-86444b0b6068" />
-<img width="4032" height="3024" alt="软琼脂3" src="https://github.com/user-attachments/assets/20c8c1f7-dc84-44f7-ac4f-efce414e70d9" />
+
+<img width="4032" height="3024" alt="软琼脂1" src="https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a2-1.avif" />
 
 ##### Learn｜学习
 
