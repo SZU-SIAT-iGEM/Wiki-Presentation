@@ -962,7 +962,7 @@ Cycle 2 已经表明 CP12CHB 获得了明显不同于 WT 的 cellobiose-dependen
 分别制备：**1%Bacto tryptone + 0.5%NaCl + 0.35% agar + 10 mM glucose** / **1%Bacto tryptone + 0.5%NaCl + 0.35% agar + 10 mM cellobiose** 软琼脂平板。接种 CP12CHB，并观察培养过程中菌体是否形成明显的扩展区域或趋化环。
 
 #### Test｜测试
-<img width="2002" height="1142" alt="cp12软琼脂" src="https://github.com/user-attachments/assets/27cf8874-980b-4ea7-8e74-c2f1dc8e0f4a" />
+https://static.igem.wiki/teams/6100/wiki/cp12.avif
 
 在本轮实验条件下，CP12CHB 在 cellobiose soft agar 中没有表现出明显的趋化扩展。
 
