@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 980" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1160" height="980" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="580" y="38" text-anchor="middle" font-size="21" font-weight="bold" fill="#1a1a1a">pACYCD-GFP Construction Diagram (promoter swap · GFP reporter system)</text>
+  <text x="580" y="61" text-anchor="middle" font-size="12.5" fill="#666666">Two branches, four PCR steps in total → two-fragment Gibson assembly into a circular plasmid (4586 bp)</text>
+
+  <!-- ================= Branch A: GFP ================= -->
+  <text x="60" y="96" font-size="15" font-weight="bold" fill="#2E7D32">① GFP branch: obtain the GFP expression cassette with homology arms (Fragment A)</text>
+
+  <!-- Template plasmid -->
+  <circle cx="95" cy="150" r="26" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="95" y="147" text-anchor="middle" font-size="10" fill="#2E7D32">GFP</text>
+  <text x="95" y="159" text-anchor="middle" font-size="9" fill="#2E7D32">plasmid</text>
+  <text x="95" y="192" text-anchor="middle" font-size="10.5" fill="#333333">Template 2766 bp</text>
+
+  <!-- Arrow PCR1 -->
+  <line x1="128" y1="150" x2="172" y2="150" stroke="#888888" stroke-width="2"/>
+  <polygon points="172,145 184,150 172,155" fill="#888888"/>
+  <text x="128" y="122" font-size="11" font-weight="bold" fill="#555555">PCR ①</text>
+  <text x="128" y="136" font-size="10" fill="#555555">GFP-F + GFP-R</text>
+
+  <!-- Intermediate 818 -->
+  <rect x="190" y="140" width="96" height="20" rx="4" fill="#66BB6A"/>
+  <text x="238" y="154" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">GFP</text>
+  <text x="238" y="178" text-anchor="middle" font-size="10.5" fill="#333333">First PCR product 818 bp</text>
+  <text x="238" y="193" text-anchor="middle" font-size="9.5" fill="#777777">(no perfect primers; each end extended by one step)</text>
+
+  <!-- Arrow PCR2 -->
+  <line x1="292" y1="150" x2="336" y2="150" stroke="#888888" stroke-width="2"/>
+  <polygon points="336,145 348,150 336,155" fill="#888888"/>
+  <text x="286" y="122" font-size="11" font-weight="bold" fill="#555555">PCR ②</text>
+  <text x="270" y="136" font-size="10" fill="#555555">GFP-Overlap-F/R</text>
+
+  <!-- Final Fragment A 878 -->
+  <rect x="352" y="140" width="150" height="20" rx="4" fill="#66BB6A"/>
+  <rect x="352" y="140" width="9" height="20" fill="#E8734A"/>
+  <rect x="493" y="140" width="9" height="20" fill="#E8734A"/>
+  <rect x="361" y="145" width="14" height="10" fill="#1B5E20"/>
+  <rect x="375" y="145" width="12" height="10" fill="#388E3C"/>
+  <rect x="458" y="145" width="35" height="10" fill="#1B5E20"/>
+  <text x="422" y="155" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">GFP</text>
+  <text x="368" y="132" font-size="9.5" fill="#1B5E20">LacO</text>
+  <text x="381" y="122" font-size="9.5" fill="#388E3C">RBS</text>
+  <text x="475" y="132" font-size="9.5" fill="#1B5E20">rrnB T1</text>
+  <text x="427" y="178" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#2E7D32">Second PCR product (Fragment A) 878 bp</text>
+  <text x="427" y="193" text-anchor="middle" font-size="9.5" fill="#777777">5′ swapped to LacO-RBS + arm | 3′ swapped to rrnB T1 (same as Cel series) + arm</text>
+
+  <!-- ================= Branch B: vector ================= -->
+  <text x="60" y="252" font-size="15" font-weight="bold" fill="#4A7EBB">② Vector branch: inverse PCR linearisation of pACYCDuet-1b (Fragment B)</text>
+
+  <!-- Template plasmid -->
+  <circle cx="95" cy="310" r="26" fill="#E3F0FA" stroke="#4A7EBB" stroke-width="2"/>
+  <text x="95" y="307" text-anchor="middle" font-size="9" fill="#4A7EBB">pACYCD</text>
+  <text x="95" y="319" text-anchor="middle" font-size="9" fill="#4A7EBB">uet-1b</text>
+  <text x="95" y="352" text-anchor="middle" font-size="10.5" fill="#333333">Template plasmid</text>
+
+  <!-- Arrow PCR1 -->
+  <line x1="128" y1="310" x2="172" y2="310" stroke="#888888" stroke-width="2"/>
+  <polygon points="172,305 184,310 172,315" fill="#888888"/>
+  <text x="128" y="282" font-size="11" font-weight="bold" fill="#555555">PCR ① inverse PCR</text>
+  <text x="128" y="296" font-size="9.5" fill="#555555">pACYCD-F1 + pACYCD-Overlap-R1</text>
+
+  <!-- Intermediate 3679 -->
+  <rect x="190" y="300" width="250" height="20" rx="4" fill="#4A7EBB"/>
+  <rect x="431" y="300" width="9" height="20" fill="#1B4E79"/>
+  <rect x="225" y="305" width="46" height="10" fill="#2E5C8A"/>
+  <rect x="300" y="305" width="42" height="10" fill="#2E5C8A"/>
+  <rect x="352" y="305" width="40" height="10" fill="#2E5C8A"/>
+  <text x="248" y="296" font-size="9.5" fill="#2E5C8A" text-anchor="middle">CmR</text>
+  <text x="321" y="296" font-size="9.5" fill="#2E5C8A" text-anchor="middle">p15A ori</text>
+  <text x="372" y="296" font-size="9.5" fill="#2E5C8A" text-anchor="middle">lacI</text>
+  <text x="315" y="338" text-anchor="middle" font-size="10.5" fill="#333333">First PCR product 3679 bp (linearised, LacO removed, 3′ end keeps part of Ptac + homology arm)</text>
+
+  <!-- Arrow PCR2 -->
+  <line x1="446" y1="310" x2="490" y2="310" stroke="#888888" stroke-width="2"/>
+  <polygon points="490,305 502,310 490,315" fill="#888888"/>
+  <text x="446" y="282" font-size="11" font-weight="bold" fill="#555555">PCR ②</text>
+  <text x="446" y="296" font-size="9.5" fill="#555555">pACYCD-Overlap-F1/R1</text>
+
+  <!-- Final Fragment B 3746 -->
+  <rect x="508" y="300" width="262" height="20" rx="4" fill="#4A7EBB"/>
+  <rect x="508" y="300" width="9" height="20" fill="#E8734A"/>
+  <rect x="761" y="300" width="9" height="20" fill="#E8734A"/>
+  <rect x="545" y="305" width="48" height="10" fill="#2E5C8A"/>
+  <rect x="625" y="305" width="44" height="10" fill="#2E5C8A"/>
+  <rect x="680" y="305" width="42" height="10" fill="#2E5C8A"/>
+  <text x="569" y="296" font-size="9.5" fill="#2E5C8A" text-anchor="middle">CmR</text>
+  <text x="647" y="296" font-size="9.5" fill="#2E5C8A" text-anchor="middle">p15A ori</text>
+  <text x="701" y="296" font-size="9.5" fill="#2E5C8A" text-anchor="middle">lacI</text>
+  <text x="639" y="338" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#4A7EBB">Second PCR product (Fragment B) 3746 bp</text>
+  <text x="639" y="353" text-anchor="middle" font-size="9.5" fill="#777777">5′ end gains the second half of rrnB T1 + homology arm; 3′ end keeps part of Ptac + homology arm</text>
+
+  <!-- Homology arm legend -->
+  <rect x="880" y="300" width="10" height="10" fill="#E8734A"/>
+  <text x="896" y="309" font-size="11" fill="#555555">Red ends = homology arms (18–20 bp)</text>
+
+  <!-- ================= Gibson ================= -->
+  <line x1="427" y1="200" x2="480" y2="392" stroke="#BBBBBB" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="639" y1="360" x2="620" y2="392" stroke="#BBBBBB" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="380" y="396" width="400" height="48" rx="8" fill="#FDF3E7" stroke="#E8734A" stroke-width="1.2"/>
+  <text x="580" y="415" text-anchor="middle" font-size="13" font-weight="bold" fill="#B54A12">③ Gibson assembly: Fragment A + Fragment B, equimolar</text>
+  <text x="580" y="433" text-anchor="middle" font-size="11.5" fill="#B54A12">5 μL of 2× CE Mix V3, ddH₂O to 10 μL, 37 °C for 30 min</text>
+  <polygon points="568,450 592,450 580,468" fill="#E8734A"/>
+  <rect x="576" y="444" width="8" height="8" fill="#E8734A"/>
+
+  <!-- ================= Circular plasmid ================= -->
+  <path d="M 580 550 A 150 150 0 1 1 443 638.8" fill="none" stroke="#4A7EBB" stroke-width="26"/>
+  <path d="M 443 638.8 A 150 150 0 0 1 580 550" fill="none" stroke="#66BB6A" stroke-width="26"/>
+
+  <!-- Centre text -->
+  <text x="580" y="694" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">pACYCD-GFP</text>
+  <text x="580" y="716" text-anchor="middle" font-size="15" font-weight="bold" fill="#2E7D32">4586 bp</text>
+
+  <!-- Feature labels inside the arcs -->
+  <text x="688" y="682" text-anchor="middle" font-size="10" fill="#444444">CmR</text>
+  <text x="657" y="779" text-anchor="middle" font-size="10" fill="#444444">p15A ori</text>
+  <text x="562" y="809" text-anchor="middle" font-size="10" fill="#444444">lacI</text>
+  <text x="534" y="600" text-anchor="middle" font-size="10" fill="#444444">GFP</text>
+  <text x="498" y="626" text-anchor="middle" font-size="9" fill="#444444">LacO·RBS</text>
+  <text x="570" y="590" text-anchor="middle" font-size="9" fill="#444444">rrnB T1</text>
+
+  <!-- Fragment labels outside the arcs -->
+  <text x="710" y="878" font-size="13" font-weight="bold" fill="#4A7EBB">Fragment B: vector backbone (3746 bp)</text>
+  <text x="430" y="532" text-anchor="end" font-size="13" font-weight="bold" fill="#2E7D32">Fragment A: GFP cassette (878 bp)</text>
+
+  <!-- Junction markers -->
+  <circle cx="580" cy="550" r="9" fill="#ffffff" stroke="#888888" stroke-width="1"/>
+  <text x="580" y="554" text-anchor="middle" font-size="10.5" fill="#333333">①</text>
+  <circle cx="443" cy="639" r="9" fill="#ffffff" stroke="#888888" stroke-width="1"/>
+  <text x="443" y="643" text-anchor="middle" font-size="10.5" fill="#333333">②</text>
+
+  <!-- Homology arm notes -->
+  <text x="830" y="640" font-size="12" font-weight="bold" fill="#1a1a1a">Junction homology arms (sequence-verified)</text>
+  <text x="830" y="662" font-size="11" fill="#333333">① 20 bp (in the Ptac −10 region)</text>
+  <text x="830" y="680" font-size="10.5" fill="#555555">pACYCD-Overlap-R1 ↔ GFP-Overlap-F</text>
+  <text x="830" y="702" font-size="11" fill="#333333">② 18 bp (within rrnB T1)</text>
+  <text x="830" y="720" font-size="10.5" fill="#555555">GFP-Overlap-R ↔ pACYCD-Overlap-F1</text>
+
+  <!-- Bottom notes -->
+  <text x="580" y="912" text-anchor="middle" font-size="12" fill="#555555">Gibson amounts (0.02 × bp ng): backbone 74.9 ng | GFP 17.6 ng; DpnI digestion is recommended before recovery to remove circular template</text>
+  <text x="580" y="934" text-anchor="middle" font-size="12" fill="#555555">After transformation, plate on LB (Cm 34 μg/mL) → screen green fluorescence under blue light → colony PCR / sequencing verification</text>
+</svg>

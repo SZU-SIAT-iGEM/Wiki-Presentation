@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 900" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1160" height="900" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="580" y="40" text-anchor="middle" font-size="21" font-weight="bold" fill="#1a1a1a">pCDF-1b–INPNC–CelX Construction Diagram (first generation, deprecated)</text>
+  <text x="580" y="63" text-anchor="middle" font-size="12.5" fill="#666666">Linearised pCDF-1b backbone + INPNC-Linker + CelX-Ter fragments → Gibson assembly (CelX = Cel5L / Cel48S / Cel9K)</text>
+
+  <!-- ============ Part 1: PCR fragments ============ -->
+  <text x="60" y="92" font-size="15" font-weight="bold" fill="#1a1a1a">① PCR amplification of fragments (homology arms at both ends)</text>
+
+  <!-- Fragment 1 -->
+  <text x="60" y="118" font-size="13.5" font-weight="bold" fill="#4A7EBB">Fragment 1 | Linearised pCDF-1b backbone (≈3780 bp)</text>
+  <text x="60" y="136" font-size="11.5" fill="#333333">Template: pCDF-1b plasmid (CloDF13 replicon, SmR)</text>
+  <text x="60" y="151" font-size="11.5" fill="#333333">Linearisation by restriction digest / inverse PCR</text>
+  <rect x="430" y="158" width="340" height="22" rx="4" fill="#4A7EBB"/>
+  <rect x="430" y="164" width="10" height="10" fill="#2E5C8A"/>
+  <rect x="500" y="164" width="60" height="10" fill="#2E5C8A"/>
+  <rect x="575" y="164" width="55" height="10" fill="#2E5C8A"/>
+  <rect x="645" y="164" width="50" height="10" fill="#2E5C8A"/>
+  <text x="435" y="154" font-size="10" fill="#2E5C8A" text-anchor="middle">T7te</text>
+  <text x="530" y="154" font-size="10" fill="#2E5C8A" text-anchor="middle">SmR</text>
+  <text x="602" y="154" font-size="10" fill="#2E5C8A" text-anchor="middle">CloDF13 ori</text>
+  <text x="670" y="154" font-size="10" fill="#2E5C8A" text-anchor="middle">lacI</text>
+  <rect x="430" y="158" width="8" height="22" fill="#E8734A"/>
+  <rect x="762" y="158" width="8" height="22" fill="#E8734A"/>
+  <text x="780" y="174" font-size="12" font-weight="bold" fill="#555555">≈3780 bp</text>
+  <rect x="810" y="140" width="10" height="10" fill="#E8734A"/>
+  <text x="826" y="149" font-size="11" fill="#555555">Red ends = homology arms</text>
+
+  <!-- Fragment 2 -->
+  <text x="60" y="238" font-size="13.5" font-weight="bold" fill="#17A2B8">Fragment 2 | INPNC-Linker (≈1126 bp)</text>
+  <text x="60" y="256" font-size="11.5" fill="#333333">Template: Synthetic-1 RBS-TorA-INPNC-hisLinker-Cel5L</text>
+  <text x="60" y="271" font-size="11.5" fill="#333333">Two-round PCR: round 1 PRTI-R0 → round 2 PRTI-R1 (clean Linker)</text>
+  <rect x="430" y="278" width="160" height="22" rx="4" fill="#17A2B8"/>
+  <rect x="430" y="284" width="12" height="10" fill="#0E6E7D"/>
+  <rect x="478" y="284" width="102" height="10" fill="#0E6E7D"/>
+  <rect x="583" y="284" width="7" height="10" fill="#0E6E7D"/>
+  <text x="430" y="274" font-size="10" fill="#0E6E7D">T7 promoter</text>
+  <text x="590" y="274" font-size="10" fill="#0E6E7D" text-anchor="end">6×His·Linker</text>
+  <text x="529" y="296" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">INPNC</text>
+  <rect x="430" y="278" width="8" height="22" fill="#E8734A"/>
+  <rect x="582" y="278" width="8" height="22" fill="#E8734A"/>
+  <text x="600" y="294" font-size="12" font-weight="bold" fill="#555555">≈1126 bp</text>
+
+  <!-- Fragment 3 -->
+  <text x="60" y="358" font-size="13.5" font-weight="bold" fill="#B03A6B">Fragment 3 | CelX-Ter (Cel5L ≈1.4 kb / Cel48S ≈2.5 kb / Cel9K ≈2.5 kb)</text>
+  <text x="60" y="376" font-size="11.5" fill="#333333">Template: synthetic CelX cassettes (Δdockerin, codon-optimised)</text>
+  <rect x="430" y="398" width="250" height="22" rx="4" fill="#B03A6B"/>
+  <rect x="434" y="404" width="214" height="10" fill="#7D2849"/>
+  <rect x="648" y="404" width="15" height="10" fill="#7D2849"/>
+  <text x="541" y="416" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">CelX (5L / 48S / 9K)</text>
+  <text x="648" y="394" font-size="10" fill="#7D2849">rrnB T1</text>
+  <rect x="430" y="398" width="8" height="22" fill="#E8734A"/>
+  <rect x="672" y="398" width="8" height="22" fill="#E8734A"/>
+  <text x="690" y="414" font-size="12" font-weight="bold" fill="#555555">≈1.4–2.5 kb</text>
+
+  <!-- ============ Gibson arrow ============ -->
+  <rect x="380" y="440" width="360" height="46" rx="8" fill="#FDF3E7" stroke="#E8734A" stroke-width="1.2"/>
+  <text x="560" y="458" text-anchor="middle" font-size="13" font-weight="bold" fill="#B54A12">② Gibson assembly: mix the fragments equimolarly</text>
+  <text x="560" y="476" text-anchor="middle" font-size="11.5" fill="#B54A12">2× Gibson mix, 50 °C for 15–60 min</text>
+  <polygon points="548,492 572,492 560,510" fill="#E8734A"/>
+  <rect x="556" y="486" width="8" height="8" fill="#E8734A"/>
+
+  <!-- ============ Part 2: circular plasmid ============ -->
+  <path d="M 560 510 A 150 150 0 1 1 545.5 809.9" fill="none" stroke="#4A7EBB" stroke-width="26"/>
+  <path d="M 545.5 809.9 A 150 150 0 0 1 424 731.4" fill="none" stroke="#17A2B8" stroke-width="26"/>
+  <path d="M 424 731.4 A 150 150 0 0 1 560 510" fill="none" stroke="#B03A6B" stroke-width="26"/>
+
+  <!-- Centre text -->
+  <text x="560" y="640" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">pCDF-1b–INPNC–CelX</text>
+  <text x="560" y="662" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">(first generation,</text>
+  <text x="560" y="680" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">deprecated)</text>
+
+  <!-- Feature labels -->
+  <text x="643" y="588" text-anchor="middle" font-size="10" fill="#444444">SmR</text>
+  <text x="669" y="677" text-anchor="middle" font-size="10" fill="#444444">CloDF13 ori</text>
+  <text x="640" y="736" text-anchor="middle" font-size="10" fill="#444444">lacI</text>
+  <text x="493" y="748" text-anchor="middle" font-size="10" fill="#444444">INPNC</text>
+  <text x="458" y="619" text-anchor="middle" font-size="10" fill="#444444">CelX</text>
+  <text x="539" y="552" text-anchor="middle" font-size="10" fill="#444444">rrnB T1</text>
+
+  <!-- Fragment labels -->
+  <text x="770" y="668" font-size="13" font-weight="bold" fill="#4A7EBB">Fragment 1: backbone (≈3780 bp)</text>
+  <text x="455" y="848" text-anchor="middle" font-size="13" font-weight="bold" fill="#17A2B8">Fragment 2: INPNC-Linker</text>
+  <text x="350" y="545" text-anchor="end" font-size="13" font-weight="bold" fill="#B03A6B">Fragment 3: CelX-Ter</text>
+
+  <!-- Junction markers -->
+  <circle cx="546" cy="800" r="9" fill="#ffffff" stroke="#888888" stroke-width="1"/>
+  <text x="546" y="804" text-anchor="middle" font-size="10.5" fill="#333333">①</text>
+  <circle cx="424" cy="731" r="9" fill="#ffffff" stroke="#888888" stroke-width="1"/>
+  <text x="424" y="735" text-anchor="middle" font-size="10.5" fill="#333333">②</text>
+  <circle cx="572" cy="512" r="9" fill="#ffffff" stroke="#888888" stroke-width="1"/>
+  <text x="572" y="516" text-anchor="middle" font-size="10.5" fill="#333333">③</text>
+
+  <!-- Bottom notes -->
+  <text x="580" y="856" text-anchor="middle" font-size="12" fill="#555555">Assembly products were verified by assembly-product PCR (expected cassette bands, records SD-05)</text>
+  <text x="580" y="878" text-anchor="middle" font-size="12" fill="#555555">The SmR selection later failed to suppress WT background (records SD-07~09), so this generation was replaced by pACYCDuet-1 (CmR)</text>
+</svg>

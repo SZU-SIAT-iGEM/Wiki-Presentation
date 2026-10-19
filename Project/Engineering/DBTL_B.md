@@ -503,6 +503,10 @@ Empty-vector transformants 能够形成 colonies，则说明：
 
 以三个 assembly products 为 PCR templates，可以分别获得预期大小的 expression-cassette bands。
 
+![pACYCD 质粒表面展示 PCR（2026-09-29）](./images%20of%20wetlabDBTL/PACYTX-SD-PCR.png)
+
+图3.3-1 以三个新 assembly products 为模板的 PCR 电泳结果
+
 目标 structures 在 transformation 前的 assembly mixtures 中仍然可以被检测到。
 
 ---
@@ -610,3 +614,149 @@ INPNC 并不是唯一可能的 outer-membrane display strategy。
 
 **surface-display scaffold selection itself may be one of the key design variables。**
 
+---
+
+## DBTL B5 Testing an inducible architecture with a GFP reporter
+
+### Overview
+
+DBTL B3 结束时，证据链已经收窄为一个清晰的模式：
+
+- WT + chloramphenicol → no growth（selection 有效）；
+- empty pACYC + chloramphenicol → colonies（宿主可转化、骨架可维持）；
+- pACYC + INPNC-cellulase → no colonies（failure 与目标 construct 的加入相关）；
+- assembly-product PCR → expected bands（目标 DNA arrangement 存在于 assembly mixture 中）。
+
+DBTL B4 据此提出：下一轮设计必须主动改变表达结构，而不是重复原来的 cloning procedure，并给出两个方向——拆分 construct 定位负担来源，以及比较备选锚定元件。
+
+本轮（B5）沿着同一假设实施了互补的两项改变：
+
+1. **启动子类型**：由组成型 J23116 更换为可诱导的 **Ptac-lacO**。如果负担与组成型持续高表达有关，诱导型表达可以把目标蛋白的表达限定在特定时段，降低宿主压力；
+2. **cargo 大小**：以 **GFP** 作为小分子量报告 cargo，先单独验证“锚定 + 展示”系统本身，再回到大型纤维素酶。
+
+这一组合同时覆盖了 B4 拆分实验的两端：GFP–INPNC 既是“小 cargo + 锚定模块”的拆分测试，也是诱导型启动子的承载平台。
+
+由此，本轮的工程问题变为：
+
+> **在诱导型表达 + 小分子量 cargo 的条件下，表面展示系统能否被细胞接受？**
+
+### Cycle 1｜Redesigning the expression architecture: inducible promoter and GFP cargo
+
+#### Design
+
+本轮同时改变两个变量，使它们各自的作用可以在后续实验中被区分：
+
+| 变量 | 第一代（DBTL B1） | 本轮（DBTL B5） |
+| --- | --- | --- |
+| 启动子 | 组成型 J23116 | 诱导型 Ptac-lacO |
+| cargo | Cel48S / Cel9K / Cel5L（1.4–3 kb 大型酶） | GFP（小分子量报告蛋白） |
+| 载体 | pCDF-1b（CloDF13 / SmR，已弃用） | pACYCDuet-1b（p15A / CmR） |
+
+我们据此设计了两条互补的构建路线：
+
+- **pACYCD-GFP（promoter swap 路线）**：保留 pACYCDuet-1b 骨架，将 GFP 置于 Ptac-lacO 调控之下，作为整个 redesign 的“探针”；
+- **pACYCDuet-1–Ptac–INPNC–CelX（cellulase 路线）**：同一启动子策略延伸回纤维素酶，与 GFP 系统共用线性化骨架与组装策略。其中 **Cel9K 的 Ptac 变体已与 Ptac-GFP 同期构建**（见下文 Build）；Cel5L / Cel48S 的 Ptac 变体则待 GFP 路线给出明确信号后再行推进。
+
+两条路线给出互补的判读：如果 GFP 路线能够稳定获得转化子，则说明锚定与转运模块可以工作，问题更可能集中在大型 cellulase cargo 本身；如果 GFP 同样无法获得转化子，则负担来源将指向 INPNC 膜定位或更上游的环节。
+
+启动子更换并非简单“换个元件”，而是针对 DBTL B3 证据链所指向的负担假设的正面回应：
+
+- **Ptac 的性质**：Ptac 为 trp 启动子 −35 区与 lacUV5 启动子 −10 区/operator 的杂合启动子（de Boer et al., 1983, PNAS），表达受 LacI 阻遏蛋白抑制、可被 IPTG 诱导，且表达量随 IPTG 浓度在数个数量级内可调；其强度约为天然 lac 的 2–3 倍、T7 系统的 1/3–1/5，属于中等强度。对本模块而言，可诱导性比绝对强度更重要。
+- **膜蛋白过表达的毒性机制**：文献中，膜蛋白（或分泌途径蛋白）过量表达的毒性主要源于 Sec translocon 饱和——分泌途径前体在细胞质中聚集、内源膜蛋白（包括呼吸链复合物）被竞争性排除、包膜完整性与能量代谢受损；且毒性与“每细胞过表达物质量”正相关，而与蛋白种类关系不大（Wagner et al., 2007, Mol Cell Proteomics；Wagner et al., 2008, PNAS）。因此，**降低并可控化表达量**本身就是对膜定位展示系统最直接的减负手段。
+- **时间解耦**：可诱导性还把“生长”与“产蛋白”在时间上解耦——细胞先长至足够密度，再承受展示结构的负担，这正是组成型 J23116 无法做到的。
+
+需要同时记录的限定：Ptac 存在泄漏表达（leaky expression），未加 IPTG 时仍有基础转录；若目标结构毒性强，后续可配合高拷贝 lacIq 菌株或 lacI 共表达进一步压低关闭态。
+
+#### Build
+
+按照设计，我们先在 SnapGene 中完成表达盒搭建与引物设计，再进行 PCR 扩增与 Gibson 组装。
+
+GFP 路线采用**两条分支、四轮 PCR**的策略：
+
+- **GFP 分支**：以 GFP 质粒（模板 2766 bp）为模板，PCR ①（GFP-F + GFP-R）获得 818 bp 的第一轮产物；由于模板没有完美引物，再以 PCR ②（GFP-Overlap-F/R）在两端分别接上 LacO-RBS（5′ 端）与 rrnB T1（3′ 端，与 Cel 系列相同）及同源臂，获得 Fragment A（878 bp）；
+- **载体分支**：以 pACYCDuet-1b 为模板，PCR ① 反向 PCR 线性化（pACYCD-F1 + pACYCD-Overlap-R1，去除 LacO 区，3′ 端保留部分 Ptac 序列与同源臂），获得 3679 bp 线性化骨架；PCR ②（pACYCD-Overlap-F1/R1）在 5′ 端补齐 rrnB T1 另一半序列与同源臂，获得 Fragment B（3746 bp）。
+
+两条分支的产物等摩尔混合，以 5 μL 2× CE Mix V3、ddH2O 补至 10 μL、37 ℃ 反应 30 min 的条件下进行 Gibson Assembly，获得 4586 bp 的环状 pACYCD-GFP。
+
+![pACYCD-GFP Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCD-GFP-Gibson-assembly.png)
+
+图5-构1 DBTL B5 报告系统的构建策略：两条分支、四轮 PCR。GFP 分支经两轮 PCR 获得带同源臂的 GFP 表达盒 Fragment A（878 bp，5′ 端换为 LacO-RBS、3′ 端换为 rrnB T1）；载体分支经反向 PCR 线性化 + 第二轮补齐，获得 Fragment B（3746 bp）。两片段等摩尔组装为 4586 bp 的 pACYCD-GFP，图中红色末端为引物引入的 18–20 bp 同源臂。
+
+与 GFP 报告系统同期，我们还用同一启动子策略延伸回纤维素酶 cargo，构建了 pACYCDuet-1–Ptac–INPNC–Cel9K：
+
+![pACYCDuet-1–Ptac–INPNC–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel9K-Gibson-assembly.png)
+
+图5-构2 pACYCDuet-1–Ptac–INPNC–Cel9K（7290 bp）的构建策略：与 GFP 系统共用反向 PCR 线性化骨架（3679 bp，LacO 区去除、Ptac 保留）与 INPNC-Linker 片段（1126 bp，两轮 PCR 获得），第三片段为 Cel9K-Ter（2537 bp），三片段等摩尔一步组装。该构建与 Ptac-GFP 同期完成，其转化与验证记录暂缺 [待补充]。
+
+#### Test
+
+GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产物均以凝胶电泳确认。
+
+![GFP PCR 第一轮（2026-09-29）](./images%20of%20wetlabDBTL/0929-GFP-R1.png)
+
+图5.1-1 GFP PCR 第一轮（2026-09-29）
+
+![GFP PCR 第一轮（2026-09-30）](./images%20of%20wetlabDBTL/0930-GFP-R1.png)
+
+图5.1-2 GFP PCR 第一轮（2026-09-30）
+
+![梯度启动子 + GFP 菌 P（2026-10-01）](./images%20of%20wetlabDBTL/1001-GFP.png)
+
+图5.1-3 梯度启动子 + GFP 菌 P（2026-10-01；该胶图中梯度启动子部分是否属本系列仍待确认）
+
+![GFP 第一轮（2026-10-02）](./images%20of%20wetlabDBTL/1002-GFP-R1.png)
+
+图5.1-4 GFP 第一轮（2026-10-02）
+
+![GFP-pACYCD 第二轮（2026-10-03）](./images%20of%20wetlabDBTL/1003-GFP-pACYCD-R2.png)
+
+图5.1-5 GFP-pACYCD 第二轮 PCR（2026-10-03）
+
+![GFP 第二轮（2026-10-03）](./images%20of%20wetlabDBTL/1003-GFP-R2.png)
+
+图5.1-6 GFP 第二轮 PCR（2026-10-03）
+
+#### Learn
+
+多轮 PCR 与两轮补接同源臂的策略，与第一代构建中解决重复区段非特异扩增的方法（SDX-05）一脉相承：**当模板或引物不理想时，用两轮 PCR 逐步补齐序列与同源臂，比一次性设计长引物更可靠**。这一经验随后被写入引物设计流程（P09）。
+
+需要说明的是，本轮各凝胶的逐泳道判读（哪些泳道为预期大小的目的条带）尚未在原始记录中标注，正式发布前需核对后补充 [待确认]。
+
+### Cycle 2｜Verifying the GFP constructs at the colony level
+
+#### Design
+
+片段扩增之后，需要回到与 B1–B3 相同的诊断逻辑：**先证明构建存在，再讨论表达**。我们以菌落 PCR 验证 GFP 构建是否真正进入并保留在细菌中。
+
+#### Build
+
+将 pACYCD-GFP 组装产物转化至克隆宿主（DH5α）与出发宿主（MG1655），挑取单菌落进行菌落 PCR。
+
+#### Test
+
+![DH5α-GFP 菌落 PCR（2026-10-03）](./images%20of%20wetlabDBTL/1003-DH5a-GFP-colony.png)
+
+图5.2-1 DH5α-GFP 菌落 PCR（2026-10-03）
+
+![菌落 GFP PCR（2026-10-06）](./images%20of%20wetlabDBTL/1006-GFP-colony.png)
+
+图5.2-2 菌落 GFP PCR（2026-10-06）
+
+#### Learn
+
+至此，GFP 报告系列的**构建与菌落级验证已经开展**（2026.9.29–10.6）。但从证据链的角度，本轮尚未闭合：
+
+1. **菌落 PCR 的判读待确认**——各泳道是否出现预期条带、哪些菌落被判定为阳性，需核对原始记录后才能写入结论；
+2. **功能验证尚未开展**——GFP 路线更直接的价值在于报告“展示是否发生”（荧光观察 / 表面定位检测），该部分尚无记录；
+3. **与 B4 拆分计划的关系待理顺**——GFP–INPNC 本质上是 B4 拆分实验（INPNC-only / cellulase-only / 完整融合）的一个实例，两条线应在下一轮合并呈现；
+4. **测序闭环仍未完成**——与 B3 结束时相同，assembly PCR 与菌落 PCR 均不能替代 Sanger 测序（P11），该闭环在本模块始终未完成。
+
+因此，本轮结束时我们的工程问题再次发生转变：
+
+> 由“细胞能否耐受组成型高表达的表面展示结构”，变为“**在诱导型表达 + 小分子量 cargo 的条件下，表面展示系统能否被细胞接受？**”
+
+而回答这个问题，需要把 B5 的初步结果与 B4 的拆分实验（INPNC-only、cellulase-only、完整融合）合并到下一个 DBTL cycle 中系统推进。
+
+---
+
+> 注：本文图片存放于 `images of wetlabDBTL/` 目录，正式发布时需上传至 static.igem.wiki 并将本地路径替换为对应 URL。
