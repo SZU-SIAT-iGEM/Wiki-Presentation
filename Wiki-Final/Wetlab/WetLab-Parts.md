@@ -1,7 +1,5 @@
 # New Parts Registry
 
-To engineer and optimize cellobiose metabolism and chemotaxis in *E. coli*, our project aims to connect substrate degradation with cellular movement. Simply put, the sugars released from cellulose are not just food for the cells, but also act as road signs guiding them toward the substrate.
-
 Our team successfully constructed and registered multiple new genetic parts. These submissions include engineered expression plasmids with varying copy numbers, functional gene cassettes, and a library of genomic promoter-replacement modules driven by different CP series promoters.
 
 ## Module 1: Engineered cellobiose utilization plasmids
