@@ -82,6 +82,10 @@
 
 通过 PCR 扩增，我们获得了带有预定同源重叠序列的 DNA fragments。
 
+![pCDF-1b–INPNC–CelX Gibson 组装示意图](./images%20of%20wetlabDBTL/pCDF-1b-INPNC-CelX-Gibson-assembly.png)
+
+图1-构1 第一代表面展示质粒的构建策略：线性化 pCDF-1b 骨架（CloDF13 ori、SmR，约 3780 bp）+ INPNC-Linker 片段（约 1126 bp）+ CelX-Ter 片段（Cel5L ≈1.4 kb / Cel48S ≈2.5 kb / Cel9K ≈2.5 kb）等摩尔 Gibson 组装，CelX 代表三种 cargo。其中 INPNC-Linker 片段采用两轮 PCR（PRTI-R0 → PRTI-R1）获得干净产物，以规避重复区段导致的非特异扩增；三个 cargo 均经过 Δdockerin 删除与大肠杆菌密码子优化。
+
 随后，我们采用 Gibson Assembly 方法，将线性化载体与相应的插入片段进行组装，分别构建：
 
 - pCDF–INPNC–Cel48S
