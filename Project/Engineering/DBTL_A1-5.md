@@ -371,10 +371,9 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/mg1655-col
 
 ##### Test｜测试
 
-<img width="3216" height="2462" alt="Graph1" src="https://github.com/user-attachments/assets/543ab89d-c3f1-4e58-999a-60fabba9cfa1" />
-<img width="3216" height="2462" alt="Graph2" src="https://github.com/user-attachments/assets/561046ec-c605-40af-85f9-38c754a43902" />
-<img width="3216" height="2462" alt="Graph3" src="https://github.com/user-attachments/assets/2d565e94-e48b-4d68-9090-3589ca56b979" />
-
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/graph1.avif
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/graph2.avif
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/graph3.avif
 实验发现，工程菌并未表现出优于空载体对照（EV）的纤维二糖代谢能力；相反，由于质粒额外搭载了 *ascB*、*ascF* 两个蛋白的表达负担，工程菌在纤维二糖条件下的生长略弱于 EV。阳性对照（葡萄糖）生长正常，说明菌株活力与质粒本身无问题；空白对照 OD 无变化，排除污染。
 
 ##### Learn｜学习
@@ -811,6 +810,8 @@ Chb operon 编码多个 PTS 相关蛋白，其中包括膜相关转运组分。
 
 #### Test｜测试
 
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/pet28-chb.avif
+
 更换为 p15A replication system 后，我们仍然没有筛选到能够进一步验证的有效 Chb 转化克隆。
 
 因此，降低质粒拷贝数并没有解决当前的构建问题。
@@ -962,7 +963,7 @@ Cycle 2 已经表明 CP12CHB 获得了明显不同于 WT 的 cellobiose-dependen
 分别制备：**1%Bacto tryptone + 0.5%NaCl + 0.35% agar + 10 mM glucose** / **1%Bacto tryptone + 0.5%NaCl + 0.35% agar + 10 mM cellobiose** 软琼脂平板。接种 CP12CHB，并观察培养过程中菌体是否形成明显的扩展区域或趋化环。
 
 #### Test｜测试
-https://static.igem.wiki/teams/6100/wiki/cp12.avif
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp12.avif
 
 在本轮实验条件下，CP12CHB 在 cellobiose soft agar 中没有表现出明显的趋化扩展。
 
