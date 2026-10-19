@@ -231,7 +231,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/mg1655-col
 
 但是，即使降低离心强度或提高初始接种量，PBS-based soft agar 平板上仍未形成稳定、可比较的扩散区域。
 
-<img width="1280" height="1707" alt="软琼脂4" src="https://github.com/user-attachments/assets/0d05df16-8f5f-477a-a31e-428443be2a1f" />
+<img width="1280" height="1707" alt="软琼脂4" src="https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a2-3-2.avif" />
 
 ##### Learn｜学习
 
@@ -266,8 +266,8 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/mg1655-col
 
 在 M9 + glucose 条件下，`ascFB` 与 EV 均出现了可观察的菌体扩展区域。
 
-相比之下，在 M9 + cellobiose 条件下，两种菌株均未观察到类似的明显扩展。<img width="2486" height="1649" alt="软琼脂5" src="https://github.com/user-attachments/assets/5ba0a392-c3e8-421c-8eba-6a27feca9ffe" />
-<img width="2777" height="1815" alt="软琼脂6" src="https://github.com/user-attachments/assets/fceaf142-51fe-4b17-8553-08484262dae8" />
+相比之下，在 M9 + cellobiose 条件下，两种菌株均未观察到类似的明显扩展。<img width="2486" height="1649" alt="软琼脂5" src="https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a2-3-1.avif" />
+<img width="2777" height="1815" alt="软琼脂6" src="https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a2-4.avif" />
 
 ##### Learn｜学习
 
@@ -325,7 +325,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/mg1655-col
 ##### Test｜测试
 
 本轮完成了低营养组实验，无营养组尚未开展。结果如下：
-<img width="3200" height="1708" alt="纤维二糖趋化性验证" src="./images%20of%20wetlabDBTL/f5ed38f8-6b29-4704-b78d-2187d44bb8c4.png" />
+<img width="3200" height="1708" alt="纤维二糖趋化性验证" src="https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a2-1-1.avif" />
 
 | Plug       | ascFB                                            | EV                                               |
 | ---------- | ------------------------------------------------ | ------------------------------------------------ |
