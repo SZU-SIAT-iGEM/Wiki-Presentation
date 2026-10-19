@@ -346,7 +346,7 @@ Touchdown PCR：本轮 PCR 的预期产物为进行 Gibson Assembly 的两个片
 ##### Test｜测试
 
 本轮完成了低营养组实验，无营养组尚未开展。结果如下：
-<img width="3200" height="1708" alt="纤维二糖趋化性验证" src="https://github.com/user-attachments/assets/f5ed38f8-6b29-4704-b78d-2187d44bb8c4" />
+<img width="3200" height="1708" alt="纤维二糖趋化性验证" src="./images%20of%20wetlabDBTL/f5ed38f8-6b29-4704-b78d-2187d44bb8c4.png" />
 
 | Plug       | ascFB                                            | EV                                               |
 | ---------- | ------------------------------------------------ | ------------------------------------------------ |
@@ -851,7 +851,7 @@ Chb operon 编码多个 PTS 相关蛋白，其中包括膜相关转运组分。
 
 因此，我们无法利用这一轮设计继续完成原计划中的五级启动子表达梯度，也无法进入后续的纤维二糖利用和趋化定量实验。
 
-这一结果促使我们重新考虑一个更基础的工程策略：与其继续将整个 `chb` operon 重新克隆到质粒中，是否可以直接利用 MG1655 染色体上已经存在的内源 `chb` operon？
+这一结果促使我们重新考虑一个更基础的工程策略，与其继续将整个 `chb` operon 重新克隆到质粒中，是否可以直接利用 MG1655 染色体上已经存在的内源 `chb` operon？
 
 ### Redesign｜从 Chb 质粒表达转向染色体内源操纵子激活
 
@@ -859,15 +859,9 @@ Chb operon 编码多个 PTS 相关蛋白，其中包括膜相关转运组分。
 
 因此，我们并不一定需要重新复制整个 `chb` operon 并通过质粒表达。另一个更直接的策略是保留内源 Chb 编码序列，仅改变其转录调控。
 
-在导师建议下，我们重新参考已有的 *E. coli* cellobiose engineering 工作。其中一种已经被验证的策略，是将 cryptic `chb` operon 的原生调控区域替换为组成型启动子，从而直接激活染色体上的内源 Chb 系统。
+在导师建议下，我们重新参考已有的 *E. coli* cellobiose engineering 工作。其中一种已经被验证的策略，是将 cryptic `chb` operon 的原生调控区域替换为组成型启动子，从而直接激活染色体上的内源 Chb 系统。(Parisutham et al., 2013)。
 
-因此，我们结束了当前的 Chb 质粒构建路线，并将下一轮工程目标改为：native chb promoter → constitutive promoter.首先选择 **CP12** 作为组成型启动子进行染色体启动子替换。
-
-这一改变使下一阶段的核心问题从：能否在质粒上重新构建并表达完整 Chb 系统？
-
-转变为：能否直接激活 MG1655 内源chb operon，使其获得稳定的纤维二糖利用表型？
-
-这成为下一轮 DBTL——**A5 CP12-chb 染色体启动子替换**——的起点。
+首先选择 CP12 组成型启动子，对大肠杆菌chb操纵子的原生染色体启动子进行替换。这成为下一轮 DBTL——**A5 CP12-chb 染色体启动子替换**——的起点。
 
 ## DBTL A5 CP12-chb 基因组启动子替换与功能验证
 
@@ -881,19 +875,11 @@ A4 中，我们先后尝试了 RSF 和 p15A 两种 Chb 质粒表达系统，但�
 
 获得候选工程菌后，我们首先通过基因组 PCR 和 Sanger sequencing 确认编辑区域是否与设计序列一致。在确认 CP12-chb 基因型正确后，再分别利用生长曲线和 soft agar assay 检测其纤维二糖利用与趋化相关表型。
 
-最终，CP12CHB 在纤维二糖培养条件下表现出了区别于 WT MG1655 的生长优势，但在 soft agar assay 中没有观察到明显增强的纤维二糖趋化表型。
-
 ### Cycle 1｜CP12 替换内源 chb 启动子并验证基因型
 
 #### Design｜设计
 
-A4 的质粒表达路线没有获得有效工程菌，因此我们重新考虑是否有必要将整个 `chb` operon 重新克隆至质粒。
-
-MG1655 染色体本身已经携带内源 `chb` operon，因此本轮选择保留原有编码区，仅改变其上游转录调控。
-
-我们选择组成型启动子 **CP12** 替换原有 `chb` promoter region。
-
-那么我们能否在 MG1655 染色体上正确完成 CP12-chb 启动子替换？
+MG1655 染色体本身已经携带内源 `chb` operon，本轮选择保留原有编码区，使用组成型启动子 **CP12** 替换其上游转录调控。
 
 #### Build｜实施
 
@@ -1037,4 +1023,28 @@ CP12CHB 的基因型验证和生长曲线表明，利用组成型启动子激活
 通过改变 Chb 的表达强度，测试其是否会产生不同的纤维二糖利用和趋化表型？
 
 我们首先通过不同 CP 系列启动子建立 Chb expression gradient，并利用生长曲线评价这些构建的纤维二糖利用表型。随后再对不同表达水平的菌株进行趋化测试，以判断是否存在之间的可检测关系。
+
+
+
+
+
+##### References
+
+Morabbi Heravi, K., & Altenbuchner, J. (2018). Cross talk among transporters of the phosphoenolpyruvate-dependent phosphotransferase system in *Bacillus subtilis*. *Journal of Bacteriology, 200*(19), e00213-18. https://doi.org/10.1128/JB.00213-18
+
+Parisutham, V., Jung, S.-K., Nam, D., & Lee, S. K. (2013). Transcriptome-driven synthetic re-modeling of *Escherichia coli* to enhance cellobiose utilization. *Chemical Engineering Science, 103*, 50–57. https://doi.org/10.1016/j.ces.2012.08.006
+
+Parisutham, V., & Lee, S. K. (2015). Novel functions and regulation of cryptic cellobiose operons in *Escherichia coli*. *PLoS ONE, 10*(6), e0131928. https://doi.org/10.1371/journal.pone.0131928
+
+Sanders, D. E., et al. (2013). Cell population control of swarming and surface behavior in *Escherichia coli*. 
+
+Adler, J. (1973). A method for measuring chemotaxis and use of it to define the optimum conditions for chemotaxis by *Escherichia coli*. *Journal of General Microbiology, 74*, 77–91.
+
+Croze, O. A., et al. (2011). Migration of *Escherichia coli* in semi-solid soft agar: Role of Gel Concentration. *Biophysical Journal*. 2011 Aug 3;101(3):525–534. doi: 10.1016/j.bpj.2011.06.023
+
+Sourjik, V., & Wingreen, N. S. (2012). Responding to chemical gradients: bacterial chemotaxis. *Current Opinion in Cell Biology, 24*(2), 262–268. https://doi.org/10.1016/j.ceb.2011.11.008 
+
+Ni, B., Colin, R., Link, H., Endres, R. G., & Sourjik, V. (2020). Growth-rate dependent resource investment in bacterial motile behavior quantitatively follows potential benefit of chemotaxis. *PNAS, 117*(1), 595–601. https://doi.org/10.1073/pnas.1909859116 
+
+Zhao, K., Liu, M., & Burgess, R. R. (2007). Adaptation in bacterial flagellar and motility systems: from regulon members to 'foraging'-like behavior in *Escherichia coli*. *Nucleic Acids Research, 35*(13), 4441–4452. https://doi.org/10.1093/nar/gkm453
 
