@@ -341,7 +341,6 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/mg1655-col
 
 ### DBTL A2.2 ascFB 生长曲线验证
 
-> 对应源文件：[KH-asc生长曲线测定DBTL.md](<./SZU-SIZT github_Wetlab/WetLab-main/实验记录/构建趋化纤维二糖工程菌/KH-asc生长曲线测定DBTL.md>)
 
 #### Overview
 
