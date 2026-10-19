@@ -264,9 +264,7 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 结果显示，链霉素平板上的工程菌能够形成单菌落，这一结果与 DBTL B1 中观察到的现象一致；但同时，链霉素平板上的野生型菌株也能够形成单菌落。
 
-<img width="1233" height="1235" alt="SD链霉素板子含WT" src="https://github.com/user-attachments/assets/cccdd42a-2a68-46b4-ab08-002baafa0f74" />
-
-图2.1-1 涂布接种工程菌和野生型菌株的链霉素平板
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/sd-smr-wt.avif
 
 #### Learn
 
@@ -292,9 +290,7 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 结果显示，壮观霉素平板上，工程菌能够形成 colonies；同时，DH5α WT 也能够在壮观霉素平板上形成 colonies。
 
-<img width="2487" height="2476" alt="SD壮观霉素板子" src="https://github.com/user-attachments/assets/9101b274-14de-4a04-a870-ca6a302bce28" />
-
-图2.2-1 涂布接种工程菌和野生型菌株的壮观霉素平板
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/sd-spcr-wt.avif
 
 #### Learn
 
@@ -328,9 +324,7 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 结果显示，链霉素 + 壮观霉素双抗平板上，工程菌能够形成 colonies；同时，DH5α WT 也能够在链霉素 + 壮观霉素双抗平板上形成 colonies。
 
-<img width="2487" height="2476" alt="SD双抗板子" src="https://github.com/user-attachments/assets/209d5579-04bb-43d9-8efe-70dc7063d65a" />
-
-图2.3-1 涂布接种工程菌和野生型菌株的的链霉素+壮观霉素平板
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/sd-smr-spcr.avif
 
 #### Learn
 
