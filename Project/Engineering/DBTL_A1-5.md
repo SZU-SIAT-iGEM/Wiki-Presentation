@@ -21,7 +21,7 @@
 #### Design｜设计
 
 在质粒设计上，我们的主要设计决策点如下表所示：
-<img width="1836" height="312" alt="Bicistronic expression cassette" src="https://github.com/user-attachments/assets/244844a7-ca5d-4b0d-b5b6-5cf36d63e860" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a1-casstte.avif
 
 
 | 决策项  | 最终选择                    | 备注                                             |
@@ -66,15 +66,15 @@
 
 巢式第一轮 PCR：以 MG1655 基因组 DNA 为模板，使用外侧引物扩增包含基因上下游各约 500 bp 侧翼序列的长片段。电泳结果显示，ascF 和 ascB 均在约 2500 bp 处出现单一、明亮的特异性条带，与预期大小一致，无非特异性扩增或引物二聚体，说明第一轮扩增成功，模板质量良好。
 
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a1-cycle1-2-1.avif
+<img width="1627" height="1220" alt="巢式第一轮" src="https://github.com/user-attachments/assets/5ffc06a7-61af-4c7d-9751-49daadc087df" />
 
 巢式第二轮 PCR：以第一轮 PCR 纯化产物为模板，使用内侧引物扩增基因编码区（CDS）。电泳结果显示两条目标条带均位于 1400–1500 bp 区间，条带清晰锐利，表明已成功获得 ascF（约 1460 bp）和 ascB（约 1420 bp）目的基因片段。
 
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a1-cycle1-2-2.avif
+<img width="1647" height="1235" alt="巢式第二轮" src="https://github.com/user-attachments/assets/bed52c3e-8873-402d-91d5-f0c7933ae5cf" />
 
 Touchdown PCR：本轮 PCR 的预期产物为进行 Gibson Assembly 的两个片段，长度分别为 1532bp 和 1502bp，电泳结果显示，Fragment 1 和 Fragment 2 均在约 1500 bp 处均出现单一主带，条带强度高、无拖尾，与预期长度相符，说明同源臂已成功悬挂，两个片段可用于下一步纯化和 Gibson 组装。
 
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/ascfb-overlap.avif
+<img width="1381" height="1036" alt="ascFB同源臂" src="https://github.com/user-attachments/assets/797b63f6-4bf2-4e1c-b91a-b701b5ddf147" />
 
 #### Learn｜学习
 
@@ -725,14 +725,14 @@ Chb expression → cellobiose utilization → downstream phenotype
 总体表达盒设计为：
 
 **Constitutive promoter → chb operon → B0015 terminator**
-<img width="1852" height="312" alt="最最新" src="./images%20of%20wetlabDBTL/0407af3f-3a65-4bb3-936c-c72a6d38cef0.png" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a4-casstte.avif
 
 
 其中 constitutive promoter 分别为 J23113、J23116、J23107、J23104 和 J23100。
 
 #### Test｜测试
 
-<img width="3561" height="3561" alt="ceeeb0b47512dffae760aedd9a00b5fb" src="./images%20of%20wetlabDBTL/f692db5e-0b01-46c7-8f71-df90d976c4b3.jpeg" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/f692db5e-0b01-46c7-8f71-df90d976c4b3.avif
 
 Gibson Assembly 完成后，我们将组装体系用于转化筛选。
 
@@ -875,7 +875,7 @@ MG1655 染色体本身已经携带内源 `chb` operon，本轮选择保留原有
 
 #### Test｜测试
 
-![A5-1](./images%20of%20wetlabDBTL/A5-1.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a5-1.avif
 
 我们成功得到了 λ-Red菌株和CP12CHB菌株
 
@@ -885,7 +885,7 @@ PCR 结果出现了与预期大小一致的目标条带，说明目标区域的�
 
 随后对 PCR 产物进行 Sanger sequencing，并将测序序列与预期的 CP12-chb edited sequence 进行比对。
 
-![image-20261009174808914](./images%20of%20wetlabDBTL/image-20261009174808914.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a5-2.avif
 
 测序结果显示，编辑区域与设计序列一致，没有观察到碱基错配。至此，我们确认获得了预期的 CP12-chb 基因组编辑菌株。
 
@@ -921,7 +921,7 @@ A4 中最大的问题是无法获得稳定的 Chb 质粒工程菌，而本轮通
 
 #### Test｜测试
 
-![CP12 Growth Curve](./images%20of%20wetlabDBTL/CP12_OD600_growth_curve_YH(1).svg)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp12-od600-growth-curve-yh-1.svg
 
 在 glucose 条件下，两株菌均表现出明显生长。在 cellobiose 条件下则出现了明显不同的趋势。
 
