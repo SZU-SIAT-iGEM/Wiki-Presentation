@@ -864,19 +864,34 @@ MG1655 染色体本身已经携带内源 `chb` operon，本轮选择保留原有
 
 我们工程菌的构建采用 pKD46 / λ-Red homologous recombination 进行基因组编辑。
 
-1、首先将 pKD46 导入 MG1655，并在适合 pKD46 维持的条件下培养。
+1、用设计好的三轮重叠延伸 PCR 引物，扩增对应启动子的线性 Donor DNA，第一轮扩增产物预期约为1300 bp，第二、第三轮扩增产物预期均约为1500bp。
 
-2、随后使用 arabinose 诱导 λ-Red recombination system，并制备新鲜电转感受态细胞。
+2、先将 pKD46 导入 MG1655，并在适合 pKD46 维持的条件下培养。
 
-3、将携带 CP12 及目标位点同源区域的线性 donor DNA 电转进入诱导后的 MG1655，通过抗性平板筛选候选重组子。
+3、随后使用 arabinose 诱导 λ-Red recombination system，并制备新鲜电转感受态细胞。
+
+4、将携带 CP12 及目标位点同源区域的线性 donor DNA 电转进入诱导后的 MG1655，通过抗性平板筛选候选重组子。
 
 获得候选克隆后，不直接进入功能实验，而是首先进行基因型验证。
 
 #### Test｜测试
+Donor DNA 第一轮 PCR 扩增产物
+
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp12chb-r1.avif
+
+Donor DNA 第二轮 PCR 扩增产物
+
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp12chb-r2.avif
+
+Donor DNA 第三轮 PCR 扩增产物
+
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp12chb-r3.avif
+
+将对应条带切胶回收后，成功得到了最终 Donor DNA，同时用 Nanodrop 测量，DNA 纯度也满足电转要求（A260/A230 ≥ 2）
+
+电转后涂布卡那霉素抗性平板，我们也成功得到了 λ-Red菌株和CP12CHB菌株
 
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a5-1.avif
-
-我们成功得到了 λ-Red菌株和CP12CHB菌株
 
 下一步我们从候选 CP12CHB 工程菌中提取基因组 DNA，并使用针对编辑区域设计的引物进行 PCR。
 
