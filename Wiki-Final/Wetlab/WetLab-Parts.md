@@ -65,6 +65,7 @@ The early pCDF-1b constructs are registered but marked as deprecated to document
 | Plasmid           | pACYCDuet-1_INPNC-Cel48S recombinant                            | [BBa_260Z3XPQ](https://registry.igem.org/parts/bba-260z3xpq) |
 | Plasmid           | pACYCDuet-1_INPNC-Cel9K recombinant                             | [BBa_26S0HSFR](https://registry.igem.org/parts/bba-26s0hsfr) |
 | Engineered Region | Ptac-GFP                                                        | [BBa_26M2HR76](https://registry.igem.org/parts/bba-26m2hr76) |
+|Plasmid            | pACYCDuet-1_Ptac-GFP recombinant                                | [BBa_266AXHCQ](https://registry.igem.org/parts/bba-266axhcq) |
 
 # Reused Parts
 
