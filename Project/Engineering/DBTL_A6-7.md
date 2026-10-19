@@ -267,8 +267,7 @@ WT 15 min 的绝对值（≈0.26 mg/mL）低于名义初始浓度 0.342 mg/mL，
 
 
 ##### Test｜测试
-<img width="2069" height="1814" alt="CP series 软琼脂" src="https://github.com/user-attachments/assets/78468fae-1e27-4bf2-905f-259cf77e8413" />
-
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp-series.avif
 
 经过培养观察，所有 CP 系列工程菌在三种平板条件下均形成了可辨识的趋化圈，并表现出一致的排序趋势：
 
