@@ -66,19 +66,19 @@
 
 巢式第一轮 PCR：以 MG1655 基因组 DNA 为模板，使用外侧引物扩增包含基因上下游各约 500 bp 侧翼序列的长片段。电泳结果显示，ascF 和 ascB 均在约 2500 bp 处出现单一、明亮的特异性条带，与预期大小一致，无非特异性扩增或引物二聚体，说明第一轮扩增成功，模板质量良好。
 
-<img width="1627" height="1220" alt="巢式第一轮" src="https://github.com/user-attachments/assets/5ffc06a7-61af-4c7d-9751-49daadc087df" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a1-cycle1-2-1.avif
 
 图1-1：巢式PCR第一轮电泳结果
 
 巢式第二轮 PCR：以第一轮 PCR 纯化产物为模板，使用内侧引物扩增基因编码区（CDS）。电泳结果显示两条目标条带均位于 1400–1500 bp 区间，条带清晰锐利，表明已成功获得 ascF（约 1460 bp）和 ascB（约 1420 bp）目的基因片段。
 
-<img width="1647" height="1235" alt="巢式第二轮" src="https://github.com/user-attachments/assets/bed52c3e-8873-402d-91d5-f0c7933ae5cf" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/a1-cycle1-2-2.avif
 
 图1-2：巢式PCR第二轮电泳结果
 
 Touchdown PCR：本轮 PCR 的预期产物为进行 Gibson Assembly 的两个片段，长度分别为 1532bp 和 1502bp，电泳结果显示，Fragment 1 和 Fragment 2 均在约 1500 bp 处均出现单一主带，条带强度高、无拖尾，与预期长度相符，说明同源臂已成功悬挂，两个片段可用于下一步纯化和 Gibson 组装。
 
-<img width="1381" height="1036" alt="ascFB同源臂" src="https://github.com/user-attachments/assets/797b63f6-4bf2-4e1c-b91a-b701b5ddf147" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/ascfb-overlap.avif
 
 图1-3：Touchdown PCR产物电泳结果
 
