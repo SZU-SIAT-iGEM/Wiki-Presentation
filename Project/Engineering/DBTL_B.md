@@ -356,6 +356,8 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 ## DBTL B3 Rebuilding the system with an independent selection strategy
 
+### Cycle 1｜pACYC-based backbone组装
+
 ### Design
 
 上一轮实验表明，原有的SmR抗性基因筛选体系无法可靠区分候选转化子与未转化细胞。我们更换了 plasmid backbone 和 antibiotic resistance marker。
@@ -406,13 +408,7 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 实验结果首先在两个 control groups 中表现出了非常清晰的差异。
 
-##### WT
-
-没有观察到 colony growth。
-
-##### Empty Vector
-
-能够获得 colonies。
+##### WT没有观察到 colony growth。Empty Vector能够获得 colonies。
 
 ---
 
@@ -422,57 +418,13 @@ WT 无法在 chloramphenicol plate 上生长，说明新的 antibiotic selection
 
 Empty-vector transformants 能够形成 colonies，则说明MG1655 可以接受并维持 pACYC-based plasmid。
 
-但是我们的三个 recombinant groups 均没有获得预期 colonies
+但是我们的三个 recombinant groups 均没有获得预期 colonies。问题开始集中到 experimental groups 与 EV 之间最大的区别：**INPNC-cellulase expression cassette。**
 
-问题开始集中到 experimental groups 与 EV 之间最大的区别：
-
-**INPNC-cellulase expression cassette。**
-
-但是，在得出 expression burden 或 toxicity 的结论之前，我们仍然需要排除一种更加简单的可能性：三个 recombinant constructs 是否只是再次发生了 assembly failure？
-
-因此，我们进一步检测新的 assembly products。
+但是，在得出 expression burden 或 toxicity 的结论之前，我们仍然需要排除一种更加简单的可能性：三个 recombinant constructs 是否只是再次发生了 assembly failure？因此，我们进一步检测新的 assembly products。
 
 ---
 
-### Cycle 2｜What happens after adding the INPNC-cellulase cassette?
-
-#### Test
-
-与 empty-vector group 明显不同，三个 recombinant groups 均没有获得预期 colonies：
-
-- INPNC-Cel5L：no colony
-- INPNC-Cel9K：no colony
-- INPNC-Cel48S：no colony
-
-这一结果呈现出了非常明显的 construct-dependent pattern。
-
----
-
-#### Learn
-
-因为 WT 与 EV controls 已经分别证明：
-
-- chloramphenicol selection 可以工作；
-- MG1655 可以进行 transformation；
-- pACYC backbone 可以在 MG1655 中维持；
-
-所以三个 recombinant groups 同时没有获得 colonies，就不能再简单解释为：
-
-**整个 transformation system 都失败了。**
-
-问题开始集中到 experimental groups 与 EV 之间最大的区别：
-
-**INPNC-cellulase expression cassette。**
-
-但是，在得出 expression burden 或 toxicity 的结论之前，我们仍然需要排除一种更加简单的可能性：
-
-> 三个 recombinant constructs 是否只是再次发生了 assembly failure？
-
-因此，我们进一步检测新的 assembly products。
-
----
-
-### Cycle 3｜Did the recombinant assemblies fail again?
+### Cycle 2｜Did the recombinant assemblies fail again?
 
 #### Design
 
