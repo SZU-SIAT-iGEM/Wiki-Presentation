@@ -18,7 +18,7 @@
 
 **DBTL B5** 同期构建 **Ptac-GFP** 和 **Ptac-INPNC-Cel9K**。Ptac-GFP 获得了候选菌落，并经 colony PCR 验证为正确重组子，而 Ptac-INPNC-Cel9K 仍未获得转化子。这一结果说明，当前 pACYC-based cloning 和 chloramphenicol selection 本身能够获得正确重组质粒，而仅将 J23116 替换为 Ptac-lacO 并不足以解决 INPNC-cellulase 构建失败的问题。
 
-结合 Human Practices 访谈中关于 **anchor–passenger compatibility** 的反馈，我们进一步认识到，不同表面展示锚定系统与 passenger protein 之间可能存在明显的组合依赖性。因此，**DBTL B6** 不再继续围绕 INPNC 进行重复尝试，而是引入另一种经典外膜展示系统 **Lpp-OmpA**，并设计 Ptac-Lpp-OmpA-Cel9K 和 Ptac-Lpp-OmpA-Cel48S 作为下一轮候选构建。
+结合 Human Practices 访谈中关于 **anchor–passenger compatibility** 的反馈，我们进一步认识到，不同表面展示锚定系统与 passenger protein 之间可能存在不同的适配性，没有绝对的规则能够预测乘客蛋白究竟和哪一个系统适配。因此，**DBTL B6** 不再继续围绕 INPNC 进行重复尝试，而是引入另一种经典外膜展示系统 **Lpp-OmpA**，并设计 Ptac-Lpp-OmpA-Cel9K 和 Ptac-Lpp-OmpA-Cel48S 作为下一轮候选构建。
 
 通过这些连续的 DBTL cycles，我们逐步将问题从最初笼统的“表面展示质粒构建失败”，收窄到 **特定 surface-display fusion architecture 与 cellulase cargo 的兼容性问题**。这一过程也使后续工程方向从单纯重复 cloning，转变为有依据地比较不同表达调控和锚定系统。
 
