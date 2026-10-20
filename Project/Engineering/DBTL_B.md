@@ -118,7 +118,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pcdf-1b-in
 
 #### Test
 
-![图片1](./images%20of%20wetlabDBTL/图片1.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1.avif
 
 图1.1-1 三个构建组的链霉素选择平板
 
@@ -158,7 +158,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pcdf-1b-in
 
 这意味着，我们未能从这些菌落中获得证明目标 INPNC–cellulase constructs 存在的基因型证据。
 
-<img width="484" height="497" alt="image" src="https://github.com/user-attachments/assets/7aa78def-8aa2-4ea5-862b-98a6c0ac68ac" />
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pcdf-pcr.avif
 
 图1.2-1 三个构建组候选菌落的 colony PCR 电泳结果
 
@@ -184,7 +184,7 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 电泳结果显示，三个 assembly products 均获得了预期大小的目的条带。
 
-![质粒PCR](./images%20of%20wetlabDBTL/质粒PCR.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pcr.avif
 
 图1.3-1 以三个 assembly products 为模板的 PCR 电泳结果
 
@@ -216,7 +216,7 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 然而，三个构建组均未观察到预期的清晰水解圈。
 
-![CMC–Congo red assay 第一轮平板](./images%20of%20wetlabDBTL/CMC-round1.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/cmc-round1.avif
 
 图1.4-1 三个构建组候选菌株的 CMC–Congo red assay 结果（第一轮）
 
@@ -384,15 +384,15 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 三个 pACYC 重建质粒的构建策略如下。三者共用同一线性化骨架与 INPNC-Linker 锚定模块，**启动子也完全相同**，仅 cargo 不同。
 
-![pACYCDuet-1–INPNC–Cel5L Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel5L-Gibson-assembly.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacycduet-1-cel5l-gibson-assembly.avif
 
 图3-构1 *pACYC–INPNC–Cel5L 的 Gibson Assembly 构建策略*
 
-![pACYCDuet-1–INPNC–Cel48S Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel48S-Gibson-assembly.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacycduet-1-cel48s-gibson-assembly.avif
 
 图3-构2*pACYC–INPNC–Cel48S 的 Gibson Assembly 构建策略*。
 
-![pACYCDuet-1–J23116–INPNC–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel9K-J23116-Gibson-assembly.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacycduet-1-cel9k-j23116-gibson-assembly.avif
 
 图3-构3 *pACYC–INPNC–Cel9K 的 Gibson Assembly 构建策略*。
 
@@ -402,7 +402,7 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 片段扩增与组装过程以凝胶电泳跟踪：
 
-![0924-pACYC-R1](./images%20of%20wetlabDBTL/0924-pACYC-R1.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/0924-pacyc-r1.avif
 
 图3.1-1 一轮 PCR 电泳
 
@@ -440,7 +440,7 @@ Empty-vector transformants 能够形成 colonies，则说明MG1655 可以接受�
 
 以三个 assembly products 为 PCR templates，可以分别获得预期大小的 expression-cassette bands。
 
-![pACYCD-assembly](./images%20of%20wetlabDBTL/pACYCD-assembly.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacycd-assembly.avif
 
 图3.3-1 以三个新 assembly products 为模板的 PCR 电泳结果
 
@@ -485,13 +485,12 @@ cargo 暂时以 **GFP** 作为小分子量报告 cargo，先单独验证测试�
 
 我们在 pACYCDuet-1 骨架上重新构建诱导型表达系统，并以 **GFP** 作为报告 cargo。通过 PCR 分别获得带有 **Ptac-lacO 调控区域、GFP 表达盒及 rrnB T1 terminator** 的目标片段和线性化载体骨架，随后利用 Gibson Assembly 完成 **pACYC-Ptac-GFP** 的组装。
 
-![pACYCD-GFP Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCD-GFP-Gibson-assembly.png)
-
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacycd-gfp-gibson-assembly.avif
 图5-构1 DBTL B5 报告系统的构建策略
 
 与 GFP 报告系统同时进行的是，我们还用同一启动子策略，回到纤维素酶 cargo，构建了 pACYCDuet-1–Ptac–INPNC–Cel9K：
 
-![pACYCDuet-1–Ptac–INPNC–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel9K-Gibson-assembly.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacycduet-1-cel9k-gibson-assembly.avif
 
 图5-构2 pACYCDuet-1–Ptac–INPNC–Cel9K（7290 bp）的构建策略
 
@@ -499,25 +498,24 @@ cargo 暂时以 **GFP** 作为小分子量报告 cargo，先单独验证测试�
 
 GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产物均以凝胶电泳确认。
 
-![1002-GFP-R1](./images%20of%20wetlabDBTL/1002-GFP-R1.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1002-gfp-r1.avif
 
 图5.1-1 GFP PCR 第一轮
 
-![1003-GFP-R2](./images%20of%20wetlabDBTL/1003-GFP-R2.png)
-
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1003-gfp-r2.avif
 图5.1-2 pACYCDuet第一轮和GFP第二轮
 
-![1003-GFP-pACYCD-R2](./images%20of%20wetlabDBTL/1003-GFP-pACYCD-R2.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1003-gfp-pacycd-r2.avif
 
 图5.1-3 pACYCD 第二轮 PCR
 
 通过PCR成功得到各条带之后我们进行gibson assembly。将重组产物转化至 *E. coli* MG1655，并在未加入诱导剂的条件下筛选转化子。
 
-![pACYC-GFP-Colony](./images%20of%20wetlabDBTL/pACYC-GFP-Colony.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacyc-gfp-colony.avif
 
 pACYC-Ptac-GFP平板得到了单个候选克隆
 
-![B5-Ptac-Cel9K](./images%20of%20wetlabDBTL/B5-Ptac-Cel9K.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/b5-ptac-cel9k.avif
 
 pACYC-Ptac-GFP平板没有得到克隆
 
@@ -541,7 +539,7 @@ pACYC-Ptac-GFP平板没有得到克隆
 
 #### Test
 
-![1006-GFP-colony](./images%20of%20wetlabDBTL/1006-GFP-colony.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1006-gfp-colony-1792499672081-2.avif
 
 图5.2-2 MG1655菌落 GFP PCR
 
@@ -572,15 +570,15 @@ Colony PCR 进一步确认，Ptac-GFP 候选菌落确实携带正确的重组 co
 2. **Lpp-OmpA–6×His–Linker fragment**：作为新的 surface-display anchor；
 3. **Cellulase–terminator fragment**：分别使用 Cel9K 或 Cel48S，并保留 rrnB T1 terminator。
 
-![image-20261020181107154](./images%20of%20wetlabDBTL/image-20261020181107154.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/image-20261020181107154.avif
 
 *Construction of pACYCDuet-1–Ptac–Lpp-OmpA–Cel9K.*
 
-![image-20261020181135192](./images%20of%20wetlabDBTL/image-20261020181135192.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/image-20261020181135192.avif
 
 *Construction of pACYCDuet-1–Ptac–Lpp-OmpA–Cel48S.*
 
-![image-20261020181252560](./images%20of%20wetlabDBTL/image-20261020181252560.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/image-20261020181252560.avif
 
 *Construction of pACYCDuet-1–Ptac–Lpp-OmpA–Cel5L.*
 
