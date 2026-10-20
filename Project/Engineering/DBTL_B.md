@@ -442,112 +442,19 @@ Empty-vector transformants 能够形成 colonies，则说明MG1655 可以接受�
 
 图3.3-1 以三个新 assembly products 为模板的 PCR 电泳结果
 
-目标 structures 在 transformation 前的 assembly mixtures 中仍然可以被检测到。
+目标 structures 在 transformation 前的 assembly mixtures 中仍然可以被检测到。三个gibson构建组均获得了预期大小的 PCR 条带。
 
 ---
 
 #### Learn
 
-这一结果与前面所有 controls 结合后，使 failure 的范围进一步缩小。
+PCR 结果表明，组装反应中存在可扩增的目标表达盒结构，至少我们的组装是有完整重组质粒的产生的。
 
-目前我们已经观察到：
+我们的指导老师Tim老师给我们提出建议，他建议我们可以用已知的较小分子量蛋白测试我们的组装方案本身会不会造成抗性基因的失效。
 
-**WT + chloramphenicol**
+同时我们查阅文献也发现，表面展示系统大多数的表达方式都是诱导型，组成型表达方式是未经验证的表面展示蛋白表达方式，也有可能会造成宿主毒性从而导致转化失败。
 
-→ no growth
-
-说明 selection 有效。
-
-**Empty pACYC + chloramphenicol**
-
-→ colonies
-
-说明 host、transformation 和 backbone 可以工作。
-
-**pACYC + INPNC-cellulase**
-
-→ no colonies
-
-说明 failure 与目标 construct 的加入相关。
-
-与此同时：
-
-**assembly-product PCR**
-
-→ expected bands
-
-说明目标 DNA arrangement 至少存在于 assembly reaction 中。
-
-当然，assembly PCR 仍然不能严格证明最终已经形成完整、无突变、可复制的 circular recombinant plasmid。
-
-因此，我们还不能单凭这些结果宣称：
-
-**INPNC expression definitely causes toxicity。**
-
-但是，与最开始相比，问题已经被明显缩小。
-
-三个不同的 cellulase constructs 都出现相似 failure，而它们共享非常相似的：
-
-- promoter/RBS architecture；
-- INPNC membrane-display module；
-- fusion strategy；
-- expression architecture。
-
-因此，一个比“连续三个独立 cloning failure”更加值得下一轮测试的共同假设是：
-
-> **the shared INPNC-cellulase expression architecture may impose a strong cellular burden, potentially related to membrane-protein expression or fusion-protein toxicity.**
-
-我们的工程问题由此发生改变。
-
-最初的问题是：
-
-> **Why can we not obtain the correct plasmid?**
-
-现在的问题变成了：
-
-> **Can the cells tolerate our current surface-display architecture?**
-
----
-
-## DBTL B4 Redesigning the surface-display architecture
-
-### Design
-
-经过前三轮 DBTL，我们认为继续简单重复相同的 transformation 已经无法带来更多信息。
-
-如果 failure 确实与 expression burden 有关，那么下一轮设计必须主动改变表达结构，而不是重复原来的 cloning procedure。
-
-因此，下一步将围绕两个问题展开：
-
-#### Which component causes the burden?
-
-可以进一步拆分完整 construct，例如分别测试：
-
-- INPNC-only；
-- cellulase without INPNC display；
-- complete INPNC-cellulase fusion。
-
-通过比较这些 constructs 的 transformation 和 growth phenotype，可以进一步判断 failure 更可能来自：
-
-**INPNC membrane localization**
-
-还是
-
-**cellulase expression**
-
-还是
-
-**the complete fusion architecture。**
-
-#### Can another surface-display platform improve host tolerance?
-
-INPNC 并不是唯一可能的 outer-membrane display strategy。
-
-因此，我们计划进一步比较其他 surface-display anchors，例如 Lpp-OmpA。
-
-如果 alternative anchor 能够稳定获得 transformants，则可以进一步验证：
-
-**surface-display scaffold selection itself may be one of the key design variables。**
+因此，下一轮将组成型启动子尝试调整为诱导型启动子控制表达，并且使用GFP测试我们的组装流程是否会存在破坏质粒抗性基因的问题。
 
 ---
 
@@ -555,25 +462,9 @@ INPNC 并不是唯一可能的 outer-membrane display strategy。
 
 ### Overview
 
-DBTL B3 结束时，证据链已经收窄为一个清晰的模式：
+为了验证我们的猜想。即由组成型表达方式 J23116有可能会造成宿主毒性从而导致转化失败。我们将其更换为可诱导的 **Ptac-lacO**。如果负担与组成型持续高表达有关，诱导型表达可以把目标蛋白的表达限定在特定时段，降低宿主压力；
 
-- WT + chloramphenicol → no growth（selection 有效）；
-- empty pACYC + chloramphenicol → colonies（宿主可转化、骨架可维持）；
-- pACYC + INPNC-cellulase → no colonies（failure 与目标 construct 的加入相关）；
-- assembly-product PCR → expected bands（目标 DNA arrangement 存在于 assembly mixture 中）。
-
-DBTL B4 据此提出：下一轮设计必须主动改变表达结构，而不是重复原来的 cloning procedure，并给出两个方向——拆分 construct 定位负担来源，以及比较备选锚定元件。
-
-本轮（B5）沿着同一假设实施了互补的两项改变：
-
-1. **启动子类型**：由组成型 J23116 更换为可诱导的 **Ptac-lacO**。如果负担与组成型持续高表达有关，诱导型表达可以把目标蛋白的表达限定在特定时段，降低宿主压力；
-2. **cargo 大小**：以 **GFP** 作为小分子量报告 cargo，先单独验证“锚定 + 展示”系统本身，再回到大型纤维素酶。
-
-这一组合同时覆盖了 B4 拆分实验的两端：GFP–INPNC 既是“小 cargo + 锚定模块”的拆分测试，也是诱导型启动子的承载平台。
-
-由此，本轮的工程问题变为：
-
-> **在诱导型表达 + 小分子量 cargo 的条件下，表面展示系统能否被细胞接受？**
+cargo 暂时以 **GFP** 作为小分子量报告 cargo，先单独验证测试我们的组装方案本身会不会造成抗性基因的失效，再回到大型纤维素酶。
 
 ### Cycle 1｜Redesigning the expression architecture: inducible promoter and GFP cargo
 
@@ -587,57 +478,37 @@ DBTL B4 据此提出：下一轮设计必须主动改变表达结构，而不是
 | cargo | Cel48S / Cel9K / Cel5L（1.4–3 kb 大型酶） | GFP（小分子量报告蛋白） |
 | 载体 | pCDF-1b（CloDF13 / SmR，已弃用） | pACYCDuet-1b（p15A / CmR） |
 
-我们据此设计了两条互补的构建路线：
-
-- **pACYCD-GFP（promoter swap 路线）**：保留 pACYCDuet-1b 骨架，将 GFP 置于 Ptac-lacO 调控之下，作为整个 redesign 的“探针”；
-- **pACYCDuet-1–Ptac–INPNC–CelX（cellulase 路线）**：同一启动子策略延伸回纤维素酶，与 GFP 系统共用线性化骨架与组装策略。其中 **Cel9K 的 Ptac 变体已与 Ptac-GFP 同期构建**（见下文 Build）；Cel5L / Cel48S 的 Ptac 变体则待 GFP 路线给出明确信号后再行推进。
-
-两条路线给出互补的判读：如果 GFP 路线能够稳定获得转化子，则说明锚定与转运模块可以工作，问题更可能集中在大型 cellulase cargo 本身；如果 GFP 同样无法获得转化子，则负担来源将指向 INPNC 膜定位或更上游的环节。
-
-启动子更换并非简单“换个元件”，而是针对 DBTL B3 证据链所指向的负担假设的正面回应：
-
-- **Ptac 的性质**：Ptac 为 trp 启动子 −35 区与 lacUV5 启动子 −10 区/operator 的杂合启动子（de Boer et al., 1983, PNAS），表达受 LacI 阻遏蛋白抑制、可被 IPTG 诱导，且表达量随 IPTG 浓度在数个数量级内可调；其强度约为天然 lac 的 2–3 倍、T7 系统的 1/3–1/5，属于中等强度。对本模块而言，可诱导性比绝对强度更重要。
-- **膜蛋白过表达的毒性机制**：文献中，膜蛋白（或分泌途径蛋白）过量表达的毒性主要源于 Sec translocon 饱和——分泌途径前体在细胞质中聚集、内源膜蛋白（包括呼吸链复合物）被竞争性排除、包膜完整性与能量代谢受损；且毒性与“每细胞过表达物质量”正相关，而与蛋白种类关系不大（Wagner et al., 2007, Mol Cell Proteomics；Wagner et al., 2008, PNAS）。因此，**降低并可控化表达量**本身就是对膜定位展示系统最直接的减负手段。
-- **时间解耦**：可诱导性还把“生长”与“产蛋白”在时间上解耦——细胞先长至足够密度，再承受展示结构的负担，这正是组成型 J23116 无法做到的。
-
-需要同时记录的限定：Ptac 存在泄漏表达（leaky expression），未加 IPTG 时仍有基础转录；若目标结构毒性强，后续可配合高拷贝 lacIq 菌株或 lacI 共表达进一步压低关闭态。
-
 #### Build
 
-按照设计，我们先在 SnapGene 中完成表达盒搭建与引物设计，再进行 PCR 扩增与 Gibson 组装。
-
-GFP 路线采用**两条分支、四轮 PCR**的策略：
-
-- **GFP 分支**：以 GFP 质粒（模板 2766 bp）为模板，PCR ①（GFP-F + GFP-R）获得 818 bp 的第一轮产物；由于模板没有完美引物，再以 PCR ②（GFP-Overlap-F/R）在两端分别接上 LacO-RBS（5′ 端）与 rrnB T1（3′ 端，与 Cel 系列相同）及同源臂，获得 Fragment A（878 bp）；
-- **载体分支**：以 pACYCDuet-1b 为模板，PCR ① 反向 PCR 线性化（pACYCD-F1 + pACYCD-Overlap-R1，去除 LacO 区，3′ 端保留部分 Ptac 序列与同源臂），获得 3679 bp 线性化骨架；PCR ②（pACYCD-Overlap-F1/R1）在 5′ 端补齐 rrnB T1 另一半序列与同源臂，获得 Fragment B（3746 bp）。
-
-两条分支的产物等摩尔混合，以 5 μL 2× CE Mix V3、ddH2O 补至 10 μL、37 ℃ 反应 30 min 的条件下进行 Gibson Assembly，获得 4586 bp 的环状 pACYCD-GFP。
+我们在 pACYCDuet-1 骨架上重新构建诱导型表达系统，并以 **GFP** 作为报告 cargo。通过 PCR 分别获得带有 **Ptac-lacO 调控区域、GFP 表达盒及 rrnB T1 terminator** 的目标片段和线性化载体骨架，随后利用 Gibson Assembly 完成 **pACYC-Ptac-GFP** 的组装。
 
 ![pACYCD-GFP Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCD-GFP-Gibson-assembly.png)
 
-图5-构1 DBTL B5 报告系统的构建策略：两条分支、四轮 PCR。GFP 分支经两轮 PCR 获得带同源臂的 GFP 表达盒 Fragment A（878 bp，5′ 端换为 LacO-RBS、3′ 端换为 rrnB T1）；载体分支经反向 PCR 线性化 + 第二轮补齐，获得 Fragment B（3746 bp）。两片段等摩尔组装为 4586 bp 的 pACYCD-GFP，图中红色末端为引物引入的 18–20 bp 同源臂。
+图5-构1 DBTL B5 报告系统的构建策略
 
-与 GFP 报告系统同期，我们还用同一启动子策略延伸回纤维素酶 cargo，构建了 pACYCDuet-1–Ptac–INPNC–Cel9K：
+与 GFP 报告系统同时进行的是，我们还用同一启动子策略，回到纤维素酶 cargo，构建了 pACYCDuet-1–Ptac–INPNC–Cel9K：
 
 ![pACYCDuet-1–Ptac–INPNC–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel9K-Gibson-assembly.png)
 
-图5-构2 pACYCDuet-1–Ptac–INPNC–Cel9K（7290 bp）的构建策略：与 GFP 系统共用反向 PCR 线性化骨架（3679 bp，LacO 区去除、Ptac 由引物引入）与 INPNC-Linker 片段（1126 bp，两轮 PCR 获得），第三片段为 Cel9K-Ter（2537 bp），三片段等摩尔一步组装。Ptac 受骨架上 lacI 编码的阻遏蛋白抑制，可用 IPTG 诱导。该构建与 Ptac-GFP 同期完成；转化后平板上未长出菌落（未获转化子，Cycle 11 记录），尚未获得生物学验证。
+图5-构2 pACYCDuet-1–Ptac–INPNC–Cel9K（7290 bp）的构建策略
 
 #### Test
 
 GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产物均以凝胶电泳确认。
 
-![](E:\Wet-lab\Git\1002-GFP-R1.png)
+![1002-GFP-R1](./images%20of%20wetlabDBTL/1002-GFP-R1.png)
 
 图5.1-1 GFP PCR 第一轮
 
-![](E:\Wet-lab\Git\1003-GFP-R2.png)
+![1003-GFP-R2](./images%20of%20wetlabDBTL/1003-GFP-R2.png)
 
 图5.1-2 pACYCDuet第一轮和GFP第二轮
 
-![](E:\Wet-lab\Git\1003-GFP-pACYCD-R2.png)
+![1003-GFP-pACYCD-R2](./images%20of%20wetlabDBTL/1003-GFP-pACYCD-R2.png)
 
 图5.1-3 pACYCD 第二轮 PCR
+
+通过PCR得到各条带之后我们进行gibson assembly。将重组产物转化至 *E. coli* MG1655，并在未加入诱导剂的条件下筛选转化子。
 
 #### Learn
 
@@ -657,11 +528,11 @@ GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产
 
 #### Test
 
-![](E:\Wet-lab\Git\1003-DH5a-GFP-colony.png)
+![1003-DH5a-GFP-colony](./images%20of%20wetlabDBTL/1003-DH5a-GFP-colony.png)
 
 图5.2-1 DH5α-GFP 菌落 PCR
 
-![](E:\Wet-lab\Git\1006-GFP-colony.png)
+![1006-GFP-colony](./images%20of%20wetlabDBTL/1006-GFP-colony.png)
 
 图5.2-2 MG1655菌落 GFP PCR
 
