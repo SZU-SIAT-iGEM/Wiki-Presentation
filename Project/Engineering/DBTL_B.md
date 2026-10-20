@@ -438,7 +438,7 @@ Empty-vector transformants 能够形成 colonies，则说明MG1655 可以接受�
 
 以三个 assembly products 为 PCR templates，可以分别获得预期大小的 expression-cassette bands。
 
-![](E:\Wet-lab\Git\pACYCD-assembly.png)
+![pACYCD-assembly](./images%20of%20wetlabDBTL/pACYCD-assembly.png)
 
 图3.3-1 以三个新 assembly products 为模板的 PCR 电泳结果
 
