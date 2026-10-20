@@ -14,11 +14,9 @@
 
 **DBTL B3** 使用 pACYC-based backbone 和 chloramphenicol selection 重新建立转化体系。WT 被有效抑制，empty vector 能够正常获得转化子，但三个 INPNC-cellulase constructs 仍未形成可靠菌落；与此同时，assembly PCR 仍可检测到正确的目标结构，使问题进一步集中到 **INPNC-cellulase expression cassette 本身**。
 
-**DBTL B4** 基于上述结果重新审视表达架构。我们开始考虑持续组成型表达可能增加宿主负担，同时也意识到需要通过更简单的 cargo 对现有组装体系进行独立验证，因此决定引入诱导型表达和 GFP reporter。
+**DBTL B4** 基于上述结果重新审视表达架构。我们开始考虑持续组成型表达可能增加宿主负担，同时也意识到需要通过更简单的 cargo 对现有组装体系进行独立验证，因此决定引入诱导型表达和 GFP reporter，构建了 **Ptac-GFP** 和 **Ptac-INPNC-Cel9K**。Ptac-GFP 获得了候选菌落，并经 colony PCR 验证为正确重组子，而 Ptac-INPNC-Cel9K 仍未获得转化子。这一结果说明，当前 pACYC-based cloning 和 chloramphenicol selection 本身能够获得正确重组质粒，而仅将 J23116 替换为 Ptac-lacO 并不足以解决 INPNC-cellulase 构建失败的问题。
 
-**DBTL B5** 同期构建 **Ptac-GFP** 和 **Ptac-INPNC-Cel9K**。Ptac-GFP 获得了候选菌落，并经 colony PCR 验证为正确重组子，而 Ptac-INPNC-Cel9K 仍未获得转化子。这一结果说明，当前 pACYC-based cloning 和 chloramphenicol selection 本身能够获得正确重组质粒，而仅将 J23116 替换为 Ptac-lacO 并不足以解决 INPNC-cellulase 构建失败的问题。
-
-结合 Human Practices 访谈中关于 **anchor–passenger compatibility** 的反馈，我们进一步认识到，不同表面展示锚定系统与 passenger protein 之间可能存在不同的适配性，没有绝对的规则能够预测乘客蛋白究竟和哪一个系统适配。因此，**DBTL B6** 不再继续围绕 INPNC 进行重复尝试，而是引入另一种经典外膜展示系统 **Lpp-OmpA**，并设计 Ptac-Lpp-OmpA-Cel9K 和 Ptac-Lpp-OmpA-Cel48S 作为下一轮候选构建。
+结合 Human Practices 访谈中关于 **anchor–passenger compatibility** 的反馈，我们进一步认识到，不同表面展示锚定系统与 passenger protein 之间可能存在不同的适配性，没有绝对的规则能够预测乘客蛋白究竟和哪一个系统适配。因此，**DBTL B5 不再继续围绕 INPNC 进行重复尝试，而是引入另一种经典外膜展示系统 **Lpp-OmpA，并设计 Ptac-Lpp-OmpA-Cel9K、Ptac-Lpp-OmpA-Cel5L 和 Ptac-Lpp-OmpA-Cel48S 作为下一轮候选构建。
 
 通过这些连续的 DBTL cycles，我们逐步将问题从最初笼统的“表面展示质粒构建失败”，收窄到 **特定 surface-display fusion architecture 与 cellulase cargo 的兼容性问题**。这一过程也使后续工程方向从单纯重复 cloning，转变为有依据地比较不同表达调控和锚定系统。
 
@@ -222,6 +220,8 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/cmc-round1
 
 此后，我们用标准化条件对该表型检测进行了一次重复，以检验第一轮观察到的弱信号是否可靠。第二轮重复实验中，对照菌株生长良好，而候选工程菌生长较弱，染色后仍未观察到可判读的水解圈。
 
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/b1-4-2.avif
+
 重复结果显示：对照组生长良好，而工程菌生长明显更弱；染色后背景整体呈红色，仍未形成可判读的清晰水解圈。**第一轮观察到的微弱信号未能在重复实验中得到确认。**
 
 #### Learn
@@ -380,7 +380,7 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 ### Build
 
-我们重新设计引物，利用 PCR 和 Gibson Assembly，在 pACYCDuet-1b 载体上分别构建了三个由 J23116 驱动的 INPNC–cellulase 表达质粒。
+我们重新设计引物，利用 PCR 和 Gibson Assembly，在 pACYC-based plasmid 载体上分别构建了三个由 J23116 驱动的 INPNC–cellulase 表达质粒。
 
 三个 pACYC 重建质粒的构建策略如下。三者共用同一线性化骨架与 INPNC-Linker 锚定模块，**启动子也完全相同**，仅 cargo 不同。
 
@@ -405,8 +405,6 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacycduet-
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/0924-pacyc-r1.avif
 
 图3.1-1 一轮 PCR 电泳
-
-
 
 实验结果首先在两个 control groups 中表现出了非常清晰的差异。
 
@@ -460,7 +458,7 @@ PCR 结果表明，组装反应中存在可扩增的目标表达盒结构，至�
 
 ---
 
-## DBTL B5 Testing an inducible architecture with a GFP reporter
+## DBTL B4 Testing an inducible architecture with a GFP reporter
 
 ### Overview
 
@@ -515,11 +513,11 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1003-gfp-p
 
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacyc-gfp-colony.avif
 
-pACYC-Ptac-GFP平板得到了单个候选克隆
+pACYC-Ptac-GFP 平板得到了单个候选克隆
 
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/b5-ptac-cel9k.avif
 
-pACYC-Ptac-GFP平板没有得到克隆
+pACYC-Ptac-Cel9K 平板没有得到克隆
 
 #### Learn
 
@@ -553,24 +551,25 @@ Colony PCR 进一步确认，Ptac-GFP 候选菌落确实携带正确的重组 co
 
 在与中国科学院深圳先进技术研究院的易啸老师的 Human Practices 访谈中，我们进一步了解到，不同surface-display anchor 与 不同的passenger protein 之间的适配性不同。对于我们的纤维素酶来说，INPNC并一定是最优锚定系统，他建议我们多测试不同的表面展示系统和纤维素酶的组合，并且与我们分享了他的经验，即Lpp-OmpA系统的鲁棒性比较强，有可能更好兼容我们的纤维素酶。因此，我们下一轮的设计中引入另一种经典外膜展示系统 **Lpp-OmpA**，重新测试其与 cellulase cargo 的兼容性。
 
-## DBTL B6 Redesigning the surface-display system with Lpp-OmpA
+## DBTL B5 Redesigning the surface-display system with Lpp-OmpA
 
 ### Design
 
 本轮我们参考HP访谈的建议，将设计修改如下：**保持诱导型表达策略和 pACYC-based backbone 不变，将表面展示锚定模块由 INPNC 更换为 Lpp-OmpA。**这样的设计我们考虑到可以尽量减少同时改变的变量，以便我们能够更直接地比较不同 anchor 与 cellulase cargo 的适配性。
 
-我们设计了以下两个候选 constructs：
+我们设计了以下3个候选 constructs：
 
 | Construct                | Planned expression cassette                        |
 | ------------------------ | -------------------------------------------------- |
 | **Ptac-Lpp-OmpA-Cel9K**  | Ptac-lacO–RBS–Lpp-OmpA–6×His–Linker–Cel9K–rrnB T1  |
 | **Ptac-Lpp-OmpA-Cel48S** | Ptac-lacO–RBS–Lpp-OmpA–6×His–Linker–Cel48S–rrnB T1 |
+| **Ptac-Lpp-OmpA-Cel5L**  | Ptac-lacO–RBS–Lpp-OmpA–6×His–Linker–Cel5L–rrnB T1  |
 
 构建策略采用三个 PCR fragments 进行 Gibson Assembly：
 
 1. **Linearised pACYCDuet-1 backbone**：保留 p15A ori、CmR 和 lacI，并在连接区域引入 Ptac-lacO 相关序列；
 2. **Lpp-OmpA–6×His–Linker fragment**：作为新的 surface-display anchor；
-3. **Cellulase–terminator fragment**：分别使用 Cel9K 或 Cel48S，并保留 rrnB T1 terminator。
+3. **Cellulase–terminator fragment**：分别使用 Cel9K 、Cel48S和Cel5L，并保留 rrnB T1 terminator。
 
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/image-20261020181107154.avif
 
