@@ -506,13 +506,15 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 ![pACYCDuet-1–INPNC–Cel5L Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel5L-Gibson-assembly.png)
 
-图3-构1 pACYCDuet-1–INPNC–Cel5L（6654 bp）的构建策略：反向 PCR 线性化 pACYCDuet-1b（3679 bp，去除 LacO 区）+ INPNC-Linker（1126 bp，两轮 PCR 获得）+ Cel5L-Ter（1901 bp，Δdockerin、密码子优化）三片段等摩尔一步组装。
+图3-构1 pACYCDuet-1–**J23116**–INPNC–Cel5L（6654 bp）的构建策略：反向 PCR 线性化 pACYCDuet-1b（MCS1 多克隆位点替换为 J23116 表达盒，保留骨架 4013 bp）+ J23116–RBS–TorA–INPNC–6×His–Linker（1286 bp，两轮 PCR 获得）+ Cel5L–rrnB T1（1380 bp，Δdockerin、密码子优化）三片段等摩尔一步组装。
 
 ![pACYCDuet-1–INPNC–Cel48S Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel48S-Gibson-assembly.png)
 
-图3-构2 pACYCDuet-1–INPNC–Cel48S（7776 bp）的构建策略：与 Cel5L 相同的三片段策略，Cel48S-Ter 片段为 3023 bp，最终质粒 7776 bp，是本模块最大的构建体。
+图3-构2 pACYCDuet-1–**J23116**–INPNC–Cel48S（7776 bp）的构建策略：与 Cel5L 相同的三片段策略，Cel48S–rrnB T1 片段为 2502 bp，最终质粒 7776 bp，是本模块最大的构建体。
 
-第三个构建 pACYCDuet-1–INPNC–Cel9K 与另外两个完全相同：同一启动子、同一线性化骨架与 INPNC-Linker 锚定模块，仅第三片段更换为 Cel9K-Ter。其专用构建示意图尚未绘制，暂以本段文字说明 [示意图待补充]。
+![pACYCDuet-1–J23116–INPNC–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel9K-J23116-Gibson-assembly.png)
+
+图3-构3 pACYCDuet-1–**J23116**–INPNC–Cel9K（7776 bp）的构建策略：与 Cel5L / Cel48S 完全相同——同一启动子（J23116）、同一线性化骨架与 INPNC-Linker 锚定模块，仅第三片段更换为 Cel9K–rrnB T1（2502 bp）。
 
 随后分别完成：
 
@@ -802,7 +804,7 @@ GFP 路线采用**两条分支、四轮 PCR**的策略：
 
 ![pACYCDuet-1–Ptac–INPNC–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel9K-Gibson-assembly.png)
 
-图5-构2 pACYCDuet-1–Ptac–INPNC–Cel9K（7290 bp）的构建策略：与 GFP 系统共用反向 PCR 线性化骨架（3679 bp，LacO 区去除、Ptac 保留）与 INPNC-Linker 片段（1126 bp，两轮 PCR 获得），第三片段为 Cel9K-Ter（2537 bp），三片段等摩尔一步组装。该构建与 Ptac-GFP 同期完成，其转化与验证记录暂缺 [待补充]。
+图5-构2 pACYCDuet-1–Ptac–INPNC–Cel9K（7290 bp）的构建策略：与 GFP 系统共用反向 PCR 线性化骨架（3679 bp，LacO 区去除、Ptac 由引物引入）与 INPNC-Linker 片段（1126 bp，两轮 PCR 获得），第三片段为 Cel9K-Ter（2537 bp），三片段等摩尔一步组装。Ptac 受骨架上 lacI 编码的阻遏蛋白抑制，可用 IPTG 诱导。该构建与 Ptac-GFP 同期完成；转化后平板上未长出菌落（未获转化子，Cycle 11 记录），尚未获得生物学验证。
 
 #### Test
 
