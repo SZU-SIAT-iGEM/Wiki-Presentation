@@ -122,47 +122,51 @@ PCR 与测序结果显示，CP12CHB 的编辑区域与设计序列一致。在�
 
 ---
 
-## Result 5 — Soft Agar Migration Assay
+## Result 5 — Soft Agar Migration Assessment of CP-chb Strains
 
 ### Goal
 
-检验 CP 系列工程菌在纤维二糖条件下是否出现与 WT 不同的迁移扩展表型，并探索这些变化能否为趋化响应提供证据。
+评估 CP 系列工程菌在纤维二糖条件下的群体迁移表现，探索纤维二糖浓度变化是否引起与 WT 不同的扩展表型，并初步观察 RPM 模拟微重力培养条件下的迁移变化。
 
 ### Method
 
-先对 CP12CHB 进行初步软琼脂测试，随后扩展至 CP6、CP7、CP12、CP25、CP30、CP44 和 WT。调整前培养条件后，采用含 1% 胰蛋白胨和 0.35% 琼脂的平板，分别设置纤维二糖、葡萄糖及无额外添加糖条件，观察菌斑形成与扩展情况。
+采用含 1% 胰蛋白胨和 0.35% 琼脂的软琼脂体系，对 CP6、CP7、CP12、CP25、CP30、CP44 及 WT MG1655 进行多点接种。
+
+第一轮比较 10 mM 纤维二糖、10 mM 葡萄糖及无额外糖添加条件。第二轮增加 1 mM 纤维二糖，并设置 L-天冬氨酸和葡萄糖阳性参照，同时比较地面静置与 RPM 培养条件下的菌斑扩展表现。
 
 ### result
 
-初步实验未观察到 CP12CHB 明显增强的纤维二糖迁移表型。后续 CP 系列实验中，部分工程菌在纤维二糖条件下形成了比 WT 或无额外添加糖条件更明显的局部菌斑。
+**1. Cellobiose supplementation altered colony expansion**
 
-然而，无额外添加糖的平板同样支持一定程度的菌斑形成；葡萄糖组出现大面积浑浊，未能获得可独立判读的迁移边界。
+第一轮实验中，CP12、CP30 和 CP44 在添加 10 mM 纤维二糖后形成了比无糖组更大的可见菌斑，而其他菌株的变化相对不明确。
 
-**[Figure 8. Soft agar migration phenotypes of CP-chb strains]**
+葡萄糖组出现明显的异常浑浊，未能获得可靠的迁移圈判读结果。
 
-*待插入：CP 系列不同碳源条件下的软琼脂平板照片。*
+这一现象提示，纤维二糖添加能够影响部分工程菌的局部生长或群体扩展，但无法区分生长与趋化的贡献。
 
-这些观察表明，部分 CP 工程菌在纤维二糖条件下具有不同的局部生长或迁移扩展表现。但纤维二糖同时是碳源和潜在趋化信号，菌斑扩大无法直接归因于定向趋化。现有结果尚不足以证明 CP 工程菌具有明显增强的纤维二糖定向趋化能力。
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp-series.avif
 
----
+**2. Cellobiose concentration affected migration phenotypes**
 
-## Result 6 — RPM-based Soft Agar Assessment
+第二轮地面实验中，多数 CP 工程菌在 10 mM 纤维二糖条件下的可见菌斑小于 1 mM 条件。其中，CP12、CP7 和 CP25 的变化较为明显，CP44 也表现出一定的减小趋势；CP6 的差异不明显，CP30 则未表现出相同趋势。
 
-### Goal
+相比之下，WT 在 10 mM 纤维二糖条件下形成了更大的菌斑，与多数 CP 工程菌呈现相反的变化方向。
 
-比较 RPM 旋转处理与常规静置条件下的软琼脂表型，为 Friskoli 的微重力相关研究提供补充观察。
+L-天冬氨酸和葡萄糖参照组的部分接种点形成了较小菌斑，与已知吸引剂可能减缓软琼脂群体迁移的文献现象相容，但不能据此单独确认趋化响应。
 
-### Method
+![image-20261021024323345](./../../Project/Engineering/images%20of%20wetlabDBTL/image-20261021024323345.png)
 
-**[待补充：RPM 装置参数、实际测试菌株、平板条件、处理时间及静置对照设置。]**
+**3. Exploratory assessment under RPM exposure**
 
-### result
+在 RPM 培养条件下，保留的 10 mM 纤维二糖平板上，WT 与部分 CP 工程菌仍能形成可见菌斑。与地面静置组相比，多个菌株的扩展范围似乎减小。
 
-**[待补充：RPM 与对照组的实际平板结果及可支持的结论。]**
 
-**[Figure 9. Soft agar phenotypes under RPM treatment and stationary controls]**
 
-*待插入：RPM 实验照片及对照结果。RPM 处理不能直接等同于真实微重力环境，也不能单凭软琼脂表型证明液相弱传质被克服。*
+![image-20261021024340505](./../../Project/Engineering/images%20of%20wetlabDBTL/image-20261021024340505.png)
+
+两轮实验表明，CP 系列工程菌在不同纤维二糖浓度下表现出不同的群体扩展表型。其中，多数 CP 菌株在 10 mM 条件下的菌斑较 1 mM 条件减小，而 WT 呈现相反趋势。这一现象与吸引剂浓度可能影响软琼脂趋化迁移的假设相容。
+
+然而，软琼脂群体扩展同时受到生长、底物利用及运动行为影响，因此这些结果尚不足以确认 CP 系列具有纤维二糖正趋化能力。进一步验证需要在预设纤维二糖浓度梯度下直接测量细菌的定向运动。
 
 ---
 
