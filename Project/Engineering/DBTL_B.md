@@ -56,7 +56,7 @@
 
 考虑到同时表达三个大型融合蛋白可能给单株工程菌造成较大的表达负担，我们决定分别构建三株独立的工程菌，每株菌仅表达一种 cellulase，最终再以 microbial cocktail 的形式组合使用。
 
-在序列层面，我们对三种 cargo 进行了两项改造：
+在序列层面，我们对三种 cargo 进行了三项改造：
 
 - **删除 dockerin 结构域**：本系统不依赖天然纤维小体的 scaffoldin–dockerin 组装机制，三种纤维素酶中不再需要的 dockerin 结构域被删除，以减少融合蛋白的结构复杂度与分子量；
 
@@ -585,6 +585,53 @@ Empty-vector transformants 能够形成 colonies，则说明：
 
 ---
 
+### Cycle 4｜Designing an alternative anchor: the Lpp-OmpA swap（设计完成，尚未实施）
+
+#### Design
+
+在 B3 证据链把失败指向共享表达架构之后，我们准备了第二条独立的 rebuild 路线：**更换锚定元件**。如果负担来自 INPNC 膜定位或 TorA–Tat 转运，换用更小、更成熟的锚定元件本身就是最直接的检验。
+
+我们选定的替换元件是 Lpp-OmpA（BBa_K5487002）：E. coli 自源杂交锚（Lpp 信号肽 + 成熟 Lpp 前 9 个氨基酸 + OmpA 46–159 区域），乘客蛋白与 OmpA 片段 C 端融合、暴露于胞外（Francisco et al., 1992, PNAS）。与现行 INPNC 体系的对比：
+
+| 维度 | Lpp-OmpA（BBa_K5487002） | INPNC（现行体系） |
+| --- | --- | --- |
+| 锚定元件大小 | 435 bp（约 16 kDa） | TorA SP + INPNC 约 1080 bp（约 40 kDa） |
+| 来源 | E. coli 自源蛋白 | P. syringae 异源蛋白 |
+| 展示密度 | 约 6 × 10⁴ 拷贝/细胞 | 较低 |
+| 文献展示容量 | 最大约 70 kDa（有毒性报道） | 60 kDa 已验证，INP 类对大酶更友好 |
+| 纤维素酶展示先例 | 有（Cex，Francisco et al., 1993） | 本团队为首个尝试 |
+| 转运途径 | Sec（周质折叠后锚定） | TorA SP → Tat |
+
+选择它的理由：锚定元件缩小约 35 kDa，直接回应翻译负担；自源锚 + 文献最厚 + 有纤维素酶展示先例；且天然兼容 Ptac + IPTG 的诱导路线（同 DBTL B5 的启动子策略）。
+
+必须记录的风险：文献展示上限约 70 kDa，Cel9K（约 80 kDa）与 Cel48S（约 74 kDa）超出或处于临界，仅 Cel5L（约 48 kDa）在安全区间；Lpp-OmpA 过表达有膜扰动/溶菌报道；短柄近膜展示可能降低对结晶底物的空间可及性。
+
+**该路线已完整设计但尚未实施**，计划以 Cel5L 先行验证，并与 INPNC 对照、Ptac-GFP 报告同批检验（见 DBTL B4 / B5）。
+
+#### Build
+
+组装策略与 Ptac-GFP 同路线，最终表达盒为 **Ptac–Lac operator–RBS–Lpp-OmpA–Linker(6×His)–Cel(Δdockerin)–rrnB T1**：
+
+1. 片段1：pACYCDuet-1b 反向 PCR 线性化（去 LacO，引物引入部分 Ptac），3679 bp；
+2. 片段2：Lpp-OmpA–6×His·Linker（自 BBa_K5487002 扩增），约 620 bp；
+3. 片段3：CelX–rrnB T1（Cel5L 1380 bp / Cel48S 2502 bp / Cel9K 2502 bp）。
+
+三片段等摩尔、2× CE Mix V3、37 ℃ 30 min 一步 Gibson 组装，预期质粒约 5614 / 6736 / 6771 bp（估算值）。
+
+![pACYCDuet-1–Ptac–LppOmpA–Cel5L Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel5L-Gibson-assembly.png)
+
+图3.4-1 pACYCDuet-1–Ptac–LppOmpA–Cel5L 组装策略（约 5614 bp）
+
+![pACYCDuet-1–Ptac–LppOmpA–Cel48S Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel48S-Gibson-assembly.png)
+
+图3.4-2 pACYCDuet-1–Ptac–LppOmpA–Cel48S 组装策略（约 6736 bp）
+
+![pACYCDuet-1–Ptac–LppOmpA–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel9K-Gibson-assembly.png)
+
+图3.4-3 pACYCDuet-1–Ptac–LppOmpA–Cel9K 组装策略（约 6771 bp）
+
+---
+
 ## DBTL B4 Redesigning the surface-display architecture
 
 ### Design
@@ -619,7 +666,7 @@ Empty-vector transformants 能够形成 colonies，则说明：
 
 INPNC 并不是唯一可能的 outer-membrane display strategy。
 
-因此，我们计划进一步比较其他 surface-display anchors，例如 Lpp-OmpA。
+因此，我们计划进一步比较其他 surface-display anchors，例如 Lpp-OmpA（替换方案的具体设计与组装策略见 DBTL B3 Cycle 4，尚未实施）。
 
 如果 alternative anchor 能够稳定获得 transformants，则可以进一步验证：
 
