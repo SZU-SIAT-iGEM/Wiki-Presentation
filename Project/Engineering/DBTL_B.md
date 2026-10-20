@@ -2,23 +2,25 @@
 
 ## Overview
 
-为了使工程菌能够直接作用于固体纤维素底物，我们设计了基于 INPNC 的细胞表面展示系统，并计划分别将 Cel5L、Cel9K 和 Cel48S 展示于三株工程菌表面。
+为了使工程菌能够直接作用于固体纤维素底物，我们最初设计了基于 **INPNC** 的细胞表面展示系统，并计划分别将 **Cel5L、Cel9K 和 Cel48S** 展示于三株工程菌表面。
 
-整个构建过程主要经历了六个阶段。
+实际构建过程中，我们连续遇到了转化、筛选和表达架构相关的问题，因此整个路线逐步演化为一系列诊断与重设计循环。
 
-**DBTL B0** 聚焦于表面展示表达系统的设计决策——锚定元件、纤维素酶 cargo 与表达调控方式的选择。
+**DBTL B0** 聚焦于初始表面展示系统的设计，包括 INPNC 锚定元件、三种 cellulase cargo 以及组成型表达策略的选择。
 
-**DBTL B1** 聚焦于第一代表面展示系统的构建与验证。我们尝试使用 pCDF-based vector 构建三种 INPNC-cellulase 质粒，并通过基因型和功能表型两种方式判断工程菌是否构建成功。在 colony PCR 未获得阳性结果后，我们进一步对 assembly products 进行质粒 PCR，确认目标 DNA 结构已经成功组装，从而将问题指向转化与筛选环节。
+**DBTL B1** 构建第一代 pCDF-based INPNC-cellulase 系统。虽然 Gibson assembly products 中能够检测到目标 DNA 结构，但候选菌落的 colony PCR 和 CMC–Congo red assay 均未提供有效的阳性证据，使问题从单纯的组装失败转向转化与筛选过程。
 
-**DBTL B2** 聚焦于抗生素筛选体系。由于第一轮实验中出现了“选择平板有菌落，但无法验证目标构建”的矛盾现象，我们加入 WT 对照，并重新评估原有 SmR-based selection 是否能够真正筛选出转化子。
+**DBTL B2** 重新评估原有 SmR-based selection system。WT 在 streptomycin、spectinomycin 及两者联合条件下均能够生长，说明原有筛选体系无法可靠区分 transformants 与未转化细胞，因此这一筛选策略被弃用。
 
-**DBTL B3** 聚焦于重新建立可靠的转化与筛选体系。我们更换为 pACYC-based chloramphenicol selection system，并通过 WT、empty vector 和三个 INPNC-cellulase constructs 的对照逐步判断问题发生在哪一个环节。
+**DBTL B3** 使用 pACYC-based backbone 和 chloramphenicol selection 重新建立转化体系。WT 被有效抑制，empty vector 能够正常获得转化子，但三个 INPNC-cellulase constructs 仍未形成可靠菌落；与此同时，assembly PCR 仍可检测到正确的目标结构，使问题进一步集中到 **INPNC-cellulase expression cassette 本身**。
 
-**DBTL B4** 聚焦于重新设计表面展示架构。在前三轮把问题收窄到表达架构之后，我们提出下一轮必须主动改变表达结构，而不是重复原来的 cloning procedure，并给出两个方向：拆分 construct 定位负担来源，以及比较备选锚定元件。
+**DBTL B4** 基于上述结果重新审视表达架构。我们开始考虑持续组成型表达可能增加宿主负担，同时也意识到需要通过更简单的 cargo 对现有组装体系进行独立验证，因此决定引入诱导型表达和 GFP reporter。
 
-**DBTL B5** 沿着同一假设实施了互补的两项改变：将组成型启动子 J23116 更换为可诱导的 Ptac-lacO，并以 GFP 作为小分子量报告 cargo 先单独验证展示系统本身；同一启动子策略也同期延伸至 Cel9K（Ptac-Cel9K）。
+**DBTL B5** 同期构建 **Ptac-GFP** 和 **Ptac-INPNC-Cel9K**。Ptac-GFP 获得了候选菌落，并经 colony PCR 验证为正确重组子，而 Ptac-INPNC-Cel9K 仍未获得转化子。这一结果说明，当前 pACYC-based cloning 和 chloramphenicol selection 本身能够获得正确重组质粒，而仅将 J23116 替换为 Ptac-lacO 并不足以解决 INPNC-cellulase 构建失败的问题。
 
-这些连续的 DBTL cycles 使我们逐渐将问题从笼统的“质粒构建失败”，缩小到目标表面展示表达结构本身可能带来的细胞负担；而 B4 / B5 进一步把问题转变为“在改变表达结构的前提下，细胞能否接受表面展示系统”。
+结合 Human Practices 访谈中关于 **anchor–passenger compatibility** 的反馈，我们进一步认识到，不同表面展示锚定系统与 passenger protein 之间可能存在明显的组合依赖性。因此，**DBTL B6** 不再继续围绕 INPNC 进行重复尝试，而是引入另一种经典外膜展示系统 **Lpp-OmpA**，并设计 Ptac-Lpp-OmpA-Cel9K 和 Ptac-Lpp-OmpA-Cel48S 作为下一轮候选构建。
+
+通过这些连续的 DBTL cycles，我们逐步将问题从最初笼统的“表面展示质粒构建失败”，收窄到 **特定 surface-display fusion architecture 与 cellulase cargo 的兼容性问题**。这一过程也使后续工程方向从单纯重复 cloning，转变为有依据地比较不同表达调控和锚定系统。
 
 ---
 
@@ -466,17 +468,18 @@ PCR 结果表明，组装反应中存在可扩增的目标表达盒结构，至�
 
 cargo 暂时以 **GFP** 作为小分子量报告 cargo，先单独验证测试我们的组装方案本身会不会造成抗性基因的失效，再回到大型纤维素酶。
 
-### Cycle 1｜Redesigning the expression architecture: inducible promoter and GFP cargo
+### Cycle 1｜Redesigning the expression architecture
 
 #### Design
 
-本轮同时改变两个变量，使它们各自的作用可以在后续实验中被区分：
+我们将两个 constructs 置于相同的 **Ptac-lacO inducible architecture** 下，但使用不同 cargo。
 
-| 变量 | 第一代（DBTL B1） | 本轮（DBTL B5） |
-| --- | --- | --- |
-| 启动子 | 组成型 J23116 | 诱导型 Ptac-lacO |
-| cargo | Cel48S / Cel9K / Cel5L（1.4–3 kb 大型酶） | GFP（小分子量报告蛋白） |
-| 载体 | pCDF-1b（CloDF13 / SmR，已弃用） | pACYCDuet-1b（p15A / CmR） |
+| Construct            | Cargo       | Purpose                                                      |
+| -------------------- | ----------- | ------------------------------------------------------------ |
+| **Ptac-GFP**         | GFP         | 测试新的载体与组装架构是否能够获得稳定转化子                 |
+| **Ptac-INPNC-Cel9K** | INPNC-Cel9K | 测试降低转化阶段的持续表达后，大型表面展示融合蛋白能否被宿主接受 |
+
+如果两个 constructs 均能够获得克隆，则说明诱导型调控可能缓解了此前的构建问题。
 
 #### Build
 
@@ -508,15 +511,25 @@ GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产
 
 图5.1-3 pACYCD 第二轮 PCR
 
-通过PCR得到各条带之后我们进行gibson assembly。将重组产物转化至 *E. coli* MG1655，并在未加入诱导剂的条件下筛选转化子。
+通过PCR成功得到各条带之后我们进行gibson assembly。将重组产物转化至 *E. coli* MG1655，并在未加入诱导剂的条件下筛选转化子。
+
+![pACYC-GFP-Colony](./images%20of%20wetlabDBTL/pACYC-GFP-Colony.png)
+
+pACYC-Ptac-GFP平板得到了单个候选克隆
+
+![B5-Ptac-Cel9K](./images%20of%20wetlabDBTL/B5-Ptac-Cel9K.png)
+
+pACYC-Ptac-GFP平板没有得到克隆
 
 #### Learn
 
-多轮 PCR 与两轮补接同源臂的策略，与第一代构建中解决重复区段非特异扩增的方法（SDX-05）一脉相承：**当模板或引物不理想时，用两轮 PCR 逐步补齐序列与同源臂，比一次性设计长引物更可靠**。这一经验随后被写入引物设计流程（P09）。
+在相同的 Ptac-lacO 调控背景下，GFP 构建能够获得候选克隆，而 Ptac-INPNC-Cel9K 仍未获得转化子。
 
-需要说明的是，本轮各凝胶的逐泳道判读（哪些泳道为预期大小的目的条带）尚未在原始记录中标注，正式发布前需核对后补充 [待确认]。
+这一结果说明，**仅将 J23116 更换为诱导型 Ptac-lacO 并不足以恢复 INPNC-Cel9K 构建**。因此，此前的失败不能简单归因于组成型表达方式。
 
-### Cycle 2｜Verifying the GFP constructs at the colony level
+与此同时，GFP 构建能够形成 colony，提示新的 pACYC-based assembly architecture 至少具有获得重组转化子的可能性。为了确认该 colony 是否真正携带正确的 GFP construct，而不是筛选过程中产生的假阳性，我们在下一轮对其进行 colony PCR 验证。
+
+### Cycle 2｜对GFPcolony验证插入情况
 
 #### Design
 
@@ -524,13 +537,9 @@ GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产
 
 #### Build
 
-将 pACYCD-GFP 组装产物转化至克隆宿主（DH5α）与出发宿主（MG1655），挑取单菌落进行菌落 PCR。
+将 pACYCD-GFP平板上的菌株挑取单菌落进行菌落 PCR。
 
 #### Test
-
-![1003-DH5a-GFP-colony](./images%20of%20wetlabDBTL/1003-DH5a-GFP-colony.png)
-
-图5.2-1 DH5α-GFP 菌落 PCR
 
 ![1006-GFP-colony](./images%20of%20wetlabDBTL/1006-GFP-colony.png)
 
@@ -538,19 +547,43 @@ GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产
 
 #### Learn
 
-至此，GFP 报告系列的**构建与菌落级验证已经开展**（2026.9.29–10.6）。但从证据链的角度，本轮尚未闭合：
+Colony PCR 进一步确认，Ptac-GFP 候选菌落确实携带正确的重组 construct。该结果说明，在当前 **pACYC-based backbone、chloramphenicol selection 和 Gibson Assembly strategy** 下，目标重组质粒可以被正确组装、转化并稳定保留，因此此前 INPNC-cellulase 构建连续失败不能简单归因于组装流程或抗性基因失效。
 
-1. **菌落 PCR 的判读待确认**——各泳道是否出现预期条带、哪些菌落被判定为阳性，需核对原始记录后才能写入结论；
-2. **功能验证尚未开展**——GFP 路线更直接的价值在于报告“展示是否发生”（荧光观察 / 表面定位检测），该部分尚无记录；
-3. **与 B4 拆分计划的关系待理顺**——GFP–INPNC 本质上是 B4 拆分实验（INPNC-only / cellulase-only / 完整融合）的一个实例，两条线应在下一轮合并呈现；
-4. **测序闭环仍未完成**——与 B3 结束时相同，assembly PCR 与菌落 PCR 均不能替代 Sanger 测序（P11），该闭环在本模块始终未完成。
+与此同时，**Ptac-GFP 可以获得正确转化子，而采用相同诱导型调控策略的 Ptac-INPNC-Cel9K 仍未获得 colony**。这说明，将 J23116 更换为 Ptac-lacO 并不足以解决 INPNC-cellulase 构建失败的问题，限制因素更可能与具体的 surface-display fusion architecture 有关。
 
-因此，本轮结束时我们的工程问题再次发生转变：
+在与中国科学院深圳先进技术研究院的易啸老师的 Human Practices 访谈中，我们进一步了解到，不同surface-display anchor 与 不同的passenger protein 之间的适配性不同。对于我们的纤维素酶来说，INPNC并一定是最优锚定系统，他建议我们多测试不同的表面展示系统和纤维素酶的组合，并且与我们分享了他的经验，即Lpp-OmpA系统的鲁棒性比较强，有可能更好兼容我们的纤维素酶。因此，我们下一轮的设计中引入另一种经典外膜展示系统 **Lpp-OmpA**，重新测试其与 cellulase cargo 的兼容性。
 
-> 由“细胞能否耐受组成型高表达的表面展示结构”，变为“**在诱导型表达 + 小分子量 cargo 的条件下，表面展示系统能否被细胞接受？**”
+## DBTL B6 Redesigning the surface-display system with Lpp-OmpA
 
-而回答这个问题，需要把 B5 的初步结果与 B4 的拆分实验（INPNC-only、cellulase-only、完整融合）合并到下一个 DBTL cycle 中系统推进。
+### Design
 
----
+本轮我们参考HP访谈的建议，将设计修改如下：**保持诱导型表达策略和 pACYC-based backbone 不变，将表面展示锚定模块由 INPNC 更换为 Lpp-OmpA。**这样的设计我们考虑到可以尽量减少同时改变的变量，以便我们能够更直接地比较不同 anchor 与 cellulase cargo 的适配性。
 
-> 注：本文图片存放于 `images of wetlabDBTL/` 目录，正式发布时需上传至 static.igem.wiki 并将本地路径替换为对应 URL。
+我们设计了以下两个候选 constructs：
+
+| Construct                | Planned expression cassette                        |
+| ------------------------ | -------------------------------------------------- |
+| **Ptac-Lpp-OmpA-Cel9K**  | Ptac-lacO–RBS–Lpp-OmpA–6×His–Linker–Cel9K–rrnB T1  |
+| **Ptac-Lpp-OmpA-Cel48S** | Ptac-lacO–RBS–Lpp-OmpA–6×His–Linker–Cel48S–rrnB T1 |
+
+构建策略采用三个 PCR fragments 进行 Gibson Assembly：
+
+1. **Linearised pACYCDuet-1 backbone**：保留 p15A ori、CmR 和 lacI，并在连接区域引入 Ptac-lacO 相关序列；
+2. **Lpp-OmpA–6×His–Linker fragment**：作为新的 surface-display anchor；
+3. **Cellulase–terminator fragment**：分别使用 Cel9K 或 Cel48S，并保留 rrnB T1 terminator。
+
+![image-20261020181107154](./images%20of%20wetlabDBTL/image-20261020181107154.png)
+
+*Construction of pACYCDuet-1–Ptac–Lpp-OmpA–Cel9K.*
+
+![image-20261020181135192](./images%20of%20wetlabDBTL/image-20261020181135192.png)
+
+*Construction of pACYCDuet-1–Ptac–Lpp-OmpA–Cel48S.*
+
+![image-20261020181252560](./images%20of%20wetlabDBTL/image-20261020181252560.png)
+
+*Construction of pACYCDuet-1–Ptac–Lpp-OmpA–Cel5L.*
+
+如果该设计能够在后续实验中获得稳定转化子，将进一步支持 **anchor-cargo compatibility** 是此前 INPNC-cellulase 构建失败的重要影响因素；如果仍然无法获得转化子，则需要继续考虑 cellulase cargo 本身、融合蛋白整体负担或其他结构因素。
+
+由于项目进入 Wiki 提交前的最后阶段，本轮设计尚未在截止前完成实际构建和实验验证。
