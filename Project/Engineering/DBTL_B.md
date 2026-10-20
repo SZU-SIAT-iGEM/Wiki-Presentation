@@ -494,13 +494,9 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 片段扩增与组装过程以凝胶电泳跟踪：
 
-![SD 组装产物（2026-09-11）](./images%20of%20wetlabDBTL/0911-SD-assembly.png)
+![](E:\Wet-lab\Git\0924-pACYC-R1.png)
 
-图3.1-1 SD 组装产物电泳
-
-![pACYC 一轮 PCR（2026-09-24）](./images%20of%20wetlabDBTL/0924-pACYC-R1.png)
-
-图3.1-2 pACYC 一轮 PCR 电泳
+图3.1-1 一轮 PCR 电泳
 
 三个 pACYC 重建质粒的构建策略如下。三者共用同一线性化骨架与 INPNC-Linker 锚定模块，**启动子也完全相同**，仅 cargo 不同。
 
@@ -621,7 +617,7 @@ Empty-vector transformants 能够形成 colonies，则说明：
 
 以三个 assembly products 为 PCR templates，可以分别获得预期大小的 expression-cassette bands。
 
-![pACYCD 质粒表面展示 PCR（2026-09-29）](./images%20of%20wetlabDBTL/PACYTX-SD-PCR.png)
+![](E:\Wet-lab\Git\pACYCD-assembly.png)
 
 图3.3-1 以三个新 assembly products 为模板的 PCR 电泳结果
 
@@ -810,29 +806,17 @@ GFP 路线采用**两条分支、四轮 PCR**的策略：
 
 GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产物均以凝胶电泳确认。
 
-![GFP PCR 第一轮（2026-09-29）](./images%20of%20wetlabDBTL/0929-GFP-R1.png)
+![](E:\Wet-lab\Git\1002-GFP-R1.png)
 
-图5.1-1 GFP PCR 第一轮（2026-09-29）
+图5.1-1 GFP PCR 第一轮
 
-![GFP PCR 第一轮（2026-09-30）](./images%20of%20wetlabDBTL/0930-GFP-R1.png)
+![](E:\Wet-lab\Git\1003-GFP-R2.png)
 
-图5.1-2 GFP PCR 第一轮（2026-09-30）
+图5.1-2 pACYCDuet第一轮和GFP第二轮
 
-![梯度启动子 + GFP 菌 P（2026-10-01）](./images%20of%20wetlabDBTL/1001-GFP.png)
+![](E:\Wet-lab\Git\1003-GFP-pACYCD-R2.png)
 
-图5.1-3 梯度启动子 + GFP 菌 P（2026-10-01；该胶图中梯度启动子部分是否属本系列仍待确认）
-
-![GFP 第一轮（2026-10-02）](./images%20of%20wetlabDBTL/1002-GFP-R1.png)
-
-图5.1-4 GFP 第一轮（2026-10-02）
-
-![GFP-pACYCD 第二轮（2026-10-03）](./images%20of%20wetlabDBTL/1003-GFP-pACYCD-R2.png)
-
-图5.1-5 GFP-pACYCD 第二轮 PCR（2026-10-03）
-
-![GFP 第二轮（2026-10-03）](./images%20of%20wetlabDBTL/1003-GFP-R2.png)
-
-图5.1-6 GFP 第二轮 PCR（2026-10-03）
+图5.1-3 pACYCD 第二轮 PCR
 
 #### Learn
 
@@ -852,13 +836,13 @@ GFP 片段的扩增于 2026 年 9 月底至 10 月初分多轮完成，各轮产
 
 #### Test
 
-![DH5α-GFP 菌落 PCR（2026-10-03）](./images%20of%20wetlabDBTL/1003-DH5a-GFP-colony.png)
+![](E:\Wet-lab\Git\1003-DH5a-GFP-colony.png)
 
-图5.2-1 DH5α-GFP 菌落 PCR（2026-10-03）
+图5.2-1 DH5α-GFP 菌落 PCR
 
-![菌落 GFP PCR（2026-10-06）](./images%20of%20wetlabDBTL/1006-GFP-colony.png)
+![](E:\Wet-lab\Git\1006-GFP-colony.png)
 
-图5.2-2 菌落 GFP PCR（2026-10-06）
+图5.2-2 MG1655菌落 GFP PCR
 
 #### Learn
 
