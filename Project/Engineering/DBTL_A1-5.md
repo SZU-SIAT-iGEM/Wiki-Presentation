@@ -778,7 +778,7 @@ Gibson Assembly 完成后，我们将组装体系用于转化筛选。
 
 因此，下一轮设计不再继续优化 Gibson 条件，而是降低载体拷贝数。
 
-### Cycle 3｜降低质粒拷贝数：从 RSF replication system 转向 p15A
+### Cycle 3｜降低质粒拷贝数：从 RSF replication system 转向 pBR322
 
 #### Design｜设计
 
@@ -796,11 +796,11 @@ Chb operon 编码多个 PTS 相关蛋白，其中包括膜相关转运组分。
 
 等核心表达模块不变，主要改变质粒复制系统。
 
-原有 RSF replication system 被替换为拷贝数更低的 p15A replication system。
+原有 RSF replication system 被替换为拷贝数更低的 pBR322 replication system。
 
 #### Build｜实施
 
-重新将 Chb 表达模块组装至 p15A-based vector，并完成后续转化与克隆筛选。
+重新将 Chb 表达模块组装至 pBR322-based vector，并完成后续转化与克隆筛选。
 
 这一设计用于直接测试：如果质粒高拷贝是导致 Chb 构建难以获得转化子的主要原因，那么降低复制拷贝数后是否能够恢复有效克隆形成？
 
@@ -808,7 +808,7 @@ Chb operon 编码多个 PTS 相关蛋白，其中包括膜相关转运组分。
 
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/pet28-chb.avif
 
-更换为 p15A replication system 后，我们仍然没有筛选到能够进一步验证的有效 Chb 转化克隆。
+更换为 pBR322 replication system 后，我们仍然没有筛选到能够进一步验证的有效 Chb 转化克隆。
 
 因此，降低质粒拷贝数并没有解决当前的构建问题。
 
@@ -822,7 +822,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/pet28-chb.
 
 以及：
 
-**p15A-based Chb plasmid**
+**pBR322-based Chb plasmid**
 
 但两条质粒路线均未获得最终可用于功能实验的工程菌。
 

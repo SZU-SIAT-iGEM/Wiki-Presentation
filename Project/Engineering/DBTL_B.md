@@ -1,4 +1,4 @@
-# 路线 B 表面展示系统湿实验工程 DBTL 草稿
+# 路线 B 表面展示系统工程 DBTL 
 
 ## Overview
 
@@ -30,106 +30,49 @@
 
 其中第三项——表达调控方式——在后续工程中被两次修订（DBTL B5 中 Ptac-GFP 与 Ptac-Cel9K 两条路线同期将启动子由 J23116 更换为 Ptac-lacO），因此原始决策的理由在此完整记录。
 
-### Cycle 1｜Selecting the surface-display anchor
-
 #### Design
+
+**1、Selecting the surface-display anchor**
 
 为了实现纤维素酶在细胞表面的固定，我们需要一个能够穿越大肠杆菌外膜、并把 cargo 展示在膜外的锚定元件。
 
 我们选择 Ice Nucleation Protein（INP）的截短型变体 INPNC 作为外膜锚定元件，采用 iGEM Registry 中的 BBa_K1933011。该元件删除了原有终止密码子，便于与下游 cellulase 序列融合，并包含用于后续蛋白表达检测的 His-tag。相关研究已经报道 INP 衍生锚定系统可用于异源蛋白的细胞表面展示。
 
-选择 INPNC 的主要考虑有三：
+与此同时，我们保留了 Lpp-OmpA 等备选锚定方案。
 
-1. **膜定位机制匹配**：INP 天然即定位并展示于细菌外膜，其 C 端结构域在保留锚定功能的同时可以截短，适合作为通用展示骨架；
-2. **克隆友好**：BBa_K1933011 去除终止密码子的设计，使锚定–cargo 融合表达可以通过 Gibson 组装直接实现，无需额外引入连接肽或酶切位点；
-3. **预留检测接口**：元件自带 His-tag，为后续通过免疫印迹或免疫荧光验证表面定位提供了检测位点。
+在融合蛋白设计中，我们于 INPNC 上游加入 TorA signal peptide，并在建模组同学的建议下，采用了 `(EAAAK)` 和 `(GGGGS)` 单元组成的混合 linker 设置在INPNC 与 cellulase 之间，以尝试改善蛋白转运、融合蛋白的空间构象及底物可及性。值得注意的是，TorA 与 INPNC 定位机制的兼容性尚未得到实验验证。
 
-与此同时，我们保留了 Lpp-OmpA 等备选锚定方案：若 INPNC 路线无法获得稳定转化子，更换锚定元件是首先需要排查的设计变量（见 DBTL B4）。
-
-#### Learn
-
-INPNC 作为第一代锚定元件进入构建。该决策中隐含一个未验证假设：**TorA signal peptide 辅助转运与 INPNC 的外膜定位机制相互兼容**。这一问题在当时无法回答，直到 DBTL B4 / SD-13 的拆分实验才被正式提上日程。
-
-### Cycle 2｜Selecting and engineering the cellulase cargos
-
-#### Design
+**2、Cellulase cargos**
 
 根据 Friskoli 的整体设计，我们希望利用大肠杆菌表面展示系统构建具有纤维素降解潜力的全细胞催化剂，因此 cargo 需要在降解功能与融合表达可行性之间取得平衡。
 
 我们选择来自 *Clostridium thermocellum* 的三种纤维素酶 Cel48S、Cel9K 和 Cel5L。三者分属不同糖苷水解酶家族，在纤维素降解链上承担不同类型的切割功能，理论上互补。
 
+| Cellulase  | GH Family | Catalytic Mode                     | Expected Role in Friskoli                                    |
+| ---------- | --------- | ---------------------------------- | ------------------------------------------------------------ |
+| **Cel48S** | GH48      | Processive cellobiohydrolase (CBH) | Degrades cellulose from reducing ends and releases cellobiose. |
+| **Cel9K**  | GH9       | Processive cellobiohydrolase (CBH) | Degrades cellulose from non-reducing ends and releases cellobiose. |
+| **Cel5L**  | GH5_1     | Processive endoglucanase (pEG2)    | Cleaves internal cellulose bonds and releases cellobiose, potentially creating new chain ends. |
+
 考虑到同时表达三个大型融合蛋白可能给单株工程菌造成较大的表达负担，我们决定分别构建三株独立的工程菌，每株菌仅表达一种 cellulase，最终再以 microbial cocktail 的形式组合使用。
 
 在序列层面，我们对三种 cargo 进行了两项改造：
 
-1. **删除 dockerin 结构域**：本系统不依赖天然纤维小体的 scaffoldin–dockerin 组装机制，三种纤维素酶中不再需要的 dockerin 结构域被删除，以减少融合蛋白的结构复杂度与分子量；
-2. **密码子优化**：对拟合成的编码序列进行了适用于大肠杆菌宿主的密码子优化。
+- **删除 dockerin 结构域**：本系统不依赖天然纤维小体的 scaffoldin–dockerin 组装机制，三种纤维素酶中不再需要的 dockerin 结构域被删除，以减少融合蛋白的结构复杂度与分子量；
 
-#### Learn
+- **密码子优化**：对拟合成的编码序列进行了适用于大肠杆菌宿主的密码子优化。
 
-三项 cargo 决策共同决定了后续的构建策略：每株菌一个表达盒，三个 constructs 共用相同的调控元件、锚定模块及融合策略，主要区别在于 cellulase cargo。
-
-这一高度一致性设计在当时是为了控制变量，后来却成为 DBTL B3 判断 construct-dependent failure 的结构基础——当三个仅 cargo 不同的构造出现相似失败时，共享的架构比 cargo 本身更可能是原因。
-
-### Cycle 3｜Choosing constitutive expression: why J23116 first
-
-#### Design
+**3、 Expression system**
 
 表达调控方式是三个设计决策中影响最深远的一项，因此完整记录其依据。
 
-为了尽量降低大型融合蛋白表达对宿主细胞的潜在负担，我们选用了 Anderson 组成型启动子 J23116，并搭配 B0034 RBS。这一选择基于三点考虑：
-
-1. **组成型表达匹配全细胞催化剂的使用场景**。工程菌的预期应用是直接作用于固体纤维素底物，需要在底物环境中持续产酶；组成型启动子无需诱导剂、无需控制诱导时机，操作最简单，也避免诱导剂在开放环境中的成本与残留问题；
-2. **刻意避开强组成型启动子，控制表达负担**。Anderson 启动子家族（J23100–J23119）是一套强度递减的组成型启动子，其相对强度已通过 RFP 报告基因系统表征（BBa_J61002，TG1 菌株 LB 培养至饱和）：J23100 最强（2547 a.u.），J23116 为 396 a.u.，约为最强成员的六分之一，属于家族中的较弱成员。强组成型启动子驱动大型融合蛋白持续高表达，容易干扰宿主代谢甚至影响细胞存活；选择较弱成员，是在“有表达”与“低负担”之间取得的平衡，与“每菌一酶”的 cargo 策略一致；
-3. **元件表征充分、可在同一骨架内更换**。Anderson 家族各成员的序列差异与强度排序已在 Registry 公布，若后续需要调整表达强度，可以直接更换启动子而不改变其他设计。
-
-需要同时记录的限定：J23116 的相对强度来自 RFP 报告系统的原始测量，其绝对表达水平在本模块的 MG1655 / pCDF 体系中没有实测值；启动子强度只是影响因素之一，RBS、载体拷贝数与 cargo 序列同样起作用。
-
-#### Learn
-
-这一决策在纸面上自洽，但回看时留下了一个重要伏笔：**组成型表达意味着宿主从转化成功的第一刻起，就要持续承受融合蛋白的负担**。如果问题确实出在表达架构的负担上，组成型启动子正是最需要修改的变量。
-
-这一伏笔在 DBTL B5 应验：Ptac-GFP 与 Ptac-Cel9K 两条路线同期将启动子从 J23116 更换为可诱导的 Ptac-lacO（更换理由见 DBTL B5）。
-
----
+为了尽量降低大型融合蛋白表达对宿主细胞的潜在负担，我们选用了 Anderson 组成型启动子 J23116（约396 a.u.），并搭配 B0034 RBS。另外一个原因我们考虑到，希望工程菌能够在接触固体纤维素底物之前，预先表达并积累一定数量的表面展示酶，从而在进入反应体系时具备初始催化能力。同时，组成型表达无需额外的诱导步骤，有利于简化系统操作。
 
 ## DBTL B1 Building the first INPNC-cellulase surface display system
 
 ### Cycle 1｜构建表面展示工程菌
 
 #### Design
-
-#### 1. Establishing the first-generation surface display architecture
-
-根据 Friskoli 的整体设计，我们希望利用大肠杆菌表面展示系统构建具有纤维素降解潜力的全细胞催化剂。
-
-在第一轮工程循环中，我们的主要任务是选择合适的表面锚定元件和纤维素酶，并将其整合为能够在 *E. coli* MG1655 中表达的融合蛋白系统。
-
-我们选择来自 *Clostridium thermocellum* 的三种纤维素酶 Cel48S、Cel9K 和 Cel5L，分别承担不同类型的纤维素降解功能。
-
-考虑到同时表达三个大型融合蛋白可能给单株工程菌造成较大的表达负担，我们决定分别构建三株独立的工程菌，每株菌仅表达一种 cellulase，最终再以 microbial cocktail 的形式组合使用。
-
-#### 2. Selection of the INPNC anchor
-
-为了实现纤维素酶在细胞表面的固定，我们选择 Ice Nucleation Protein（INP）的截短型变体 INPNC 作为外膜锚定元件。
-
-我们采用 iGEM Registry 中的 BBa_K1933011。该元件删除了原有终止密码子，便于与下游 cellulase 序列融合，并包含用于后续蛋白表达检测的 His-tag。
-
-相关研究已经报道 INP 衍生锚定系统可用于异源蛋白的细胞表面展示，因此我们将 INPNC 作为第一代融合结构的基础。
-
-#### 3. Engineering the fusion protein
-
-为了适配 INPNC 融合表达结构，我们对三种 cellulase cargo 进行了相应的序列设计。
-
-首先，由于本系统不依赖天然纤维小体的 scaffoldin–dockerin 组装机制，我们删除了三种纤维素酶中不再需要的 dockerin 结构域，以减少融合蛋白的结构复杂度。
-
-其次，我们在 INPNC 与 cellulase 之间设计了由刚性 `(EAAAK)` 和柔性 `(GGGGS)` 单元组成的混合 linker，希望提供适当的空间距离及构象自由度，降低融合对纤维素酶折叠和底物接近的潜在影响。
-
-同时，我们在 INPNC 上游加入 TorA signal peptide，尝试辅助融合蛋白转运。该设计是否能够与 INPNC 的定位机制兼容，仍需后续实验确认。
-
-在 DNA 序列设计阶段，我们还对拟合成的编码序列进行了适用于大肠杆菌宿主的密码子优化。
-
-#### 4. Designing the expression system
 
 为了尽量降低大型融合蛋白表达对宿主细胞的潜在负担，我们选用了 Anderson 组成型启动子 J23116，并搭配 B0034 RBS。
 
@@ -147,8 +90,6 @@ INPNC 作为第一代锚定元件进入构建。该决策中隐含一个未验�
 
 这一设计使我们能够独立构建和测试三种融合蛋白，并为后续比较不同 cargo 与表面展示系统的适配性提供基础。
 
-第一代载体采用 pCDF-based plasmid。该载体具有 CloDF replication origin，并携带 SmR selection marker。
-
 如果 Gibson assembly 正确完成，并且重组质粒成功进入 MG1655，那么转化后的细胞应当能够在选择平板上形成菌落，并同时表现出正确的 genotype 和 cellulose-degrading phenotype。
 
 ---
@@ -161,7 +102,7 @@ INPNC 作为第一代锚定元件进入构建。该决策中隐含一个未验�
 
 ![pCDF-1b–INPNC–CelX Gibson 组装示意图](./images%20of%20wetlabDBTL/pCDF-1b-INPNC-CelX-Gibson-assembly.png)
 
-图1-构1 第一代表面展示质粒的构建策略：线性化 pCDF-1b 骨架（CloDF13 ori、SmR，约 3780 bp）+ INPNC-Linker 片段（约 1126 bp）+ CelX-Ter 片段（Cel5L ≈1.4 kb / Cel48S ≈2.5 kb / Cel9K ≈2.5 kb）等摩尔 Gibson 组装，CelX 代表三种 cargo。其中 INPNC-Linker 片段采用两轮 PCR（PRTI-R0 → PRTI-R1）获得干净产物，以规避重复区段导致的非特异扩增；三个 cargo 均经过 Δdockerin 删除与大肠杆菌密码子优化。
+上图为第一代表面展示质粒的构建策略。通过 Gibson Assembly 将线性化 pCDF-1b 载体、INPNC-Linker 片段及三种纤维素酶编码片段分别组装，构建对应的 INPNC–cellulase 表达质粒。
 
 随后，我们采用 Gibson Assembly 方法，将线性化载体与相应的插入片段进行组装，分别构建：
 
@@ -171,7 +112,7 @@ INPNC 作为第一代锚定元件进入构建。该决策中隐含一个未验�
 
 三个 Gibson Assembly reactions 分别进行，以获得对应的重组质粒候选产物。
 
-此时，我们获得的是用于后续转化的 assembly mixtures，尚未通过测序确认其中是否存在完整且正确的环状重组质粒。
+将产物转化MG1655大肠杆菌,划线接种于LB+链霉素平板，37℃倒置培养
 
 #### Test
 
@@ -183,11 +124,9 @@ INPNC 作为第一代锚定元件进入构建。该决策中隐含一个未验�
 
 转化后，我们将细胞涂布至含链霉素的选择平板上并进行培养。
 
-**实验结果显示，三个构建组的选择平板上均观察到了菌落形成。**
+实验结果显示，三个构建组的选择平板上均观察到了菌落形成。
 
 这一结果最初使我们认为，三个重组质粒可能已经成功导入 MG1655，并获得了潜在的工程菌转化子。
-
-然而，抗生素选择平板上的 colony formation 仅能证明相应实验组在该培养条件下出现了细胞生长，尚不能确认菌落是否真正携带目标 INPNC–cellulase construct。
 
 #### Learn
 
@@ -259,9 +198,9 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 #### Design
 
-在 colony PCR 未能提供基因型证据、质粒 PCR 又确认目标 DNA 已经组装成功之后，我们希望进一步从功能表型的角度判断候选菌株是否表现出可检测的纤维素降解活性。
+在 colony PCR 阴性、质粒 PCR 又确认目标 DNA 已经组装成功之后，我们希望进一步从功能表型的角度判断候选菌株是否表现出可检测的纤维素降解活性。
 
-我们利用 CMC–Congo red assay 对候选菌株进行功能验证。若纤维素酶能够有效水解 CMC，理论上可以在刚果红染色和脱色后观察到菌落周围的浅色水解区域。
+我们采用 CMC–Congo red assay，观察候选菌株能否在 CMC 平板上形成可检测的水解圈。
 
 #### Build
 
@@ -310,17 +249,9 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 ### Overview
 
-上一轮实验暴露出了一个此前被我们忽略的 assumption：
+上一轮实验暴露出了一个此前被我们忽略的 assumption：能够在 antibiotic plate 上生长的 colony，并不一定就是目标 transformant。
 
-> 能够在 antibiotic plate 上生长的 colony，并不一定就是目标 transformant。
-
-因此，我们决定重新测试整个 SmR-based selection system，并加入未经 transformation 的 DH5α WT 作为 negative control。
-
-这一轮我们同时比较不同 antibiotic condition 下：
-
-- 工程菌，即尝试转入 pCDF-based SmR plasmid 的 DH5α；
-
-- 野生型 DH5α WildType，未转入任何 plasmid。
+因此，我们决定重新测试整个 SmR-based selection system，并加入未经 transformation 的 DH5α WT（wild type） 作为 negative control。
 
 我们设置了三种 selection condition：
 
@@ -330,15 +261,7 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 3. **链霉素 + 壮观霉素平板**：同时涂布工程菌和 WT，判断双抗生素组合是否能提高筛选严谨性。
 
-如果 selection system 工作正常，那么：
-
-- 工程菌应当能够生长；
-
-- WT 应当无法生长。
-
-我们使用新的 DH5α competent cells，并进行 pCDF-based SmR plasmid transformation，同时保留未经任何 plasmid transformation 的 DH5α WT。
-
-随后将各组细胞分别涂布于三种 selection condition 下的平板，所有平板在 37℃ 的相同培养条件下过夜培养。
+如果 selection system 工作正常，那么，工程菌应当能够生长，WT 应当无法生长。
 
 ### Cycle 1｜What does the streptomycin plate alone tell us?
 
@@ -346,11 +269,11 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 链霉素平板是最初 DBTL B1 中使用的 selection condition。
 
-我们首先保留这一条件，观察工程菌和 DH5α WT 是否能够形成 colonies。
+我们首先保留这一条件，观察工程菌和 WT 是否能够形成 colonies。
 
 #### Build
 
-将转入 pCDF-based SmR plasmid 的工程菌和未经 transformation 的 DH5α WT 分别涂布于链霉素平板，所有平板在 37℃ 下过夜培养。
+将转入 pCDF-based SmR plasmid 的工程菌和未经 transformation 的 WT 分别涂布于链霉素平板，所有平板在 37℃ 下过夜培养。
 
 #### Test
 
@@ -376,7 +299,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/sd-smr-wt.
 
 #### Build
 
-我们重新进行 transformation，并将工程菌和未经 transformation 的 DH5α WT 分别涂布于新的 spectinomycin-containing plates，所有平板在 37℃ 下过夜培养。
+我们重新进行 transformation，并将工程菌和未经 transformation 的 WT 分别涂布于新的 spectinomycin-containing plates，所有平板在 37℃ 下过夜培养。
 
 #### Test
 
@@ -400,7 +323,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/sd-spcr-wt
 
 - 工程菌
 
-- 未经 transformation 的 DH5α WT
+- 未经 transformation 的 WT
 
 如果双药组合能够抑制 WT，而工程菌仍然生长，则说明双药 selection 可能比单药更可靠。
 
@@ -410,7 +333,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/sd-spcr-wt
 
 我们重新制备链霉素 + 壮观霉素双药平板。
 
-随后将工程菌和 DH5α WT 分别涂布于双药平板上，所有组在 37℃ 培养条件下过夜培养。
+随后将工程菌和  WT 分别涂布于双药平板上，所有组在 37℃ 培养条件下过夜培养。
 
 #### Test
 
@@ -448,39 +371,13 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 新的载体采用 pACYC-based backbone，具有 p15A-family replication origin，并使用 chloramphenicol resistance marker。
 
-这一轮最重要的改变不仅是“换一个质粒”，而是建立三个具有不同诊断意义的 control levels：
+我们通过这一轮的改变，建立了三个具有不同诊断意义的 control levels：
 
-#### WT
-
-未经 transformation 的 MG1655。
-
-用于判断：
-
-**chloramphenicol selection 能否有效抑制没有 resistance plasmid 的 cells？**
-
-#### EV — Empty Vector
-
-转入 empty pACYC vector 的 MG1655。
-
-用于判断：
-
-**MG1655 是否能够接受并维持新的 plasmid backbone？**
-
-同时也用于确认：
-
-**chloramphenicol resistance cassette 是否能够正常支持 transformant growth？**
-
-#### INPNC-cellulase constructs
-
-分别转入：
-
-- INPNC-Cel5L
-- INPNC-Cel9K
-- INPNC-Cel48S
-
-用于判断：
-
-**在 vector backbone、transformation 和 selection 均能够正常工作的情况下，加入目标 surface-display expression cassette 后是否仍能够获得 transformants？**
+| 菌株类型                   | 构建目的                                                     |
+| -------------------------- | ------------------------------------------------------------ |
+| WT                         | **chloramphenicol selection 能否有效抑制没有 resistance plasmid 的 cells？** |
+| EV — Empty Vector          | **MG1655 是否能够接受并维持新的 plasmid backbone？**         |
+| INPNC-cellulase constructs | **在 vector backbone、transformation 和 selection 均能够正常工作的情况下，加入目标 surface-display expression cassette 后是否仍能够获得 transformants？** |
 
 这一组 controls 使我们能够更加系统地定位 failure。
 
