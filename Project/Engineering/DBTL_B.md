@@ -102,7 +102,7 @@
 
 通过 PCR 扩增，我们获得了带有预定同源重叠序列的 DNA fragments。
 
-![pCDF-1b–INPNC–CelX Gibson 组装示意图](./images%20of%20wetlabDBTL/pCDF-1b-INPNC-CelX-Gibson-assembly.png)
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pcdf-1b-inpnc-celx-gibson-assembly.avif
 
 上图为第一代表面展示质粒的构建策略。通过 Gibson Assembly 将线性化 pCDF-1b 载体、INPNC-Linker 片段及三种纤维素酶编码片段分别组装，构建对应的 INPNC–cellulase 表达质粒。
 
