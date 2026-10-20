@@ -36,19 +36,52 @@
 
 为了实现纤维素酶在细胞表面的固定，我们需要一个能够穿越大肠杆菌外膜、并把 cargo 展示在膜外的锚定元件。
 
-我们选择 Ice Nucleation Protein（INP）的截短型变体 INPNC 作为外膜锚定元件，采用 iGEM Registry 中的 BBa_K1933011。该元件删除了原有终止密码子，便于与下游 cellulase 序列融合，并包含用于后续蛋白表达检测的 His-tag。相关研究已经报道 INP 衍生锚定系统可用于异源蛋白的细胞表面展示。
+这一决策的首要约束来自 cargo 本身：三种纤维素酶的天然分子量均达 48–90 kDa（Cel48S 约 48 kDa、Cel9K 约 90 kDa、Cel5L 约 80 kDa；Leis et al., 2017），与锚定模块、linker 融合后仍属大型融合蛋白。因此，“能承载多大的 cargo”成为锚定元件选择的第一标准。我们系统比较了两个成熟的大肠杆菌表面展示体系：
 
-选择 INPNC 的主要考虑有三：
+| 锚定体系 | 拓扑（朝外端） | 分泌路径 | cargo 大小上限（参考） | 纤维素酶适用性 | 主要风险 |
+| --- | --- | --- | --- | --- | --- |
+| **INP（INPNC）** | C 端朝外 | Sec 途径（外膜直接锚定） | >100 kDa（脂肪酶、氧化酶等已验证） | 高——CMCase 已经 INP 展示验证（Kim et al., 2000） | LPS 屏障、大蛋白折叠 |
+| **Lpp-OmpA** | C 端朝外 | Sec（脂蛋白）途径 | ~60 kDa | 中——cargo 大小受限 | 大 cargo 时细胞毒性、活力下降 |
 
-1. **膜定位机制匹配**：INP 天然即定位并展示于细菌外膜，其 C 端结构域在保留锚定功能的同时可以截短，适合作为通用展示骨架；
-2. **克隆友好**：BBa_K1933011 去除终止密码子的设计，使锚定–cargo 融合表达可以通过 Gibson 组装直接实现，无需额外引入连接肽或酶切位点；
-3. **预留检测接口**：元件自带 His-tag，为后续通过免疫印迹或免疫荧光验证表面定位提供了检测位点。
+基于以下考虑，我们选择 INPNC 作为第一代锚定元件：
+
+1. **cargo 承载能力**（首要原因）：文献显示 INP 系统可承载 >100 kDa 的 cargo，显著高于 Lpp-OmpA 约 60 kDa 的上限；本模块最大的 cargo（Cel9K 约 90 kDa）只有 INP 路线有把握承载；
+2. **纤维素酶展示的领域先例**：目前学界对纤维素酶的表面展示主要使用 INP 系统（如 CMCase 突变体库的展示与筛选，Kim et al., 2000），选择 INP 更稳妥，且已有成熟的验证方法可直接借鉴（蛋白酶 K 可及性实验、流式细胞术、全细胞酶活）；
+3. **截短型 INPNC 的表达优势**：完整 INP 分子量 120–180 kDa，由 N 端疏水锚定区（约 15%，靶向外膜的必要区域）、中央重复域（约 80%，天然间隔臂）与 C 端亲水区（约 4%，cargo 融合位点）组成。INPNC 保留 N、C 两端、缺失中央重复域，表达量较完整型高 3–4 倍，展示活性也更高（INPNC-TliA 全细胞活性达 350 U/g 干细胞，约为完整型 INP-TliA 的 2 倍；Jung et al., 2006）。
 
 与此同时，我们保留了 Lpp-OmpA 等备选锚定方案：若 INPNC 路线无法获得稳定转化子，更换锚定元件是首先需要排查的设计变量（见 DBTL B4）。
 
+**Cargo 大小之外：折叠与转运的考虑。** 乘客蛋白的折叠与转运同样约束锚定与信号肽的选择：
+
+- **分泌途径与折叠状态**：INPNC 经 Sec 途径转运，蛋白以去折叠状态过膜，共价结合辅因子的 cargo 过膜后辅因子难以重组装。本模块三种纤维素酶均不依赖辅因子，受影响较小；在 INPNC 上游加入的 TorA signal peptide（Tat 途径）则是为折叠敏感的 cargo 预留的备选路线，其与 INPNC 定位机制的兼容性见下文 Learn；
+- **包涵体风险**：疏水或依赖二硫键的 cargo（如部分真菌纤维素酶）易在胞质中聚集形成包涵体。本模块三种酶来自 *C. thermocellum*（细菌来源），风险相对较低，但仍需以低表达强度控制（见 Cycle 3 的启动子选择）；
+- **表面稳定性**：外膜外表面的 OmpT 蛋白酶可在阳离子残基之间切割肽键，表面展示的 cargo 有被降解的风险；规避策略包括使用 ΔompT 菌株，并避免 linker–cargo 连接区域出现 RR、RK、KR 等双碱性氨基酸对；
+- **底物可及性**：LPS 层会阻碍纤维素这类大分子底物接近膜表面，这是全细胞催化剂需要单独应对的问题（如 waaC/waaF 缺失株或温和通透化），与锚定元件选择无关但需一并规划。
+
+**Linker 设计。** INPNC 缺失了完整 INP 的中央重复域，也就失去了天然间隔臂——展示距离需要由人工 linker 提供。linker 同时决定展示距离与酶活性，其设计原则主要来自纤维素酶 linker 的序列分析（Sammond et al., 2012）：
+
+| 原则 | 文献发现 | 本模块的落实 |
+| --- | --- | --- |
+| 长度优化 | 不同结构域组合对应不同的最优 linker 长度（GH7 平均 30 aa，GH6 平均 42 aa） | 以已验证的人工 linker 为基础，将长度列为可筛选变量 |
+| 避免过柔或过刚 | 过柔会降低功能效率，过刚会影响结构域取向 | 刚性与柔性单元混合搭配 |
+| 末端富含 Gly | linker 与结构域连接处 Gly 含量高，可增加局部柔性 | linker 两端以 Gly 收尾，减少对锚定区与酶折叠的干扰 |
+| 高 Pro 提供延伸性 | 细菌天然 linker 中 Pro 含量高（约 35%），可形成延伸构象 | 如需将酶“撑开”远离细胞表面，可适当引入 Pro |
+
+据此，我们在 INPNC 与 cellulase 之间设计了由刚性 `(EAAAK)` 与柔性 `(GGGGS)` 单元组成的混合 linker：刚性单元提供确定的间隔距离，把酶活性中心托离膜表面、减少空间位阻；柔性单元提供构象自由度，降低融合对纤维素酶折叠与底物接近的潜在影响。
+
+linker 长度本身尚未经过实验筛选，属于需要在后续验证的设计变量：可固定 linker 序列、制备不同长度变体，以酶活测定结合表面展示检测（免疫荧光、流式）筛选最优长度（见 DBTL B4）。
+
+**元件与检测接口。** 在序列层面，我们采用 iGEM Registry 中的 BBa_K1933011：该元件删除了原有终止密码子，使锚定–cargo 融合表达可以通过 Gibson 组装直接实现，无需额外引入连接肽或酶切位点；元件自带 His-tag，为后续通过免疫印迹或免疫荧光验证表面定位提供了检测位点。相关研究已经报道 INP 衍生锚定系统可用于异源蛋白的细胞表面展示。
+
 #### Learn
 
-INPNC 作为第一代锚定元件进入构建。该决策中隐含一个未验证假设：**TorA signal peptide 辅助转运与 INPNC 的外膜定位机制相互兼容**。这一问题在当时无法回答，直到 DBTL B4 / SD-13 的拆分实验才被正式提上日程。
+INPNC 作为第一代锚定元件进入构建。回看这一决策，有三项假设在当时无法验证、只能留给后续实验：
+
+1. **TorA signal peptide 与 INPNC 定位机制的兼容性**——TorA（Tat 途径）辅助转运能否与 INPNC 的外膜锚定协同工作，直到 DBTL B4 / SD-13 的拆分实验才被正式提上日程；
+2. **linker 长度是否合适**——(EAAAK)+(GGGGS) 的混合搭配来自文献原则，并非针对本模块 cargo 的实验优化；
+3. **大 cargo 的折叠与表面稳定性**——Cel9K（约 90 kDa）级别的 cargo 能否在大肠杆菌中正确折叠并稳定展示于外膜，只有获得转化子之后才能检验。
+
+这也解释了为什么后续模块把“锚定 + 转运”与“cargo 表达”拆开验证（DBTL B4 的 INPNC-only / cellulase-only 拆分实验）。
 
 ### Cycle 2｜Selecting and engineering the cellulase cargos
 
@@ -56,14 +89,27 @@ INPNC 作为第一代锚定元件进入构建。该决策中隐含一个未验�
 
 根据 Friskoli 的整体设计，我们希望利用大肠杆菌表面展示系统构建具有纤维素降解潜力的全细胞催化剂，因此 cargo 需要在降解功能与融合表达可行性之间取得平衡。
 
-我们选择来自 *Clostridium thermocellum* 的三种纤维素酶 Cel48S、Cel9K 和 Cel5L。三者分属不同糖苷水解酶家族，在纤维素降解链上承担不同类型的切割功能，理论上互补。
+我们选择来自 *Clostridium thermocellum* 的三种纤维素酶 Cel48S、Cel9K 和 Cel5L（SKL 组合；Leis et al., 2017）：
+
+| 候选酶 | GH 家族 | 类型 | 主产物 | 分子量（约） | CBM |
+| --- | --- | --- | --- | --- | --- |
+| Cel48S | GH48 | 外切（CBH，从还原端降解） | 纤维二糖 | 48 kDa | 有 |
+| Cel9K | GH9 | 外切（CBH，从非还原端降解） | 纤维二糖 | 90 kDa | 有 |
+| Cel5L | GH5 | 过程性内切（pEG2） | 纤维二糖 | 80 kDa | 有 |
+
+（表中为天然酶分子量；删除 dockerin 后 cargo 略小，但加上 INPNC 锚定模块与 linker 后仍为大型融合蛋白——这正是 Cycle 1 中锚定元件承载能力成为首要标准的原因。）
+
+三者的分工与 Friskoli 的整体降解机制一致：内切酶从纤维素链内部随机切割、破坏无定形区并产生新的链末端，两种外切酶分别从还原端与非还原端持续水解、以纤维二糖形式释放葡萄糖单元；三者均以纤维二糖为主要产物，且都自带 CBM（碳水化合物结合模块），有利于工程菌与不溶性纤维素底物的直接接触。
+
+在表达可行性方面，Cel48S 与 Cel9K 的大肠杆菌可溶表达已有报道，Cel5L 当时仅为推测可行，需以表达验证确认。
 
 考虑到同时表达三个大型融合蛋白可能给单株工程菌造成较大的表达负担，我们决定分别构建三株独立的工程菌，每株菌仅表达一种 cellulase，最终再以 microbial cocktail 的形式组合使用。
 
-在序列层面，我们对三种 cargo 进行了两项改造：
+在序列层面，我们对三种 cargo 进行了三项改造：
 
 1. **删除 dockerin 结构域**：本系统不依赖天然纤维小体的 scaffoldin–dockerin 组装机制，三种纤维素酶中不再需要的 dockerin 结构域被删除，以减少融合蛋白的结构复杂度与分子量；
-2. **密码子优化**：对拟合成的编码序列进行了适用于大肠杆菌宿主的密码子优化。
+2. **密码子优化**：对拟合成的编码序列进行了适用于大肠杆菌宿主的密码子优化；
+3. **去除 cargo 自带的起始密码子与信号肽**：纤维素酶以融合形式表达，需删除其 ATG 与信号肽序列，确保翻译从 TorA–INPNC 一侧起始、融合蛋白按设计进入分泌途径。
 
 #### Learn
 
@@ -688,6 +734,53 @@ Empty-vector transformants 能够形成 colonies，则说明：
 
 ---
 
+### Cycle 4｜Designing an alternative anchor: the Lpp-OmpA swap（设计完成，尚未实施）
+
+#### Design
+
+在 B3 证据链把失败指向共享表达架构之后，我们准备了第二条独立的 rebuild 路线：**更换锚定元件**。如果负担来自 INPNC 膜定位或 TorA–Tat 转运，换用更小、更成熟的锚定元件本身就是最直接的检验。
+
+我们选定的替换元件是 Lpp-OmpA（BBa_K5487002）：E. coli 自源杂交锚（Lpp 信号肽 + 成熟 Lpp 前 9 个氨基酸 + OmpA 46–159 区域），乘客蛋白与 OmpA 片段 C 端融合、暴露于胞外（Francisco et al., 1992, PNAS）。与现行 INPNC 体系的对比：
+
+| 维度 | Lpp-OmpA（BBa_K5487002） | INPNC（现行体系） |
+| --- | --- | --- |
+| 锚定元件大小 | 435 bp（约 16 kDa） | TorA SP + INPNC 约 1080 bp（约 40 kDa） |
+| 来源 | E. coli 自源蛋白 | P. syringae 异源蛋白 |
+| 展示密度 | 约 6 × 10⁴ 拷贝/细胞 | 较低 |
+| 文献展示容量 | 最大约 70 kDa（有毒性报道） | 60 kDa 已验证，INP 类对大酶更友好 |
+| 纤维素酶展示先例 | 有（Cex，Francisco et al., 1993） | 本团队为首个尝试 |
+| 转运途径 | Sec（周质折叠后锚定） | TorA SP → Tat |
+
+选择它的理由：锚定元件缩小约 35 kDa，直接回应翻译负担；自源锚 + 文献最厚 + 有纤维素酶展示先例；且天然兼容 Ptac + IPTG 的诱导路线（同 DBTL B5 的启动子策略）。
+
+必须记录的风险：文献展示上限约 70 kDa，Cel9K（约 80 kDa）与 Cel48S（约 74 kDa）超出或处于临界，仅 Cel5L（约 48 kDa）在安全区间；Lpp-OmpA 过表达有膜扰动/溶菌报道；短柄近膜展示可能降低对结晶底物的空间可及性。
+
+**该路线已完整设计但尚未实施**，计划以 Cel5L 先行验证，并与 INPNC 对照、Ptac-GFP 报告同批检验（见 DBTL B4 / B5）。
+
+#### Build
+
+组装策略与 Ptac-GFP 同路线，最终表达盒为 **Ptac–Lac operator–RBS–Lpp-OmpA–Linker(6×His)–Cel(Δdockerin)–rrnB T1**：
+
+1. 片段1：pACYCDuet-1b 反向 PCR 线性化（去 LacO，引物引入部分 Ptac），3679 bp；
+2. 片段2：Lpp-OmpA–6×His·Linker（自 BBa_K5487002 扩增），约 620 bp；
+3. 片段3：CelX–rrnB T1（Cel5L 1380 bp / Cel48S 2502 bp / Cel9K 2502 bp）。
+
+三片段等摩尔、2× CE Mix V3、37 ℃ 30 min 一步 Gibson 组装，预期质粒约 5614 / 6736 / 6771 bp（估算值）。
+
+![pACYCDuet-1–Ptac–LppOmpA–Cel5L Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel5L-Gibson-assembly.png)
+
+图3.4-1 pACYCDuet-1–Ptac–LppOmpA–Cel5L 组装策略（约 5614 bp）
+
+![pACYCDuet-1–Ptac–LppOmpA–Cel48S Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel48S-Gibson-assembly.png)
+
+图3.4-2 pACYCDuet-1–Ptac–LppOmpA–Cel48S 组装策略（约 6736 bp）
+
+![pACYCDuet-1–Ptac–LppOmpA–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel9K-Gibson-assembly.png)
+
+图3.4-3 pACYCDuet-1–Ptac–LppOmpA–Cel9K 组装策略（约 6771 bp）
+
+---
+
 ## DBTL B4 Redesigning the surface-display architecture
 
 ### Design
@@ -722,7 +815,7 @@ Empty-vector transformants 能够形成 colonies，则说明：
 
 INPNC 并不是唯一可能的 outer-membrane display strategy。
 
-因此，我们计划进一步比较其他 surface-display anchors，例如 Lpp-OmpA。
+因此，我们计划进一步比较其他 surface-display anchors，例如 Lpp-OmpA（替换方案的具体设计与组装策略见 DBTL B3 Cycle 4，尚未实施）。
 
 如果 alternative anchor 能够稳定获得 transformants，则可以进一步验证：
 

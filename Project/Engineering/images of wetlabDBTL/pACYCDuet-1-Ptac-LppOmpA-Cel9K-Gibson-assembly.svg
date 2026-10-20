@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 900" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1160" height="900" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="580" y="40" text-anchor="middle" font-size="21" font-weight="bold" fill="#1a1a1a">pACYCDuet-1&#8211;Ptac&#8211;Lpp-OmpA&#8211;Cel9K Construction Diagram (INPNC &#8594; Lpp-OmpA swap)</text>
+  <text x="580" y="63" text-anchor="middle" font-size="12.5" fill="#666666">Three PCR fragments with homology arms &#8594; one-step Gibson assembly into a circular plasmid (&#8776; 6771 bp)</text>
+
+  <!-- ============ Part 1: PCR fragments ============ -->
+  <text x="60" y="92" font-size="15" font-weight="bold" fill="#1a1a1a">&#9312; PCR amplification of three fragments (homology arms at both ends)</text>
+
+  <!-- Fragment 1 -->
+  <text x="60" y="118" font-size="13.5" font-weight="bold" fill="#4A7EBB">Fragment 1 | Linearised pACYCDuet-1 backbone (3679 bp)</text>
+  <text x="60" y="136" font-size="11.5" fill="#333333">Template: pACYCDuet-1b plasmid</text>
+  <text x="60" y="151" font-size="11.5" fill="#333333">Inverse PCR linearisation (LacO removed; Ptac introduced by primer)</text>
+  <text x="60" y="166" font-size="11.5" fill="#333333">Primers: pACYCD-F1 + pACYCD-Overlap-R1</text>
+  <rect x="430" y="158" width="360" height="22" rx="4" fill="#4A7EBB"/>
+  <rect x="430" y="164" width="10" height="10" fill="#2E5C8A"/>
+  <rect x="511" y="164" width="65" height="10" fill="#2E5C8A"/>
+  <rect x="596" y="164" width="58" height="10" fill="#2E5C8A"/>
+  <rect x="665" y="164" width="55" height="10" fill="#2E5C8A"/>
+  <text x="435" y="154" font-size="10" fill="#2E5C8A" text-anchor="middle">T7te</text>
+  <text x="543" y="154" font-size="10" fill="#2E5C8A" text-anchor="middle">CmR</text>
+  <text x="625" y="154" font-size="10" fill="#2E5C8A" text-anchor="middle">p15A ori</text>
+  <text x="692" y="154" font-size="10" fill="#2E5C8A" text-anchor="middle">lacI</text>
+  <rect x="430" y="158" width="8" height="22" fill="#E8734A"/>
+  <rect x="782" y="158" width="8" height="22" fill="#E8734A"/>
+  <text x="800" y="174" font-size="12" font-weight="bold" fill="#555555">3679 bp</text>
+  <rect x="810" y="140" width="10" height="10" fill="#E8734A"/>
+  <text x="826" y="149" font-size="11" fill="#555555">Red ends = homology arms (15&#8211;40 bp)</text>
+
+  <!-- Fragment 2 -->
+  <text x="60" y="238" font-size="13.5" font-weight="bold" fill="#17A2B8">Fragment 2 | Lpp-OmpA&#8211;6&#215;His&#183;Linker (&#8776; 620 bp)</text>
+  <text x="60" y="256" font-size="11.5" fill="#333333">Template: Lpp-OmpA.dna (BBa_K5487002, 435 bp; UESTC-China 2024)</text>
+  <text x="60" y="271" font-size="11.5" fill="#333333">5' overhang primer adds Lac operator + RBS (completing Ptac&#8211;LacO&#8211;RBS)</text>
+  <text x="60" y="286" font-size="11.5" fill="#333333">3' overhang primer adds 6&#215;His + Gly-Ser linker + Cel overlap (TorA SP removed)</text>
+  <rect x="430" y="278" width="160" height="22" rx="4" fill="#17A2B8"/>
+  <rect x="430" y="284" width="12" height="10" fill="#0E6E7D"/>
+  <rect x="478" y="284" width="102" height="10" fill="#0E6E7D"/>
+  <rect x="583" y="284" width="7" height="10" fill="#0E6E7D"/>
+  <text x="430" y="274" font-size="10" fill="#0E6E7D">LacO&#183;RBS</text>
+  <text x="590" y="274" font-size="10" fill="#0E6E7D" text-anchor="end">6&#215;His&#183;Linker</text>
+  <text x="529" y="296" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Lpp-OmpA</text>
+  <rect x="430" y="278" width="8" height="22" fill="#E8734A"/>
+  <rect x="582" y="278" width="8" height="22" fill="#E8734A"/>
+  <text x="600" y="294" font-size="12" font-weight="bold" fill="#555555">620 bp</text>
+
+  <!-- Fragment 3 -->
+  <text x="60" y="358" font-size="13.5" font-weight="bold" fill="#B03A6B">Fragment 3 | Cel9K-Ter (2502 bp)</text>
+  <text x="60" y="376" font-size="11.5" fill="#333333">Template: Synthetic Cel9K-Ter (&#916;dockerin, codon-optimised)</text>
+  <text x="60" y="391" font-size="11.5" fill="#333333">Primers: Cel9K-Ter-F + Cel-pACYCD-Overlap-R</text>
+  <rect x="430" y="398" width="250" height="22" rx="4" fill="#B03A6B"/>
+  <rect x="434" y="404" width="214" height="10" fill="#7D2849"/>
+  <rect x="648" y="404" width="15" height="10" fill="#7D2849"/>
+  <text x="541" y="416" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Cel9K</text>
+  <text x="648" y="394" font-size="10" fill="#7D2849">rrnB T1 terminator</text>
+  <rect x="430" y="398" width="8" height="22" fill="#E8734A"/>
+  <rect x="672" y="398" width="8" height="22" fill="#E8734A"/>
+  <text x="690" y="414" font-size="12" font-weight="bold" fill="#555555">2502 bp</text>
+
+  <!-- ============ Gibson arrow ============ -->
+  <rect x="380" y="440" width="360" height="46" rx="8" fill="#FDF3E7" stroke="#E8734A" stroke-width="1.2"/>
+  <text x="560" y="458" text-anchor="middle" font-size="13" font-weight="bold" fill="#B54A12">&#9313; Gibson assembly: mix the three fragments equimolarly</text>
+  <text x="560" y="476" text-anchor="middle" font-size="11.5" fill="#B54A12">5 &#956;L of 2&#215; CE Mix V3, ddH&#8322;O to 10 &#956;L, 37 &#176;C for 30 min</text>
+  <polygon points="548,492 572,492 560,510" fill="#E8734A"/>
+  <rect x="556" y="486" width="8" height="8" fill="#E8734A"/>
+
+  <!-- ============ Part 2: circular plasmid ============ -->
+  <path d="M 560 510 A 150 150 0 1 1 545.5 809.9" fill="none" stroke="#4A7EBB" stroke-width="26"/>
+  <path d="M 545.5 809.9 A 150 150 0 0 1 424 731.4" fill="none" stroke="#17A2B8" stroke-width="26"/>
+  <path d="M 424 731.4 A 150 150 0 0 1 560 510" fill="none" stroke="#B03A6B" stroke-width="26"/>
+
+  <!-- Centre text -->
+  <text x="560" y="640" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">pACYCDuet-1&#8211;Ptac&#8211;</text>
+  <text x="560" y="658" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Lpp-OmpA&#8211;Cel9K</text>
+  <text x="560" y="680" text-anchor="middle" font-size="15" font-weight="bold" fill="#B03A6B">&#8776; 6771 bp</text>
+
+  <!-- Feature labels -->
+  <text x="643" y="588" text-anchor="middle" font-size="10" fill="#444444">CmR</text>
+  <text x="669" y="677" text-anchor="middle" font-size="10" fill="#444444">p15A ori</text>
+  <text x="640" y="736" text-anchor="middle" font-size="10" fill="#444444">lacI</text>
+  <text x="493" y="748" text-anchor="middle" font-size="10" fill="#444444">Lpp-OmpA</text>
+  <text x="458" y="619" text-anchor="middle" font-size="10" fill="#444444">Cel9K</text>
+  <text x="539" y="552" text-anchor="middle" font-size="10" fill="#444444">rrnB T1</text>
+  <text x="612" y="812" text-anchor="middle" font-size="10" fill="#444444">Ptac</text>
+
+  <!-- Fragment labels -->
+  <text x="770" y="668" font-size="13" font-weight="bold" fill="#4A7EBB">Fragment 1: vector backbone (3679 bp)</text>
+  <text x="455" y="840" text-anchor="middle" font-size="13" font-weight="bold" fill="#17A2B8">Fragment 2: Lpp-OmpA&#8211;Linker (620 bp)</text>
+  <text x="350" y="545" text-anchor="end" font-size="13" font-weight="bold" fill="#B03A6B">Fragment 3: Cel9K-Ter (2502 bp)</text>
+
+  <!-- Junction markers -->
+  <circle cx="546" cy="800" r="9" fill="#ffffff" stroke="#888888" stroke-width="1"/>
+  <text x="546" y="804" text-anchor="middle" font-size="10.5" fill="#333333">&#9312;</text>
+  <circle cx="424" cy="731" r="9" fill="#ffffff" stroke="#888888" stroke-width="1"/>
+  <text x="424" y="735" text-anchor="middle" font-size="10.5" fill="#333333">&#9313;</text>
+  <circle cx="572" cy="512" r="9" fill="#ffffff" stroke="#888888" stroke-width="1"/>
+  <text x="572" y="516" text-anchor="middle" font-size="10.5" fill="#333333">&#9314;</text>
+
+  <!-- Homology arm legend -->
+  <text x="810" y="560" font-size="12" font-weight="bold" fill="#1a1a1a">Junction homology arms (introduced by primers)</text>
+  <text x="810" y="582" font-size="11" fill="#333333">&#9312; pACYCD-Overlap-R1 &#8596; LppOmpA-Overlap-F (Ptac&#8211;LacO&#8211;RBS region)</text>
+  <text x="810" y="602" font-size="11" fill="#333333">&#9313; LppOmpA-HisLinker-R &#8596; CelX-Ter-F (6&#215;His&#183;linker overlap)</text>
+  <text x="810" y="622" font-size="11" fill="#333333">&#9314; Cel-pACYCD-Overlap-R &#8596; pACYCD-F1 (rrnB T1)</text>
+
+  <!-- Bottom notes -->
+  <text x="580" y="856" text-anchor="middle" font-size="12" fill="#555555">PCR products were gel-purified and quantified, then mixed equimolarly (0.02 &#215; bp ng): backbone 73.6 ng | Lpp-OmpA&#8211;Linker 12.4 ng | Cel9K-Ter 50.0 ng</text>
+  <text x="580" y="876" text-anchor="middle" font-size="12" fill="#555555">Ptac is repressed by the LacI repressor on the same backbone (IPTG-inducible); plasmid size is estimated &#8212; the exact value will be fixed by the final primer design</text>
+  <text x="580" y="896" text-anchor="middle" font-size="12" fill="#555555">After assembly, transform and plate on LB (Cm 34 &#956;g/mL); pick single colonies for colony PCR / sequencing verification</text>
+</svg>
