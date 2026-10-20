@@ -56,7 +56,7 @@
 
 考虑到同时表达三个大型融合蛋白可能给单株工程菌造成较大的表达负担，我们决定分别构建三株独立的工程菌，每株菌仅表达一种 cellulase，最终再以 microbial cocktail 的形式组合使用。
 
-在序列层面，我们对三种 cargo 进行了三项改造：
+在序列层面，我们对三种 cargo 进行了两项改造：
 
 - **删除 dockerin 结构域**：本系统不依赖天然纤维小体的 scaffoldin–dockerin 组装机制，三种纤维素酶中不再需要的 dockerin 结构域被删除，以减少融合蛋白的结构复杂度与分子量；
 
@@ -208,6 +208,8 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 培养完成后，我们对含 CMC 的平板进行刚果红染色及脱色处理，观察菌落周围是否形成纤维素水解区域。
 
+针对第一轮观察到的微弱信号，我们统一实验条件进行了第二轮检测，并增设 MG1655、MG1655-EV 和 DH5α-EV 对照。
+
 #### Test
 
 然而，三个构建组均未观察到预期的清晰水解圈。
@@ -216,30 +218,19 @@ Colony PCR 没有得到预期条带，有两种可能的解释：一种是候选
 
 图1.4-1 三个构建组候选菌株的 CMC–Congo red assay 结果（第一轮）
 
-此后，我们用标准化条件对该表型检测进行了一次重复，以检验第一轮观察到的弱信号是否可靠：统一倒板体积与琼脂厚度、平板中央定量点样（7 cm 平板 10 μL）、37 ℃ 培养并按 24 h 间隔观察至 96 h，同时增设 MG1655、MG1655-EV 与 DH5α-EV 对照。
+此后，我们用标准化条件对该表型检测进行了一次重复，以检验第一轮观察到的弱信号是否可靠。第二轮重复实验中，对照菌株生长良好，而候选工程菌生长较弱，染色后仍未观察到可判读的水解圈。
 
-重复结果显示：对照组生长良好，而工程菌生长明显更弱；染色后背景整体呈红色，仍未形成可判读的清晰水解圈。**第一轮的弱信号在标准化条件下不可重复**，且因工程菌生长量不足，三株菌之间无法横向比较。
+重复结果显示：对照组生长良好，而工程菌生长明显更弱；染色后背景整体呈红色，仍未形成可判读的清晰水解圈。**第一轮观察到的微弱信号未能在重复实验中得到确认。**
 
 #### Learn
 
 因此，该实验也没有提供能够确认工程菌具有纤维素降解活性的功能证据。
 
-不过，CMC 染色阴性本身不能证明目标 DNA 不存在，因为蛋白表达、定位或酶活不足同样可能造成阴性结果。
+两轮 CMC–Congo red assay 均未获得可重复的纤维素水解表型，未能为候选菌株的纤维素酶活性提供有效证据。
 
-至此，我们同时获得了三方面的信息：colony PCR 没有检测到目标 DNA，质粒 PCR 证明目标 DNA 结构已经成功组装，而 CMC–Congo red assay 也没有观察到纤维素降解表型。
+结合此前 colony PCR 的阴性结果，我们仍无法确认这些菌落是否真正携带目标重组质粒。
 
-两轮 CMC 实验还给出两点方法学记录：
-
-1. 单轮平板法的观察结果必须经标准化重复确认——未重复的弱信号不能作为功能判读依据；
-2. CMC–Congo red 平板法在本系统不足以支撑功能结论——该方法主要反映可溶性底物上的内切酶活性，对结晶纤维素降解与表面定位均不具代表性，功能验证需转向液相定量（CMCase + DNS）、PASC/Avicel 降解与表面定位检测。
-
-另值得注意的是，重复实验中“工程菌生长弱”的现象，与后来 SD-11 的 construct-dependent 失败及 SD-13 的表达负担假设存在潜在联系；但在当时筛选体系尚未被证伪的前提下，这一现象不能被过度解读。
-
-这些结果合在一起，使我们更加怀疑上一轮获得的候选菌落是否真正携带目标重组质粒，问题也开始从 DNA 组装环节转向转化与筛选环节。
-
-因此，下一轮我们决定重新评估原有抗生素筛选条件是否能够真正区分野生型细胞与携带质粒的转化子。
-
-如果目标 DNA 确实已经组装成功，那么我们的下一步问题是：
+但是既然已验证目标 DNA 确实已经组装成功，那么我们的下一步问题是：
 
 **Were the colonies on the selection plates genuine transformants at all?**
 
@@ -367,7 +358,7 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 ### Design
 
-为了摆脱上一轮 selection uncertainty，我们更换了 plasmid backbone 和 antibiotic resistance marker。
+上一轮实验表明，原有的SmR抗性基因筛选体系无法可靠区分候选转化子与未转化细胞。我们更换了 plasmid backbone 和 antibiotic resistance marker。
 
 新的载体采用 pACYC-based backbone，具有 p15A-family replication origin，并使用 chloramphenicol resistance marker。
 
@@ -385,46 +376,33 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 ### Build
 
-我们根据新的 pACYC backbone 重新设计 assembly primers，并重新扩增构建所需的 DNA fragments。
-
-引物设计遵循“设计 → BLAST 复核 → 修订”的固定流程：先按 Tm 59–62 ℃、pair 内差值 ≤ 2 ℃ 的目标设计 pACYCD-1 组装引物（pACYCD-F1 / pACYCD-Overlap-F1 / PRTI-R1，预期产物 1062 bp），再对三个 construct 的测序引物进行 BLAST 特异性复核——复核后预期产物由 1066 / 1027 bp 修订为 991 / 992 bp，说明修订时实际移动了引物位置而非仅修剪末端。该流程随后固化为本模块的引物设计标准。
-
-片段扩增与组装过程以凝胶电泳跟踪：
-
-![](E:\Wet-lab\Git\0924-pACYC-R1.png)
-
-图3.1-1 一轮 PCR 电泳
+我们重新设计引物，利用 PCR 和 Gibson Assembly，在 pACYCDuet-1b 载体上分别构建了三个由 J23116 驱动的 INPNC–cellulase 表达质粒。
 
 三个 pACYC 重建质粒的构建策略如下。三者共用同一线性化骨架与 INPNC-Linker 锚定模块，**启动子也完全相同**，仅 cargo 不同。
 
 ![pACYCDuet-1–INPNC–Cel5L Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel5L-Gibson-assembly.png)
 
-图3-构1 pACYCDuet-1–**J23116**–INPNC–Cel5L（6654 bp）的构建策略：反向 PCR 线性化 pACYCDuet-1b（MCS1 多克隆位点替换为 J23116 表达盒，保留骨架 4013 bp）+ J23116–RBS–TorA–INPNC–6×His–Linker（1286 bp，两轮 PCR 获得）+ Cel5L–rrnB T1（1380 bp，Δdockerin、密码子优化）三片段等摩尔一步组装。
+图3-构1 *pACYC–INPNC–Cel5L 的 Gibson Assembly 构建策略*
 
 ![pACYCDuet-1–INPNC–Cel48S Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel48S-Gibson-assembly.png)
 
-图3-构2 pACYCDuet-1–**J23116**–INPNC–Cel48S（7776 bp）的构建策略：与 Cel5L 相同的三片段策略，Cel48S–rrnB T1 片段为 2502 bp，最终质粒 7776 bp，是本模块最大的构建体。
+图3-构2*pACYC–INPNC–Cel48S 的 Gibson Assembly 构建策略*。
 
 ![pACYCDuet-1–J23116–INPNC–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Cel9K-J23116-Gibson-assembly.png)
 
-图3-构3 pACYCDuet-1–**J23116**–INPNC–Cel9K（7776 bp）的构建策略：与 Cel5L / Cel48S 完全相同——同一启动子（J23116）、同一线性化骨架与 INPNC-Linker 锚定模块，仅第三片段更换为 Cel9K–rrnB T1（2502 bp）。
+图3-构3 *pACYC–INPNC–Cel9K 的 Gibson Assembly 构建策略*。
 
-随后分别完成：
-
-- empty pACYC vector transformation；
-- pACYC-INPNC-Cel5L assembly and transformation；
-- pACYC-INPNC-Cel9K assembly and transformation；
-- pACYC-INPNC-Cel48S assembly and transformation。
-
-同时设置未经 transformation 的 MG1655 WT。
-
-所有实验组均使用 chloramphenicol selection。
-
----
-
-### Cycle 1｜Does the new transformation-selection system work?
+随后，我们将三个 Gibson Assembly products 分别转化至 MG1655，并设置 WT 和 EV 对照，使用氯霉素平板进行筛选。
 
 #### Test
+
+片段扩增与组装过程以凝胶电泳跟踪：
+
+![0924-pACYC-R1](./images%20of%20wetlabDBTL/0924-pACYC-R1.png)
+
+图3.1-1 一轮 PCR 电泳
+
+
 
 实验结果首先在两个 control groups 中表现出了非常清晰的差异。
 
@@ -440,25 +418,19 @@ streptomycin + spectinomycin 双药也不能抑制 WT；
 
 #### Learn
 
-这一结果为后续分析建立了一个可靠的 baseline。
+WT 无法在 chloramphenicol plate 上生长，说明新的 antibiotic selection 能够有效抑制没有 resistance plasmid 的 MG1655。
 
-WT 无法在 chloramphenicol plate 上生长，说明：
+Empty-vector transformants 能够形成 colonies，则说明MG1655 可以接受并维持 pACYC-based plasmid。
 
-**新的 antibiotic selection 能够有效抑制没有 resistance plasmid 的 MG1655。**
+但是我们的三个 recombinant groups 均没有获得预期 colonies
 
-Empty-vector transformants 能够形成 colonies，则说明：
+问题开始集中到 experimental groups 与 EV 之间最大的区别：
 
-**MG1655 可以接受并维持 pACYC-based plasmid。**
+**INPNC-cellulase expression cassette。**
 
-同时说明新的 chloramphenicol resistance system 可以正常发挥作用。
+但是，在得出 expression burden 或 toxicity 的结论之前，我们仍然需要排除一种更加简单的可能性：三个 recombinant constructs 是否只是再次发生了 assembly failure？
 
-因此，前一轮一直无法确定的几个问题，在这一轮中得到了明显改善：
-
-- antibiotic selection is functional；
-- host cells can be transformed；
-- the new plasmid backbone can be maintained。
-
-这使我们能够更加有信心地分析三个 recombinant constructs 的结果。
+因此，我们进一步检测新的 assembly products。
 
 ---
 
@@ -585,53 +557,6 @@ Empty-vector transformants 能够形成 colonies，则说明：
 
 ---
 
-### Cycle 4｜Designing an alternative anchor: the Lpp-OmpA swap（设计完成，尚未实施）
-
-#### Design
-
-在 B3 证据链把失败指向共享表达架构之后，我们准备了第二条独立的 rebuild 路线：**更换锚定元件**。如果负担来自 INPNC 膜定位或 TorA–Tat 转运，换用更小、更成熟的锚定元件本身就是最直接的检验。
-
-我们选定的替换元件是 Lpp-OmpA（BBa_K5487002）：E. coli 自源杂交锚（Lpp 信号肽 + 成熟 Lpp 前 9 个氨基酸 + OmpA 46–159 区域），乘客蛋白与 OmpA 片段 C 端融合、暴露于胞外（Francisco et al., 1992, PNAS）。与现行 INPNC 体系的对比：
-
-| 维度 | Lpp-OmpA（BBa_K5487002） | INPNC（现行体系） |
-| --- | --- | --- |
-| 锚定元件大小 | 435 bp（约 16 kDa） | TorA SP + INPNC 约 1080 bp（约 40 kDa） |
-| 来源 | E. coli 自源蛋白 | P. syringae 异源蛋白 |
-| 展示密度 | 约 6 × 10⁴ 拷贝/细胞 | 较低 |
-| 文献展示容量 | 最大约 70 kDa（有毒性报道） | 60 kDa 已验证，INP 类对大酶更友好 |
-| 纤维素酶展示先例 | 有（Cex，Francisco et al., 1993） | 本团队为首个尝试 |
-| 转运途径 | Sec（周质折叠后锚定） | TorA SP → Tat |
-
-选择它的理由：锚定元件缩小约 35 kDa，直接回应翻译负担；自源锚 + 文献最厚 + 有纤维素酶展示先例；且天然兼容 Ptac + IPTG 的诱导路线（同 DBTL B5 的启动子策略）。
-
-必须记录的风险：文献展示上限约 70 kDa，Cel9K（约 80 kDa）与 Cel48S（约 74 kDa）超出或处于临界，仅 Cel5L（约 48 kDa）在安全区间；Lpp-OmpA 过表达有膜扰动/溶菌报道；短柄近膜展示可能降低对结晶底物的空间可及性。
-
-**该路线已完整设计但尚未实施**，计划以 Cel5L 先行验证，并与 INPNC 对照、Ptac-GFP 报告同批检验（见 DBTL B4 / B5）。
-
-#### Build
-
-组装策略与 Ptac-GFP 同路线，最终表达盒为 **Ptac–Lac operator–RBS–Lpp-OmpA–Linker(6×His)–Cel(Δdockerin)–rrnB T1**：
-
-1. 片段1：pACYCDuet-1b 反向 PCR 线性化（去 LacO，引物引入部分 Ptac），3679 bp；
-2. 片段2：Lpp-OmpA–6×His·Linker（自 BBa_K5487002 扩增），约 620 bp；
-3. 片段3：CelX–rrnB T1（Cel5L 1380 bp / Cel48S 2502 bp / Cel9K 2502 bp）。
-
-三片段等摩尔、2× CE Mix V3、37 ℃ 30 min 一步 Gibson 组装，预期质粒约 5614 / 6736 / 6771 bp（估算值）。
-
-![pACYCDuet-1–Ptac–LppOmpA–Cel5L Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel5L-Gibson-assembly.png)
-
-图3.4-1 pACYCDuet-1–Ptac–LppOmpA–Cel5L 组装策略（约 5614 bp）
-
-![pACYCDuet-1–Ptac–LppOmpA–Cel48S Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel48S-Gibson-assembly.png)
-
-图3.4-2 pACYCDuet-1–Ptac–LppOmpA–Cel48S 组装策略（约 6736 bp）
-
-![pACYCDuet-1–Ptac–LppOmpA–Cel9K Gibson 组装示意图](./images%20of%20wetlabDBTL/pACYCDuet-1-Ptac-LppOmpA-Cel9K-Gibson-assembly.png)
-
-图3.4-3 pACYCDuet-1–Ptac–LppOmpA–Cel9K 组装策略（约 6771 bp）
-
----
-
 ## DBTL B4 Redesigning the surface-display architecture
 
 ### Design
@@ -666,7 +591,7 @@ Empty-vector transformants 能够形成 colonies，则说明：
 
 INPNC 并不是唯一可能的 outer-membrane display strategy。
 
-因此，我们计划进一步比较其他 surface-display anchors，例如 Lpp-OmpA（替换方案的具体设计与组装策略见 DBTL B3 Cycle 4，尚未实施）。
+因此，我们计划进一步比较其他 surface-display anchors，例如 Lpp-OmpA。
 
 如果 alternative anchor 能够稳定获得 transformants，则可以进一步验证：
 
