@@ -26,11 +26,21 @@ Friskoli 的湿实验工程围绕两个主要目标展开：一是改造大肠�
 
 PCR 与测序结果显示，CP12CHB 的编辑区域与设计序列一致。在后续构建中，CP9a 未获得转化菌落；其他启动子替换实验获得了候选菌株。其中，CP6-1 的启动子区域存在一个额外突变，其余已测序的目标克隆与预期序列一致。
 
-![Results-plate-of-CPseries](./../../Project/Engineering/images%20of%20wetlabDBTL/Results-plate-of-CPseries.png)
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/results-plate-of-cpseries.avif
 
-**[Figure 1. CP-chb chromosomal promoter replacement and genotypic verification]**
+测序结果：
 
-*待插入：染色体启动子替换示意图、代表性 PCR 电泳及测序结果。*
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/cp7seq.avif
+
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/cp25seq.avif
+
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/cp12seq.avif
+
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/cp30seq.avif
+
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/cp44seq.avif
+
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/cp6seq.avif
 
 这些结果表明，染色体启动子替换策略使我们获得了具有不同 `chb` 调控背景的工程菌株，并能够进一步开展功能比较。
 
@@ -50,9 +60,7 @@ PCR 与测序结果显示，CP12CHB 的编辑区域与设计序列一致。在�
 
 不同 CP 菌株的目标区域转录水平存在明显差异。CP30 和 CP44 的相对转录水平最高，CP25 次之，CP12 表现出一定程度的转录上调，而 CP6 和 CP7 的测量结果接近 WT。
 
-**[Figure 2. Relative transcription levels of CP-chb strains]**
-
-*待插入：A6.2 RT-qPCR 结果图。*
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/a6-2-qpcr.avif
 
 本次测得的转录丰度排序与 Jensen and Hammer（1998）报道的启动子相对活性排序不一致。这说明文献中的启动子活性不能直接用于预测其在当前染色体 `chb` 调控背景下的实际转录水平。
 
@@ -72,15 +80,11 @@ PCR 与测序结果显示，CP12CHB 的编辑区域与设计序列一致。在�
 
 在葡萄糖条件下，所有测试菌株均能够生长。在纤维二糖条件下，CP12、CP25、CP30 和 CP44 的 OD₆₀₀ 随时间明显增加，CP6 和 CP7 的增长较弱，WT MG1655 则基本没有增长。
 
-**[Figure 3. Growth curves of CP-chb strains under different carbon sources]**
-
-*待插入：CP 系列在 cellobiose 和 glucose 条件下的 24 h 生长曲线。*
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/cpseries-1.avif
 
 在纤维二糖条件下，CP12、CP25、CP30 和 CP44 的最大 6 h 表观比生长速率约为 0.07–0.09 h⁻¹，CP6 约为 0.038 h⁻¹；CP7 和 WT 未能筛选出可靠的持续增长区间，因此不报告对应数值。
 
-**[Figure 4. Maximum 6-hour apparent specific growth rates]**
-
-*待插入：A6.3 表观比生长速率比较图。*
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/1-1.avif
 
 结合 RT-qPCR 结果，CP12 虽然具有低于 CP30 和 CP44 的转录水平，却表现出相近的纤维二糖相关生长速率，说明转录丰度与生长表现并非简单的正比例关系。
 
@@ -102,23 +106,17 @@ PCR 与测序结果显示，CP12CHB 的编辑区域与设计序列一致。在�
 
 预实验显示，CP12CHB 的上清还原糖浓度随时间下降，而 WT 基本保持稳定。在 CP 系列比较中，WT 的上清还原糖浓度同样变化较小，CP 工程菌则表现出不同程度的下降。其中，CP12 的下降最明显，CP30、CP7、CP44 和 CP25 也出现较明显的消耗趋势，CP6 相对较弱。
 
+[image-20261019225115082.avif (1560×1140)](https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-20261019225115082.avif)
 
-
-*待插入：A6.4 剩余还原糖浓度时间曲线及 60 min 终点比较图。*
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-20261019223408045.avif
 
 按 OD₆₀₀ 归一化后，CP12 和 CP7 的表观平均消耗速率最高，均约为 0.0095 μmol·mL⁻¹·min⁻¹·OD₆₀₀⁻¹，CP44 和 CP30 次之。
 
-**[Figure 6. OD₆₀₀-normalized apparent substrate consumption rates]**
-
-*待插入：A6.4 归一化表观平均消耗速率图。*
+[image-20261019223505057.avif (1680×1140)](https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-20261019223505057.avif)
 
 值得注意的是，CP7 的目标区域转录水平较低、纤维二糖相关生长较弱，但其归一化表观消耗速率却与 CP12 接近。结合 CP12、CP30 和 CP44 的转录及生长数据可见，三个功能指标之间并不存在简单的一一对应关系。
 
-**[Figure 7. Integrated characterization of CP-chb strains]**
-
-*待插入：RT-qPCR、生长速率及 DNS 表观消耗速率综合比较图。*
-
-需要注意的是，CP12 在 30 min 时的剩余还原糖浓度已低于本批标准曲线的可靠定量范围，因此本次 0–60 min 平均速率尚不能准确区分部分高消耗菌株的早期消耗能力。DNS 法测得的也是上清还原糖变化，不能直接等同于特异性转运速率。
+需要注意的是，CP12 在 30 min 时的剩余还原糖浓度已低于本批标准曲线的可靠定量范围，因此本次 0–60 min 平均速率尚不能准确区分部分高消耗菌株的早期消耗能力。
 
 ---
 
@@ -172,7 +170,7 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610210243405
 
 ---
 
-## Result 7 — Development of a Microfluidic Chemotaxis Observation System
+## Result 6 — Development of a Microfluidic Chemotaxis Observation System
 
 ### Goal
 
@@ -196,7 +194,7 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610210243405
 
 ---
 
-## Result 8 — Initial INPNC–Cellulase Surface-display Constructs
+## Result 7 — Initial INPNC–Cellulase Surface-display Constructs
 
 ### Goal
 
@@ -216,7 +214,7 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610210243405
 
 ---
 
-## Result 9 — Rebuilding and Troubleshooting the Surface-display System
+## Result 8 — Rebuilding and Troubleshooting the Surface-display System
 
 ### Goal
 
