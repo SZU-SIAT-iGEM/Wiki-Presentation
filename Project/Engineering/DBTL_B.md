@@ -486,6 +486,7 @@ cargo 暂时以 **GFP** 作为小分子量报告 cargo，先单独验证测试�
 我们在 pACYCDuet-1 骨架上重新构建诱导型表达系统，并以 **GFP** 作为报告 cargo。通过 PCR 分别获得带有 **Ptac-lacO 调控区域、GFP 表达盒及 rrnB T1 terminator** 的目标片段和线性化载体骨架，随后利用 Gibson Assembly 完成 **pACYC-Ptac-GFP** 的组装。
 
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/pacycd-gfp-gibson-assembly.avif
+
 图5-构1 DBTL B5 报告系统的构建策略
 
 与 GFP 报告系统同时进行的是，我们还用同一启动子策略，回到纤维素酶 cargo，构建了 pACYCDuet-1–Ptac–INPNC–Cel9K：
@@ -503,6 +504,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1002-gfp-r
 图5.1-1 GFP PCR 第一轮
 
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1003-gfp-r2.avif
+
 图5.1-2 pACYCDuet第一轮和GFP第二轮
 
 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-b/1003-gfp-pacycd-r2.avif
