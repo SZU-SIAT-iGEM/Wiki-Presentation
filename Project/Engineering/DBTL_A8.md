@@ -23,9 +23,9 @@
 通液测试时，芯片无法正常吸入液体。拆开装置后发现，钢针插入处的琼脂层出现破损。此外，PDMS 层与琼脂层贴合后容易相对滑动，轻微扰动便可能导致两者发生相对位移。
 
 用胶带制作的 PDMS
-[图a6-1-1]
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-1-1.avif
 组合后的芯片（模型版）
-[图a6-1-2]
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-1-2.avif
 
 ## Learn｜学习
 
@@ -58,7 +58,7 @@
 - 1.5% 琼脂组的三条流道均未正常通液，3% 琼脂组仅一条流道能够通液。分别对其中一条不通的流道进行推气操作后，3% 琼脂的流道恢复通液，1.5% 琼脂无明显变化。未处理的流道仍未流通。
 - 拆开芯片后，琼脂层保持完整，PDMS 与琼脂层的贴合情况较上一轮有所改善。
 
-[图片a6-2]
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-2.avif
 
 ## Learn｜学习
 
@@ -85,10 +85,10 @@
 沿用 Cycle 2 的通液条件后三条流道均较为顺利的通液。
 显微观察时，琼脂背景较为斑驳，无法清楚辨认菌体，因此未能有效观察菌体运动，也无法判断是否出现趋化行为。
 
-[图a6-3-2]
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-3-2.avif
 实验器材
 
-[图a6-3-1]
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-3-1.avif
 Microscope images at different focal planes, 400x magnification with phase contrast
 
 ## Learn｜学习
@@ -111,9 +111,9 @@ Microscope images at different focal planes, 400x magnification with phase contr
 
 改用琼脂糖后，显微镜下的背景明显透亮，能够观察到菌体。但菌液中可见菌体数量较多，且菌体在视野中出现较快位移。此外，流道中仍存在较多微小杂质，干扰观察。并随时间逐步黏附于琼脂上，本轮未能观察到明确的趋化行为。
 
-[图a6-4-1]
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-4-1.avif
 
-[图a6-4-2]
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-4-2.avif
 
 ## Learn｜学习
 
@@ -139,11 +139,12 @@ Microscope images at different focal planes, 400x magnification with phase contr
 
 回流过程中，多数可见菌体位于远离天冬氨酸溶液的一侧。观察过程中，部分菌体逐渐黏附在琼脂糖表面，且随着观察时间延长，黏附的菌体逐渐增多。但这些菌体黏附后，后续观察到的运动行为较少。
 
-[a6-5-5]
-[a6-5-1]
-[a6-5-2]
-[a6-5-3]
-[a6-5-4]
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-5.avif
+未通菌液时
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-1.avif
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-2.avif
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-3.avif
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-4.avif
 ## Learn｜学习
 
 调整重悬体系、菌液浓度及管路状态后，观察背景中的微小杂质有所减少，菌体密度也更适合观察。但管路封闭后仍出现流速变化和回流，干扰了菌体运动轨迹的判断。
