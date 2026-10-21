@@ -203,7 +203,7 @@ WT 的上清还原糖浓度在测量期间基本保持稳定，而 CP 系列工�
 
 ##### 2. OD600 归一化后的单位细胞摄取速率
 
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/fig6-promoter-gradient.avif
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/fig5-rate-60min-od.avif
 
 按各生物学重复的 OD₆₀₀ 归一化后，CP12 与 CP30 的表观平均消耗速率最高，均约为 0.0095 μmol·mL⁻¹·min⁻¹·OD₆₀₀⁻¹。CP7 和 CP30 次之，CP25、CP6 相对较低。
 
