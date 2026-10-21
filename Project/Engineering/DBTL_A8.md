@@ -184,3 +184,13 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-4.av
  本次实验对接口加工、芯片组装和显微观察条件进行了多轮调整。改用打孔器并调整组装顺序后，后续实验未再观察到第一轮那样明显的接口处琼脂破损；底板由琼脂改为琼脂糖后，显微背景明显改善。更换重悬液为 PBS 并调整菌液浓度后，观察到流道中的微小杂质有所减少，菌体密度也更适合观察。
 
 但是，由于芯片制作、组装和多轮调试占用了较多时间，导致正式趋化观察启动较晚。截至 Wiki 截止时，motility buffer 条件下的后续实验尚未完成，现有数据仍不足以判断工程菌是否表现出预期的趋化行为。
+
+##### References
+
+1. Gargasson A, Douarche CD, Mergaert P, Auradou H. Quantifying Bacterial Chemotaxis in Controlled and Stationary Chemical Gradients With a Microfluidic Device. *Bio-protocol*. 2025;15(4):e5184. https://doi.org/10.21769/BioProtoc.5184
+
+2. Gargasson A, Bouvard J, Douarche C, Mergaert P, Auradou H. Local chemotactic response of *Escherichia coli* in fluid and near surfaces. *Lab on a Chip*. 2026. https://doi.org/10.1039/D5LC01048A
+
+3. Grognot M, Taute KM. A multiscale 3D chemotaxis assay reveals bacterial navigation mechanisms. *Communications Biology*. 2021;4:669. https://doi.org/10.1038/s42003-021-02190-2
+
+4. Koorehdavoudi H, Bogdan P, Wei G, Marculescu R, Zhuang J, Carlsen RW, Sitti M. Multi-fractal characterization of bacterial swimming dynamics: a case study on real and simulated *Serratia marcescens*. *Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences*. 2017;473(2203):20170154. https://doi.org/10.1098/rspa.2017.0154
