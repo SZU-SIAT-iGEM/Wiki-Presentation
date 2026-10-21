@@ -88,7 +88,7 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/1-1.avif
 
 结合 RT-qPCR 结果，CP12 虽然具有低于 CP30 和 CP44 的转录水平，却表现出相近的纤维二糖相关生长速率，说明转录丰度与生长表现并非简单的正比例关系。
 
-本次连续生长曲线仅包含三个技术重复，没有独立生物学重复，因此菌株之间的差异仍需作为初步观察结果解释。
+本次连续生长曲线仅包含三个技术重复，没有独立生物学重复，因此测量的结果具有一定的局限性。
 
 ---
 
@@ -114,7 +114,7 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610192234080
 
 [image-20261019223505057.avif (1680×1140)](https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-20261019223505057.avif)
 
-值得注意的是，CP7 的目标区域转录水平较低、纤维二糖相关生长较弱，但其归一化表观消耗速率却与 CP12 接近。结合 CP12、CP30 和 CP44 的转录及生长数据可见，三个功能指标之间并不存在简单的一一对应关系。
+值得注意的是，CP7 的目标区域转录水平较低、纤维二糖相关生长较弱，但其归一化表观消耗速率却比较异常，与 CP12 接近。具体的机制和原因还待我们下一步排查。
 
 需要注意的是，CP12 在 30 min 时的剩余还原糖浓度已低于本批标准曲线的可靠定量范围，因此本次 0–60 min 平均速率尚不能准确区分部分高消耗菌株的早期消耗能力。
 
@@ -138,7 +138,7 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610192234080
 
 第一轮实验中，CP12、CP30 和 CP44 在添加 10 mM 纤维二糖后形成了比无糖组更大的可见菌斑，而其他菌株的变化相对不明确。
 
-葡萄糖组出现明显的异常浑浊，未能获得可靠的迁移圈判读结果。
+葡萄糖组出现明显的异常浑浊，未能获得可靠的迁移圈判定结果。
 
 这一现象提示，纤维二糖添加能够影响部分工程菌的局部生长或群体扩展，但无法区分生长与趋化的贡献。
 
@@ -152,7 +152,7 @@ https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp-series.
 
 L-天冬氨酸和葡萄糖参照组的部分接种点形成了较小菌斑，与已知吸引剂可能减缓软琼脂群体迁移的文献现象是相符合的。
 
-这一结果有可能支持CP12,CP44,CP25菌株可能具有较强的趋化迁移能力，但如前文所述，群体迁移速度还是会受到生长和代谢的影响，所以本方法并不能直接判定CP系列菌株对纤维二糖有趋化结果。我们需要更进一步的实验，需要一个人为制造纤维二糖浓度梯度的趋化实验来观察工程菌的趋化，而非通过细菌自身生长消耗糖形成梯度的实验来观察趋化。
+这一结果有可能支持CP12,CP44,CP25菌株可能具有较强的趋化迁移能力，但群体迁移速度还是会受到生长和代谢的影响，所以本方法并不能直接判定CP系列菌株对纤维二糖有趋化结果。我们需要更进一步的实验，需要一个人为制造纤维二糖浓度梯度的趋化实验来观察工程菌的趋化，而非通过细菌自身生长消耗糖形成梯度的实验来观察趋化。
 
 https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-20261021024323345.avif
 
@@ -163,10 +163,6 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610210243233
 这提示着我们未来的应用投放不能简单地认为地面实验取得的成果可以简单复用在微重力条件下，我们仍需经过多轮微重力模拟测试工程菌的各项参数是否与地面环境有差异。
 
 https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-20261021024340505.avif
-
-两轮实验表明，CP 系列工程菌在不同纤维二糖浓度下表现出不同的群体扩展表型。其中，多数 CP 菌株在 10 mM 条件下的菌斑较 1 mM 条件减小，而 WT 呈现相反趋势。这一现象与吸引剂浓度可能影响软琼脂趋化迁移的假设相容。
-
-然而，软琼脂群体扩展同时受到生长、底物利用及运动行为影响，因此这些结果尚不足以确认 CP 系列具有纤维二糖正趋化能力。进一步验证需要在预设纤维二糖浓度梯度下直接测量细菌的定向运动。
 
 ---
 
@@ -186,16 +182,9 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610210243405
 
 但在后续观察中，管路压力变化与液体回流仍明显干扰了菌体的表观位移，无法可靠区分主动运动和被动流体迁移。
 
-芯片实际图片
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-3-2.avif
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-4-1.avif
+**[Figure 10. Microfluidic chip assembly and preliminary observations]**
 
-代表性显微镜图片
-第4代芯片：
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-4-2.avif
-第5代芯片
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-3.avif
-
+*待插入：芯片实物、流道示意及代表性显微图。*
 
 截至 Wiki 截止时，我们尚未获得可用于定量分析的连续运动轨迹，也未完成 CP 系列工程菌的有效微流控趋化比较。因此，这一部分属于趋化测量平台开发的阶段性结果，而不是趋化能力的阳性或阴性验证。
 
