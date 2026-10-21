@@ -933,7 +933,7 @@ A4 中最大的问题是无法获得稳定的 Chb 质粒工程菌，而本轮通
 
 #### Test｜测试
 
-https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp12-od600-growth-curve-yh-1.svg
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a/cp12-od600-growth-curve-yh.svg
 
 在 glucose 条件下，两株菌均表现出明显生长。在 cellobiose 条件下则出现了明显不同的趋势。
 
