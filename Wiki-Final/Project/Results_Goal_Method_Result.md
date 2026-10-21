@@ -170,23 +170,32 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610210243405
 
 ### Goal
 
-尝试建立能够在化学梯度下观察细菌运动的微流控测量体系，为后续区分主动趋化与被动流体位移提供条件。
+尝试搭建三流道微流控芯片，以观察化学梯度下的大肠杆菌运动，并探索区分主动趋化与被动位移的方法。
 
 ### Method
 
-制作三流道 PDMS 芯片并与凝胶层组装，逐步调整接口加工、通液方式及显微观察条件。采用天冬氨酸作为初步观察用的吸引物，先后比较琼脂和琼脂糖底层，并调整菌液重悬体系及密度。
+制作三流道 PDMS 芯片，并与凝胶层组装。以天冬氨酸作为吸引物，逐步调整芯片接口、组装方式及通液条件。观察过程中，将底层材料由琼脂替换为琼脂糖，并将菌液重悬体系由 M9 改为 PBS，同时调整菌液浓度，以改善观察效果。
 
 ### result
 
-通过改进接口加工和组装顺序，部分流道的连通性得到改善；使用琼脂糖替代琼脂后，显微背景更加清晰，能够辨认流道中的菌体。调整菌液浓度及重悬液后，观察背景中的杂质与菌体密度也有所改善。
+1. Chip assembly and material adjustment
 
-但在后续观察中，管路压力变化与液体回流仍明显干扰了菌体的表观位移，无法可靠区分主动运动和被动流体迁移。
+实验初期，芯片存在通液困难及琼脂层破损等问题。调整接口加工和组装方式后，部分流道的连通性有所改善。将底层材料由琼脂替换为琼脂糖后，显微观察背景更加清晰，菌体辨认情况有所改善。
 
-**[Figure 10. Microfluidic chip assembly and preliminary observations]**
+2. Improvement of microscopic observation
 
-*待插入：芯片实物、流道示意及代表性显微图。*
+将菌液重悬体系由 M9 改为 PBS，并调整菌液浓度后，观察背景中的杂质干扰有所减轻，菌体密度也更适合观察。
 
-截至 Wiki 截止时，我们尚未获得可用于定量分析的连续运动轨迹，也未完成 CP 系列工程菌的有效微流控趋化比较。因此，这一部分属于趋化测量平台开发的阶段性结果，而不是趋化能力的阳性或阴性验证。
+3. Limitations of chemotaxis observation
+
+后续实验中，管路压力变化及液体流动仍会干扰菌体的表观位移，无法可靠区分主动趋化与被动流体迁移。此外，部分菌体吸附于琼脂糖表面，位置相对稳定，这些菌体能够减少液体对流对运动观察的干扰，并更好的接触琼脂糖中的趋化物浓度梯度。但这部分菌体的运动能力较弱，限制了对其趋化行为的观察。
+
+芯片实际图片 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-3-2.avif https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-4-1.avif
+
+代表性显微镜图片 第4代芯片： https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-4-2.avif 第5代芯片 https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-3.avif
+
+截至 Wiki 截止时，我们尚未获得可用于定量分析的连续运动轨迹。因此，本阶段主要完成了微流控芯片的初步搭建和观察条件调整，尚未获得能够验证工程菌趋化能力的直接证据。
+
 
 ---
 
