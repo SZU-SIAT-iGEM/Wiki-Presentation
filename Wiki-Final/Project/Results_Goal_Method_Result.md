@@ -186,9 +186,16 @@ https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/image-202610210243405
 
 但在后续观察中，管路压力变化与液体回流仍明显干扰了菌体的表观位移，无法可靠区分主动运动和被动流体迁移。
 
-**[Figure 10. Microfluidic chip assembly and preliminary observations]**
+芯片实际图片
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-3-2.avif
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-4-1.avif
 
-*待插入：芯片实物、流道示意及代表性显微图。*
+代表性显微镜图片
+第4代芯片：
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-4-2.avif
+第5代芯片
+https://static.igem.wiki/teams/6100/wiki/images-of-wetlab-dbtl/dbtl-a8/a6-5-3.avif
+
 
 截至 Wiki 截止时，我们尚未获得可用于定量分析的连续运动轨迹，也未完成 CP 系列工程菌的有效微流控趋化比较。因此，这一部分属于趋化测量平台开发的阶段性结果，而不是趋化能力的阳性或阴性验证。
 
