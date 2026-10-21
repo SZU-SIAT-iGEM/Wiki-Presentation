@@ -326,8 +326,7 @@ A7.1 中，我们观察到部分 CP 工程菌在纤维二糖条件下形成更�
 
 值得注意的是，WT 在 10 mM 纤维二糖条件下反而形成了更大的菌斑，与多数 CP 工程菌呈现相反的变化方向。
 
-![image-20261021024323345](./images%20of%20wetlabDBTL/image-20261021024323345.png)
-
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/1g-rpm.avif
 **2. RPM 模拟微重力组**
 
 本轮 RPM 实验遭遇了明显的技术问题。由于软琼脂机械强度较低，多块平板在 RPM 旋转过程中发生破裂，导致部分实验条件未能获得有效结果，其中包括 L-Asp 阳性参照组。
@@ -335,8 +334,7 @@ A7.1 中，我们观察到部分 CP 工程菌在纤维二糖条件下形成更�
 在保留下来的平板中，似乎只有在 10 mM 纤维二糖条件下，WT 与部分 CP 工程菌均形成可见菌。
 
 而且与地面组相比，RPM 组多个菌株的可见扩展范围整体偏小，但由于部分平板损坏、菌斑边界不清晰，无法进行可靠的定量比较。
-
-![image-20261021024340505](./images%20of%20wetlabDBTL/image-20261021024340505.png)
+https://static.igem.wiki/teams/6100/wiki/results-of-wetlab/rpm.avif
 
 ### Learn｜学习
 
